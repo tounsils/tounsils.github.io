@@ -166,6 +166,23 @@ img.diagram-large {
     background: #fff;
 }
 
+/* QR code: compact, clean, centered — no chrome. */
+img.qr {
+    max-width: 1.7in;
+    max-height: 1.7in;
+    border: none;
+    padding: 0;
+    margin: 1.2em auto 0.2em auto;
+    background: transparent;
+}
+
+p.qr-caption {
+    text-align: center;
+    font-size: 9pt;
+    color: var(--muted);
+    margin: 0.2em 0 0 0;
+}
+
 /* Keep image + preceding heading together. */
 h3 + p > img, h3 + p img, h4 + p img { margin-top: 0.4em; }
 
@@ -426,6 +443,8 @@ h3 + p > img, h3 + p img, h4 + p img { margin-top: 0.4em; }
 <li><strong>French</strong> — Fluent</li>
 <li><strong>Arabic</strong> — Native</li>
 </ul>
+<p><img alt="Scan for the latest version of this résumé" class="qr" src="resume-assets/resume-qr.png"></p>
+<p class="qr-caption">Scan for the always-current version — <a href="https://tounsils.github.io/ResumeIlyes.pdf">tounsils.github.io/ResumeIlyes.pdf</a></p>
 </main>
 </body>
 </html>

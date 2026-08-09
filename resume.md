@@ -257,3 +257,7 @@ Active contractor across ML data, weak-supervision, and bounty platforms — inf
 - **English** — Fluent
 - **French** — Fluent
 - **Arabic** — Native
+
+![Scan for the latest version of this résumé](resume-assets/resume-qr.png){: .qr}
+
+<p class="qr-caption">Scan for the always-current version — <a href="https://tounsils.github.io/ResumeIlyes.pdf">tounsils.github.io/ResumeIlyes.pdf</a></p>
