@@ -176,6 +176,17 @@ img.qr {
     background: transparent;
 }
 
+/* Inline brand logo — small, no chrome, left-aligned. */
+img.logo {
+    max-width: 2.2in;
+    max-height: 0.7in;
+    border: none;
+    padding: 0;
+    margin: 0.4em 0 0.5em 0;
+    background: transparent;
+    display: block;
+}
+
 p.qr-caption {
     text-align: center;
     font-size: 9pt;
@@ -225,18 +236,23 @@ h3 + p > img, h3 + p img, h4 + p img { margin-top: 0.4em; }
 <h2 id="experience">Experience</h2>
 <h3 id="senior-software-engineer-nxt-robotics-remote-fractional-60-2025-present">Senior Software Engineer — NXT Robotics (Remote) · Fractional (~60%) · 2025 – Present</h3>
 <ul>
-<li>Improved frontend, backend, and APIs powering robot control, monitoring, diagnostics, and command dashboards.</li>
-<li>Integrated AI/ML into robotic decision-making pipelines.</li>
-<li>Multi-module architecture: React dashboard, Python deploy tooling, Node workers, financial dashboard, internal "nxt-brains" services.</li>
-<li><strong>Stack:</strong> React + Ant Design + Redux + Chart.js, Python, Node, ElevenLabs, Laravel, PHP, AWS, Docker, REST APIs.</li>
+<li>Build and maintain <strong>RobotogoAI</strong> — the operator SaaS console + agent layer that turns raw device telemetry (video, GPS, battery, BLE beacons) into actionable ops decisions for physical-security and field-equipment fleets across ACE / Snapdragon Stadium / Petco Park, Verdant, ChargeHub, Drone Informer, and a 300+ site Amazon-parking pilot.</li>
+<li>Ship end-to-end operator-console features: alerts UI with severity taxonomy + deep-link, checklists module, camera-picker video streams with iOS black-tile fix, mobile swipeable single-camera carousel + battery graph, tenant-themed dashboards.</li>
+<li>LiveKit voice/video + ElevenLabs + react-speech-recognition cockpit voice interface; AI Assist wired to Nexie AgentCore / AWS Bedrock supervisor across <code>p00</code> / <code>ace</code> / <code>lsa</code> tenants.</li>
+<li>Backend feature work: BLE beacon CRUD, editable gateway coverage radius, geofence-move alerts, battery-low threshold service with clamp-safe firing, <code>PruneTelemetry</code> retention command, Drone Informer heartbeat + bounded event sync.</li>
+<li>Built the <strong>NXT Executive Cockpit</strong> — Revenue-Runway, Fleet Status, OKR, Renewals, DecisionQueue cards + vendor ledger with audit log, ⌘K categorized search, drag-to-reorder, Trello &amp; Monday board integrations, Cognito SRP auth migration, admin <code>/team</code> route with invite modal + inline role editor.</li>
+<li>Founded and structured <code>nxt-brains</code> — the shared human + Claude-Code knowledge repo (Docsify + OKF v0.1 frontmatter + ADR-0001 adoption).</li>
+<li><strong>Stack:</strong> React 19, Redux Toolkit + Saga, Ant Design, Vite, LiveKit, HLS.js, Recharts / Chart.js, react-leaflet, PHP 8.3 + Laravel 12 + Passport, MySQL/RDS, RabbitMQ / MQTT, Python + AWS SAM/CloudFormation, ECS + RDS + ALB, Node 20 + TypeScript + esbuild, AWS Lambda + API Gateway + Aurora Serverless v2 + Cognito, ElevenLabs, AWS Bedrock, Docker.</li>
 </ul>
 <h3 id="vp-of-engineering-advisory-part-time-20-aimia-remote-san-diego-ca-2025-present">VP of Engineering (Advisory, Part-time ~20%) — AIMIA (Remote) · San Diego, CA · 2025 – Present</h3>
 <ul>
-<li>Advise on engineering strategy for a distributed software, platform, QA, and data team.</li>
-<li>Architect and oversee an AI-powered career advisory platform: FastAPI + Node backend, React + Next.js frontend, MongoDB, AWS.</li>
-<li>Establish CI/CD pipelines, deploy on AWS (ECS, EC2, Route 53), and maintain production reliability.</li>
-<li>Mentor engineers; instill disciplined execution across Agile teams.</li>
-<li><strong>Stack:</strong> Node.js, Python, FastAPI, Express, Next.js, Tailwind, MongoDB, GitHub Actions, AWS, Docker.</li>
+<li>Own end-to-end engineering for an AI-driven career + AI-literacy assessment platform (aimia.me) serving students, young professionals, and adult learners — with institutional partners including Irvine Valley College, MIT, Palomar College, and Mission Edge.</li>
+<li>Architect a <strong>multi-agent Gemini stack</strong>: 6 specialized agents + supervisor produce a Career Summary + Top-3 Career Paths from a conversational RIASEC / skills / values / personality assessment, paired with a 48-question AI Proficiency Assessment across 6 domains that issues a shareable public certificate.</li>
+<li>Ship <strong>Gemini Live</strong> bidirectional voice over WebSocket + ElevenLabs voice fallback; multilingual UX + LLM output (English, zh-TW, zh-HK, Spanish); length-bias / anti-cheat detector that retries generation when the model systematically writes longer correct answers.</li>
+<li>Own security posture: application-layer <strong>AES-256-GCM</strong> Mongoose field encryption with HMAC-SHA256 blind-index email dedupe; JWT cookie + bearer access tokens; PostHog analytics with COPPA / FERPA masking; Sentry observability.</li>
+<li>Lead in-flight <strong>AWS ECS Fargate → GCP Cloud Run</strong> migration (ECR/ALB/Route 53/Secrets Manager → Cloud Run / Cloud DNS / Secret Manager); per-service GitHub Actions CI/CD.</li>
+<li>Ship admin console: live Gemini model discovery + smoke-test switcher, attempt inspection, contact CSV export, encryption backfill utility.</li>
+<li><strong>Stack:</strong> Next.js 15 (Pages Router), React 18, Redux Toolkit, Tailwind v4, Express + TypeScript, Mongoose 7, FastAPI (Python 3.11), Google Vertex AI / Gemini + Gemini Live, ElevenLabs, MongoDB Atlas, AWS (ECS Fargate, ECR, ALB, Route 53, Secrets Manager) → GCP (Cloud Run, Cloud DNS, Secret Manager), GitHub Actions, Docker, Sentry, PostHog.</li>
 </ul>
 <h3 id="software-engineering-manager-zembra-remote-san-diego-ca-sep-2024-nov-2024">Software Engineering Manager — Zembra (Remote) · San Diego, CA · Sep 2024 – Nov 2024</h3>
 <ul>
@@ -319,12 +335,47 @@ h3 + p > img, h3 + p img, h4 + p img { margin-top: 0.4em; }
 <p>Founding member of the <strong>AAA Accelerator</strong> cohort (<a href="https://aaaaccelerator.com">aaaaccelerator.com</a>) — the AI business launch &amp; AIOS program that seeded this architecture.</p>
 </blockquote>
 <h2 id="featured-client-engineering">Featured Client Engineering</h2>
-<h3 id="nxt-robotics-unified-robotics-operations-dashboard">NXT Robotics — Unified robotics operations dashboard</h3>
-<p>Multi-module system consolidating robot control, monitoring, diagnostics, financial ops, and voice-driven "cockpit" interaction into a single operations surface for a robotics company. Ongoing senior engineering role; cockpit demo in flight.</p>
+<h3 id="nxt-robotics-nxtroboticscom-robotogoai-operator-platform">NXT Robotics — <a href="https://www.nxtrobotics.com/">nxtrobotics.com</a> · RobotogoAI operator platform</h3>
+<p>NXT Robotics builds AI-powered computer-vision infrastructure for stadiums, airports, parking, data centers, government, and manufacturing — the flagship customer deployment lives at <strong>ACE / Snapdragon Stadium</strong>. Positioning: <em>"See More. Know More. Act Faster."</em></p>
+<p><img alt="NXT Robotics — See More. Know More. Act Faster." src="resume-assets/nxt-hero.png"></p>
+<p>The product I contribute to is <strong>RobotogoAI</strong> — an operator-facing SaaS console plus agent layer. Raw device telemetry (video streams, GPS, battery, BLE beacons, alerts) flows in from rovers, EV chargers, drones, and NXTSensorHub trailers; RobotogoAI turns it into decisions an operator can act on inside a Virtual Security Operations Center (vSOC).</p>
+<p><strong>Sub-modules I own or contribute to:</strong></p>
 <ul>
-<li><strong>Sub-modules I contribute to:</strong> <code>dashboard-react-js</code> (operator UI), <code>dashboard-api</code> (backend), <code>dashboard-deploy</code> (Python deployment tooling), <code>P-NXT-financial-dashboard</code> (revenue/ops view), <code>nxt-brains</code> (internal service).</li>
-<li><strong>What's interesting:</strong> heterogeneous stack unified behind one operator experience; voice channel via ElevenLabs; Chart.js-backed real-time telemetry; Redux state across long-running dashboards.</li>
-<li><strong>Stack:</strong> React 18, Ant Design, Redux, Chart.js, Node, Python, Laravel, PHP, ElevenLabs, AWS, Docker, REST APIs.</li>
+<li><strong><code>dashboard-react-js</code></strong> — the operator console (React 19 + Vite + Ant Design + Redux Toolkit + Saga). Live device map (react-leaflet + Draw), video streams (LiveKit + HLS.js), alerts, checklists, telemetry charts (Recharts / Chart.js), RBAC, multi-tenant theming.</li>
+<li><strong><code>dashboard-api</code></strong> — Laravel 12 / PHP 8.3 / Passport REST API. MQTT ingest via <code>php-amqplib</code>, device / site / beacon CRUD, alert engine, LiveKit + Bedrock / Nexie AgentCore integration.</li>
+<li><strong><code>dashboard-deploy</code></strong> — Python + AWS SAM / CloudFormation IaC that provisions per-tenant stacks (<code>p00</code>, <code>p01</code>, <code>ace</code>, …) on ECS + RDS + ALB + ACM + Route 53.</li>
+<li><strong><code>nxt-cockpit</code> + <code>nxt-cockpit-api</code></strong> — the successor Executive Cockpit: Node 20 + TypeScript + esbuild + AWS Lambda + API Gateway + Aurora Serverless v2 (Postgres, Data API) + Cognito.</li>
+<li><strong><code>nxt-brains</code></strong> — dual-audience (human + Claude Code) knowledge repo I founded; Docsify site with OKF v0.1 frontmatter, ADRs, runbooks; source-of-truth that feeds the Bedrock KB.</li>
+</ul>
+<p><strong>Recent shipped work (last 30 days):</strong></p>
+<ul>
+<li>Alerts UI end-to-end: Critical / Actionable / Informational severity taxonomy, sort + filters, <code>AlertDetailCard</code> (priority + weather), bell deep-link (<code>?alertId=</code>).</li>
+<li>Video streams reliability: replaced auto-load-all cameras with a picker; fixed iOS black-tile with queued attaches (300 ms gap, <code>playsInline</code> + <code>muted</code> + explicit <code>play()</code>); mobile swipeable single-camera carousel with tenant theming and battery graph.</li>
+<li>BLE beacons: capability + CRUD for editable BC03 positions; site-profile <code>beacons_snapshot</code>.</li>
+<li>Battery alerts: <code>battery_low</code> threshold service, clamp-safe firing, telemetry retention 30 → 60 d, <code>PruneTelemetry</code> command.</li>
+<li>Drone Informer heartbeat + bounded event sync; multi-tab simultaneous streaming.</li>
+<li>Executive Cockpit → Trello (OAuth connect, live board tile, drilldown Drawer, new-card modal + <code>POST /trello/cards</code>) and Monday integrations (product-dev roadmap board, prospects fan-out, silent token refresh).</li>
+<li>Cognito SRP + <code>FORCE_CHANGE_PASSWORD</code> auth migration; admin <code>/team</code> route with live Cognito listing, invite modal, inline role editor, resend-invite.</li>
+</ul>
+<h3 id="aimia-aimiame-ai-driven-career-ai-literacy-assessment">AIMIA — <a href="https://aimia.me">aimia.me</a> · AI-driven career + AI-literacy assessment</h3>
+<p><img alt="AIMIA" class="logo" src="resume-assets/aimia-logo.png"></p>
+<p>AIMIA pairs a <strong>conversational career assessment</strong> (RIASEC + skills + values + personality + needs + career-decision support) with an <strong>AI Proficiency Assessment</strong> — 48 questions across six domains, scored on a five-band scale (Awareness → Foundational → Competent → Proficient → Expert), and finalized with a shareable public certificate. Built for students, young professionals, and adult learners. Institutional partners: Irvine Valley College, MIT, Palomar College, Mission Edge.</p>
+<p><img alt="AIMIA — conversational career assessment UI" src="resume-assets/aimia-conversation.png"></p>
+<p><strong>Architecture:</strong> Turbo-style npm-workspace monorepo — <code>apps/web</code> (Next.js 15), <code>apps/api</code> (Express + TypeScript), <code>apps/ai-service</code> (FastAPI + Gemini), <code>packages/db</code> (shared Mongoose 7 models). Six specialized Gemini agents plus a supervisor synthesize the Career Summary + Top-3 Career Paths outcome.</p>
+<p><strong>What I built / own as VP of Engineering:</strong></p>
+<ul>
+<li><strong>Multi-agent conversational assessment</strong> — six domain agents + supervisor, plus a "Quick Mode" batch-answer UI as an alternative to chat; save-and-exit / early-exit with partial scored result.</li>
+<li><strong>48-question AI Proficiency Assessment</strong> with per-attempt LLM question generation, calibrated difficulty mix, and 5-band scoring.</li>
+<li><strong>Personalized LLM-generated Study Plan</strong> with curated courses per domain, exportable as printable HTML.</li>
+<li><strong>Public shareable certificate</strong> at <code>/verify/[certificateId]</code> with SSR Open Graph tags for LinkedIn / Twitter previews.</li>
+<li><strong>Gemini Live bidirectional voice</strong> over WebSocket, plus an ElevenLabs voice-agent alternate.</li>
+<li><strong>Multilingual UX + LLM output</strong>: English, zh-TW, zh-HK, Spanish.</li>
+<li><strong>Length-bias / anti-cheat detector</strong> — retries generation when the LLM systematically writes longer correct answers.</li>
+<li><strong>Public-mode anonymous attempt flow</strong> with short-lived bearer tokens; admin toggle per assessment.</li>
+<li><strong>Admin console:</strong> live Gemini model discovery + smoke-test switcher, attempt inspection, contact CSV export, encryption backfill utility.</li>
+<li><strong>Application-layer AES-256-GCM</strong> field encryption on Mongoose setters, with <strong>HMAC-SHA256 blind-index email lookup</strong> so encrypted emails still dedupe.</li>
+<li><strong>Automated branded recap email</strong> on finalize; SSR-rendered <code>/verify/[certificateId]</code> public page.</li>
+<li><strong>In-flight AWS → GCP migration</strong> — ECS Fargate → Cloud Run, EC2 Mongo → Atlas — with <code>BRIDGE_SHARED_SECRET</code> already deployed cross-service.</li>
 </ul>
 <h3 id="hydrostasis-retool-admin-portal-with-test-prod-promotion-pipeline">Hydrostasis — Retool admin portal with Test → Prod promotion pipeline</h3>
 <p>Admin portal for Hydrostasis (intern summer 2026 engagement). Phase 1 promoted to production; phase 2 (webhook integrations) in flight.</p>
