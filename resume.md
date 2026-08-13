@@ -2,7 +2,7 @@
 
 **Full-Stack Software Engineer · AI/ML Integrator · Founder**
 
-Carlsbad, CA, USA · +1 (760) 481-4120 · tounsils@gmail.com
+Carlsbad, CA, USA · +1 7604814120 · tounsils@gmail.com
 [linkedin.com/in/mohameditounsi](https://linkedin.com/in/mohameditounsi) · [github.com/tounsils](https://github.com/tounsils) · [digitalqrcard.com](https://www.digitalqrcard.com)
 
 ## Professional Summary
@@ -32,12 +32,12 @@ I'm a **software engineer first**. AI is a tool in the stack, not the whole stac
 ## Experience
 
 ### Senior Software Engineer — NXT Robotics (Remote) · Fractional (~60%) · 2025 – Present
-- Build and maintain **RobotogoAI** — the operator SaaS console + agent layer that turns raw device telemetry (video, GPS, battery, BLE beacons) into actionable ops decisions for physical-security and field-equipment fleets across ACE / Snapdragon Stadium / Petco Park, Verdant, ChargeHub, Drone Informer, and a 300+ site Amazon-parking pilot.
+- Build and maintain **RobotogoAI** — the operator SaaS console + agent layer that turns raw device telemetry (video, GPS, battery, BLE beacons) into actionable ops decisions for physical-security and field-equipment fleets — stadium venues (ACE / Snapdragon Stadium, Petco Park), EV-charging networks, drone operators, and a 300+ site parking pilot.
 - Ship end-to-end operator-console features: alerts UI with severity taxonomy + deep-link, checklists module, camera-picker video streams with iOS black-tile fix, mobile swipeable single-camera carousel + battery graph, tenant-themed dashboards.
 - LiveKit voice/video + ElevenLabs + react-speech-recognition cockpit voice interface; AI Assist wired to an AWS Bedrock supervisor agent across multiple production tenants.
-- Backend feature work: BLE beacon CRUD, editable gateway coverage radius, geofence-move alerts, battery-low threshold service with clamp-safe firing, `PruneTelemetry` retention command, Drone Informer heartbeat + bounded event sync.
-- Built the **NXT Executive Cockpit** — Revenue-Runway, Fleet Status, OKR, Renewals, DecisionQueue cards + vendor ledger with audit log, ⌘K categorized search, drag-to-reorder, Trello & Monday board integrations, Cognito SRP auth migration, admin `/team` route with invite modal + inline role editor.
-- Founded and structured `nxt-brains` — the shared human + Claude-Code knowledge repo (Docsify + OKF v0.1 frontmatter + ADR-0001 adoption).
+- Backend feature work: BLE beacon CRUD, editable gateway coverage radius, geofence-move alerts, battery-low threshold service with clamp-safe firing, `PruneTelemetry` retention command, drone-partner heartbeat + bounded event sync.
+- Built the **executive operations console** — a configurable metric-card system with an auditable vendor ledger, ⌘K categorized search, drag-to-reorder, Trello & Monday board integrations, Cognito SRP auth migration, admin `/team` route with invite modal + inline role editor.
+- Founded and structured the shared human + AI-agent knowledge repository (Docsify site, structured frontmatter schema, ADR adoption).
 - **Stack:** React 19, Redux Toolkit + Saga, Ant Design, Vite, LiveKit, HLS.js, Recharts / Chart.js, react-leaflet, PHP 8.3 + Laravel 12 + Passport, MySQL/RDS, RabbitMQ / MQTT, Python + AWS SAM/CloudFormation, ECS + RDS + ALB, Node 20 + TypeScript + esbuild, AWS Lambda + API Gateway + Aurora Serverless v2 + Cognito, ElevenLabs, AWS Bedrock, Docker.
 
 ### VP of Engineering (Advisory, Part-time ~20%) — AIMIA (Remote) · San Diego, CA · 2025 – Present
@@ -149,11 +149,11 @@ The product I contribute to is **RobotogoAI** — an operator-facing SaaS consol
 
 **Sub-modules I own or contribute to:**
 
-- **`dashboard-react-js`** — the operator console (React 19 + Vite + Ant Design + Redux Toolkit + Saga). Live device map (react-leaflet + Draw), video streams (LiveKit + HLS.js), alerts, checklists, telemetry charts (Recharts / Chart.js), RBAC, multi-tenant theming.
-- **`dashboard-api`** — Laravel 12 / PHP 8.3 / Passport REST API. MQTT ingest via `php-amqplib`, device / site / beacon CRUD, alert engine, LiveKit + AWS Bedrock agent integration.
-- **`dashboard-deploy`** — Python + AWS SAM / CloudFormation IaC that provisions isolated per-tenant stacks on ECS + RDS + ALB + ACM + Route 53.
-- **`nxt-cockpit` + `nxt-cockpit-api`** — the successor Executive Cockpit: Node 20 + TypeScript + esbuild + AWS Lambda + API Gateway + Aurora Serverless v2 (Postgres, Data API) + Cognito.
-- **`nxt-brains`** — dual-audience (human + Claude Code) knowledge repo I founded; Docsify site with OKF v0.1 frontmatter, ADRs, runbooks; source-of-truth that feeds the Bedrock KB.
+- **Operator console (frontend)** — (React 19 + Vite + Ant Design + Redux Toolkit + Saga). Live device map (react-leaflet + Draw), video streams (LiveKit + HLS.js), alerts, checklists, telemetry charts (Recharts / Chart.js), RBAC, multi-tenant theming.
+- **Platform API** — Laravel 12 / PHP 8.3 / Passport REST API. MQTT ingest via `php-amqplib`, device / site / beacon CRUD, alert engine, LiveKit + AWS Bedrock agent integration.
+- **Infrastructure as code** — Python + AWS SAM / CloudFormation IaC that provisions isolated per-tenant stacks on ECS + RDS + ALB + ACM + Route 53.
+- **Executive console (frontend + API)** — the successor operations console: Node 20 + TypeScript + esbuild + AWS Lambda + API Gateway + Aurora Serverless v2 (Postgres, Data API) + Cognito.
+- **Knowledge repository** — dual-audience (human + AI agent) knowledge base I founded; Docsify site with a structured frontmatter schema, ADRs, and runbooks; source of truth feeding the Bedrock knowledge base.
 
 **Recent shipped work (last 30 days):**
 
@@ -161,8 +161,8 @@ The product I contribute to is **RobotogoAI** — an operator-facing SaaS consol
 - Video streams reliability: replaced auto-load-all cameras with a picker; fixed iOS black-tile with queued attaches (300 ms gap, `playsInline` + `muted` + explicit `play()`); mobile swipeable single-camera carousel with tenant theming and battery graph.
 - BLE beacons: capability + CRUD for editable BC03 positions; site-profile `beacons_snapshot`.
 - Battery alerts: `battery_low` threshold service, clamp-safe firing, telemetry retention 30 → 60 d, `PruneTelemetry` command.
-- Drone Informer heartbeat + bounded event sync; multi-tab simultaneous streaming.
-- Executive Cockpit → Trello (OAuth connect, live board tile, drilldown Drawer, new-card modal + `POST /trello/cards`) and Monday integrations (product-dev roadmap board, prospects fan-out, silent token refresh).
+- Drone-partner heartbeat + bounded event sync; multi-tab simultaneous streaming.
+- Executive console → Trello (OAuth connect, live board tile, drilldown Drawer, new-card modal + `POST /trello/cards`) and Monday integrations (roadmap board sync, record fan-out, silent token refresh).
 - Cognito SRP + `FORCE_CHANGE_PASSWORD` auth migration; admin `/team` route with live Cognito listing, invite modal, inline role editor, resend-invite.
 
 ### AIMIA — [aimia.me](https://aimia.me) · AI-driven career + AI-literacy assessment

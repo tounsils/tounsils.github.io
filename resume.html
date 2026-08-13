@@ -369,15 +369,22 @@ code { color: var(--ink); }
     font-weight: 600;
     color: var(--muted);
 }
-/* Two-column masthead: avatar in col 1, everything else sharing col 2's
-   left edge so the block has a single alignment instead of a ragged one. */
-.masthead {
+.id-text { min-width: 0; }
+.id-text .tagline { margin-bottom: 0; }
+.masthead ul.contact { margin-top: 1.1rem; }
+
+/* Portrait support — currently unused. Re-add
+   <img class="avatar no-print" src="resume-assets/headshot.png" ...>
+   as the first child of .masthead and the two-column layout switches on by
+   itself: avatar in col 1, name/tagline/chips sharing col 2's left edge so
+   the block reads as one alignment rather than a ragged one. */
+.masthead:has(.avatar) {
     display: grid;
     grid-template-columns: auto 1fr;
     column-gap: 1rem;
     row-gap: 1.05rem;
 }
-.masthead .avatar {
+.masthead:has(.avatar) .avatar {
     grid-area: 1 / 1;
     align-self: center;
     width: 68px;
@@ -389,9 +396,8 @@ code { color: var(--ink); }
     object-fit: cover;
     background: var(--soft);
 }
-.id-text { grid-area: 1 / 2; min-width: 0; align-self: center; }
-.id-text .tagline { margin-bottom: 0; }
-.masthead ul.contact { grid-area: 2 / 2; }
+.masthead:has(.avatar) .id-text { grid-area: 1 / 2; align-self: center; }
+.masthead:has(.avatar) ul.contact { grid-area: 2 / 2; margin-top: 0; }
 ul.contact {
     list-style: none;
     display: flex;
@@ -417,13 +423,13 @@ ul.contact li a:hover { color: var(--accent); }
 @media screen and (max-width: 640px) {
     /* Phones: chips reclaim the avatar's column. At this width usable line
        length beats sharing a left edge with the name. */
-    .masthead { column-gap: 0.8rem; row-gap: 0.85rem; }
-    .masthead ul.contact { grid-area: 2 / 1 / 3 / -1; }
-    .masthead .avatar { width: 56px; height: 56px; }
+    .masthead:has(.avatar) { column-gap: 0.8rem; row-gap: 0.85rem; }
+    .masthead:has(.avatar) ul.contact { grid-area: 2 / 1 / 3 / -1; }
+    .masthead:has(.avatar) .avatar { width: 56px; height: 56px; }
 }
 
 @media screen and (max-width: 380px) {
-    .masthead .avatar { width: 50px; height: 50px; }
+    .masthead:has(.avatar) .avatar { width: 50px; height: 50px; }
 }
 
 /* --- Media --- */
@@ -507,14 +513,13 @@ img.qr, img.logo { box-shadow: none; }
 </div>
 <main>
 <header class="masthead">
-<img class="avatar no-print" src="resume-assets/headshot.png" width="96" height="96" alt="Portrait of Mohamed Ilyes Tounsi">
 <div class="id-text">
 <h1 id="mohamed-ilyes-tounsi">Mohamed Ilyes Tounsi</h1>
 <p class="tagline">Full-Stack Software Engineer · AI/ML Integrator · Founder</p>
 </div>
 <ul class="contact">
 <li>Carlsbad, CA, USA</li>
-<li><a href="tel:+17604814120">+1 (760) 481-4120</a></li>
+<li><a href="tel:+17604814120">+1 7604814120</a></li>
 <li><a href="mailto:tounsils@gmail.com">tounsils@gmail.com</a></li>
 <li><a href="https://linkedin.com/in/mohameditounsi">linkedin.com/in/mohameditounsi</a></li>
 <li><a href="https://github.com/tounsils">github.com/tounsils</a></li>
@@ -535,12 +540,12 @@ img.qr, img.logo { box-shadow: none; }
 <h2 id="experience">Experience</h2>
 <h3 id="senior-software-engineer-nxt-robotics-remote-fractional-60-2025-present">Senior Software Engineer — NXT Robotics (Remote) · Fractional (~60%) · 2025 – Present</h3>
 <ul>
-<li>Build and maintain <strong>RobotogoAI</strong> — the operator SaaS console + agent layer that turns raw device telemetry (video, GPS, battery, BLE beacons) into actionable ops decisions for physical-security and field-equipment fleets across ACE / Snapdragon Stadium / Petco Park, Verdant, ChargeHub, Drone Informer, and a 300+ site Amazon-parking pilot.</li>
+<li>Build and maintain <strong>RobotogoAI</strong> — the operator SaaS console + agent layer that turns raw device telemetry (video, GPS, battery, BLE beacons) into actionable ops decisions for physical-security and field-equipment fleets — stadium venues (ACE / Snapdragon Stadium, Petco Park), EV-charging networks, drone operators, and a 300+ site parking pilot.</li>
 <li>Ship end-to-end operator-console features: alerts UI with severity taxonomy + deep-link, checklists module, camera-picker video streams with iOS black-tile fix, mobile swipeable single-camera carousel + battery graph, tenant-themed dashboards.</li>
 <li>LiveKit voice/video + ElevenLabs + react-speech-recognition cockpit voice interface; AI Assist wired to an AWS Bedrock supervisor agent across multiple production tenants.</li>
-<li>Backend feature work: BLE beacon CRUD, editable gateway coverage radius, geofence-move alerts, battery-low threshold service with clamp-safe firing, <code>PruneTelemetry</code> retention command, Drone Informer heartbeat + bounded event sync.</li>
-<li>Built the <strong>NXT Executive Cockpit</strong> — Revenue-Runway, Fleet Status, OKR, Renewals, DecisionQueue cards + vendor ledger with audit log, ⌘K categorized search, drag-to-reorder, Trello &amp; Monday board integrations, Cognito SRP auth migration, admin <code>/team</code> route with invite modal + inline role editor.</li>
-<li>Founded and structured <code>nxt-brains</code> — the shared human + Claude-Code knowledge repo (Docsify + OKF v0.1 frontmatter + ADR-0001 adoption).</li>
+<li>Backend feature work: BLE beacon CRUD, editable gateway coverage radius, geofence-move alerts, battery-low threshold service with clamp-safe firing, <code>PruneTelemetry</code> retention command, drone-partner heartbeat + bounded event sync.</li>
+<li>Built the <strong>executive operations console</strong> — a configurable metric-card system with an auditable vendor ledger, ⌘K categorized search, drag-to-reorder, Trello &amp; Monday board integrations, Cognito SRP auth migration, admin <code>/team</code> route with invite modal + inline role editor.</li>
+<li>Founded and structured the shared human + AI-agent knowledge repository (Docsify site, structured frontmatter schema, ADR adoption).</li>
 <li><strong>Stack:</strong> React 19, Redux Toolkit + Saga, Ant Design, Vite, LiveKit, HLS.js, Recharts / Chart.js, react-leaflet, PHP 8.3 + Laravel 12 + Passport, MySQL/RDS, RabbitMQ / MQTT, Python + AWS SAM/CloudFormation, ECS + RDS + ALB, Node 20 + TypeScript + esbuild, AWS Lambda + API Gateway + Aurora Serverless v2 + Cognito, ElevenLabs, AWS Bedrock, Docker.</li>
 </ul>
 <h3 id="vp-of-engineering-advisory-part-time-20-aimia-remote-san-diego-ca-2025-present">VP of Engineering (Advisory, Part-time ~20%) — AIMIA (Remote) · San Diego, CA · 2025 – Present</h3>
@@ -662,11 +667,11 @@ img.qr, img.logo { box-shadow: none; }
 <p>The product I contribute to is <strong>RobotogoAI</strong> — an operator-facing SaaS console plus agent layer. Raw device telemetry (video streams, GPS, battery, BLE beacons, alerts) flows in from rovers, EV chargers, drones, and NXTSensorHub trailers; RobotogoAI turns it into decisions an operator can act on inside a Virtual Security Operations Center (vSOC).</p>
 <p><strong>Sub-modules I own or contribute to:</strong></p>
 <ul>
-<li><strong><code>dashboard-react-js</code></strong> — the operator console (React 19 + Vite + Ant Design + Redux Toolkit + Saga). Live device map (react-leaflet + Draw), video streams (LiveKit + HLS.js), alerts, checklists, telemetry charts (Recharts / Chart.js), RBAC, multi-tenant theming.</li>
-<li><strong><code>dashboard-api</code></strong> — Laravel 12 / PHP 8.3 / Passport REST API. MQTT ingest via <code>php-amqplib</code>, device / site / beacon CRUD, alert engine, LiveKit + AWS Bedrock agent integration.</li>
-<li><strong><code>dashboard-deploy</code></strong> — Python + AWS SAM / CloudFormation IaC that provisions isolated per-tenant stacks on ECS + RDS + ALB + ACM + Route 53.</li>
-<li><strong><code>nxt-cockpit</code> + <code>nxt-cockpit-api</code></strong> — the successor Executive Cockpit: Node 20 + TypeScript + esbuild + AWS Lambda + API Gateway + Aurora Serverless v2 (Postgres, Data API) + Cognito.</li>
-<li><strong><code>nxt-brains</code></strong> — dual-audience (human + Claude Code) knowledge repo I founded; Docsify site with OKF v0.1 frontmatter, ADRs, runbooks; source-of-truth that feeds the Bedrock KB.</li>
+<li><strong>Operator console (frontend)</strong> — (React 19 + Vite + Ant Design + Redux Toolkit + Saga). Live device map (react-leaflet + Draw), video streams (LiveKit + HLS.js), alerts, checklists, telemetry charts (Recharts / Chart.js), RBAC, multi-tenant theming.</li>
+<li><strong>Platform API</strong> — Laravel 12 / PHP 8.3 / Passport REST API. MQTT ingest via <code>php-amqplib</code>, device / site / beacon CRUD, alert engine, LiveKit + AWS Bedrock agent integration.</li>
+<li><strong>Infrastructure as code</strong> — Python + AWS SAM / CloudFormation IaC that provisions isolated per-tenant stacks on ECS + RDS + ALB + ACM + Route 53.</li>
+<li><strong>Executive console (frontend + API)</strong> — the successor operations console: Node 20 + TypeScript + esbuild + AWS Lambda + API Gateway + Aurora Serverless v2 (Postgres, Data API) + Cognito.</li>
+<li><strong>Knowledge repository</strong> — dual-audience (human + AI agent) knowledge base I founded; Docsify site with a structured frontmatter schema, ADRs, and runbooks; source of truth feeding the Bedrock knowledge base.</li>
 </ul>
 <p><strong>Recent shipped work (last 30 days):</strong></p>
 <ul>
@@ -674,8 +679,8 @@ img.qr, img.logo { box-shadow: none; }
 <li>Video streams reliability: replaced auto-load-all cameras with a picker; fixed iOS black-tile with queued attaches (300 ms gap, <code>playsInline</code> + <code>muted</code> + explicit <code>play()</code>); mobile swipeable single-camera carousel with tenant theming and battery graph.</li>
 <li>BLE beacons: capability + CRUD for editable BC03 positions; site-profile <code>beacons_snapshot</code>.</li>
 <li>Battery alerts: <code>battery_low</code> threshold service, clamp-safe firing, telemetry retention 30 → 60 d, <code>PruneTelemetry</code> command.</li>
-<li>Drone Informer heartbeat + bounded event sync; multi-tab simultaneous streaming.</li>
-<li>Executive Cockpit → Trello (OAuth connect, live board tile, drilldown Drawer, new-card modal + <code>POST /trello/cards</code>) and Monday integrations (product-dev roadmap board, prospects fan-out, silent token refresh).</li>
+<li>Drone-partner heartbeat + bounded event sync; multi-tab simultaneous streaming.</li>
+<li>Executive console → Trello (OAuth connect, live board tile, drilldown Drawer, new-card modal + <code>POST /trello/cards</code>) and Monday integrations (roadmap board sync, record fan-out, silent token refresh).</li>
 <li>Cognito SRP + <code>FORCE_CHANGE_PASSWORD</code> auth migration; admin <code>/team</code> route with live Cognito listing, invite modal, inline role editor, resend-invite.</li>
 </ul>
 <h3 id="aimia-aimiame-ai-driven-career-ai-literacy-assessment">AIMIA — <a href="https://aimia.me">aimia.me</a> · AI-driven career + AI-literacy assessment</h3>
