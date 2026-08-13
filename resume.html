@@ -4,33 +4,71 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Mohamed Ilyes Tounsi — Resume</title>
+<meta name="description" content="Full-stack software engineer and AI/ML integrator with 20+ years shipping production platforms — multi-agent LLM systems, RAG, realtime voice, AWS. Carlsbad, CA.">
+<meta name="author" content="Mohamed Ilyes Tounsi">
+<meta name="theme-color" content="#0a4d8c">
+
+<link rel="icon" href="favicon.ico" sizes="any">
+<link rel="icon" type="image/png" href="logo192.png">
+<link rel="apple-touch-icon" href="logo192.png">
+
+<meta property="og:type" content="profile">
+<meta property="og:title" content="Mohamed Ilyes Tounsi — Full-Stack Software Engineer &amp; AI/ML Integrator">
+<meta property="og:description" content="20+ years shipping production platforms end-to-end. Multi-agent LLM systems, RAG, realtime voice, AWS.">
+<meta property="og:url" content="https://tounsils.github.io/resume.html">
+<meta property="og:image" content="https://tounsils.github.io/logo512.png">
+<meta name="twitter:card" content="summary">
 <style>
 :root {
-    --ink: #1a1a1a;
-    --muted: #555;
-    --rule: #d5d5d5;
+    --ink: #14181d;
+    --muted: #5b6572;
+    --rule: #dfe3e8;
     --accent: #0a4d8c;
-    --soft: #f4f6f8;
+    --accent-soft: rgba(10, 77, 140, 0.10);
+    --soft: #f5f7f9;
+    --bg: #ffffff;
+    --shadow: 0 1px 2px rgba(16, 24, 40, .05), 0 8px 24px rgba(16, 24, 40, .06);
+}
+
+@media screen and (prefers-color-scheme: dark) {
+    :root {
+        --ink: #e7ebf0;
+        --muted: #9aa5b1;
+        --rule: #2a333d;
+        --accent: #74b4f2;
+        --accent-soft: rgba(116, 180, 242, 0.14);
+        --soft: #161c23;
+        --bg: #0f141a;
+        --shadow: 0 1px 2px rgba(0, 0, 0, .4), 0 8px 24px rgba(0, 0, 0, .35);
+    }
 }
 
 * { box-sizing: border-box; }
 
+html { scroll-behavior: smooth; }
+
 html, body {
     margin: 0;
     padding: 0;
-    background: #fff;
+    background: var(--bg);
     color: var(--ink);
     font-family: "Segoe UI", -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
-    font-size: 10.5pt;
-    line-height: 1.45;
+    font-size: 17px;
+    line-height: 1.62;
     -webkit-print-color-adjust: exact;
     print-color-adjust: exact;
+    -webkit-text-size-adjust: 100%;
 }
 
 main {
-    max-width: 7.5in;
+    max-width: 54rem;
     margin: 0 auto;
-    padding: 0.5in 0.6in;
+    padding: 2.5rem 1.5rem 5rem;
+}
+
+@media screen and (max-width: 640px) {
+    html, body { font-size: 16px; }
+    main { padding: 1.75rem 1.1rem 4rem; }
 }
 
 h1 {
@@ -197,31 +235,292 @@ p.qr-caption {
 /* Keep image + preceding heading together. */
 h3 + p > img, h3 + p img, h4 + p img { margin-top: 0.4em; }
 
-/* Print-only rules */
+/* ============================================================
+   SCREEN PRESENTATION LAYER
+   The rules above are the print-first document base. Everything
+   below refines the on-screen reading experience; the @media
+   print block at the end re-asserts the compact page layout so
+   the downloadable PDF is unaffected.
+   ============================================================ */
+
+/* Long tokens (paths, identifiers, URLs) must never widen the page. */
+body { overflow-wrap: break-word; }
+code, a { overflow-wrap: anywhere; }
+h1, h2, h3, h4 { overflow-wrap: break-word; }
+
+h1 { font-size: 2.35rem; letter-spacing: -0.02em; margin: 0 0 0.3rem; }
+h2 {
+    font-size: 1.3rem;
+    margin: 3rem 0 0.9rem;
+    padding-bottom: 0.35rem;
+    scroll-margin-top: 5rem;
+}
+h3 { font-size: 1.08rem; margin: 2rem 0 0.4rem; scroll-margin-top: 5rem; }
+h4 {
+    font-size: 0.92rem;
+    margin: 1.4rem 0 0.3rem;
+    color: var(--muted);
+    text-transform: uppercase;
+    letter-spacing: 0.045em;
+}
+
+p { margin: 0.75rem 0; }
+ul, ol { margin: 0.6rem 0 1.1rem; padding-left: 1.35rem; }
+li { margin: 0.35rem 0; }
+
+a { border-bottom-color: var(--accent-soft); transition: border-color .15s ease, color .15s ease; }
+a:hover { border-bottom-color: var(--accent); }
+a:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 2px; }
+
+code { color: var(--ink); }
+
+/* --- Sticky section nav --- */
+.topbar {
+    position: sticky;
+    top: 0;
+    z-index: 20;
+    background: var(--bg);
+    background: color-mix(in srgb, var(--bg) 86%, transparent);
+    backdrop-filter: saturate(1.7) blur(10px);
+    -webkit-backdrop-filter: saturate(1.7) blur(10px);
+    border-bottom: 1px solid var(--rule);
+}
+.topbar-inner {
+    max-width: 54rem;
+    margin: 0 auto;
+    padding: 0.5rem 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+.topbar nav {
+    display: flex;
+    gap: 0.1rem;
+    flex: 1 1 auto;
+    /* min-width:0 is required — without it the flex item's automatic minimum
+       size is its content width, which pushes the page wider than the viewport. */
+    min-width: 0;
+    overflow-x: auto;
+    scrollbar-width: none;
+}
+.topbar nav::-webkit-scrollbar { display: none; }
+.topbar nav a {
+    flex: none;
+    font-size: 0.82rem;
+    color: var(--muted);
+    border: 0;
+    padding: 0.38rem 0.62rem;
+    border-radius: 999px;
+    white-space: nowrap;
+}
+.topbar nav a:hover { color: var(--accent); background: var(--accent-soft); }
+.btn-pdf {
+    flex: none;
+    font-size: 0.82rem;
+    font-weight: 600;
+    color: #fff;
+    background: var(--accent);
+    border: 0;
+    padding: 0.45rem 0.9rem;
+    border-radius: 999px;
+    white-space: nowrap;
+}
+.btn-pdf:hover { filter: brightness(1.1); color: #fff; border: 0; }
+.lbl-short { display: none; }
+
+@media screen and (max-width: 640px) {
+    .topbar-inner { padding: 0.4rem 1.1rem; gap: 0.5rem; }
+    /* Short label frees the room the scrolling nav needs on a phone. */
+    .lbl-full { display: none; }
+    .lbl-short { display: inline; }
+    /* Fade the right edge so a clipped item reads as "scrollable", not "broken". */
+    .topbar nav {
+        -webkit-mask-image: linear-gradient(to right, #000 calc(100% - 22px), transparent);
+        mask-image: linear-gradient(to right, #000 calc(100% - 22px), transparent);
+    }
+    /* Touch targets: ~44px tall. */
+    .topbar nav a { padding: 0.62rem 0.55rem; font-size: 0.85rem; }
+    .btn-pdf { padding: 0.62rem 0.95rem; font-size: 0.85rem; }
+
+    h1 { font-size: 1.85rem; }
+    h2 { font-size: 1.18rem; margin-top: 2.4rem; }
+    h3 { margin-top: 1.6rem; }
+    ul.contact { font-size: 0.8rem; }
+    ul.contact li { padding: 0.32rem 0.65rem; }
+    blockquote { padding: 0.6rem 0.8rem; }
+}
+
+
+@media screen and (max-width: 380px) {
+    main { padding: 1.4rem 0.9rem 3.5rem; }
+    .topbar-inner { padding: 0.4rem 0.9rem; }
+    h1 { font-size: 1.65rem; }
+}
+
+/* --- Masthead --- */
+.masthead {
+    padding-bottom: 1.6rem;
+    margin-bottom: 0.5rem;
+    border-bottom: 1px solid var(--rule);
+}
+.tagline {
+    margin: 0 0 1.1rem;
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--muted);
+}
+/* Two-column masthead: avatar in col 1, everything else sharing col 2's
+   left edge so the block has a single alignment instead of a ragged one. */
+.masthead {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    column-gap: 1rem;
+    row-gap: 1.05rem;
+}
+.masthead .avatar {
+    grid-area: 1 / 1;
+    align-self: center;
+    width: 68px;
+    height: 68px;
+    border-radius: 50%;
+    border: 2px solid var(--rule);
+    box-shadow: var(--shadow);
+    margin: 0;
+    object-fit: cover;
+    background: var(--soft);
+}
+.id-text { grid-area: 1 / 2; min-width: 0; align-self: center; }
+.id-text .tagline { margin-bottom: 0; }
+.masthead ul.contact { grid-area: 2 / 2; }
+ul.contact {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem 0.45rem;
+    margin: 0;
+    padding: 0;
+    font-size: 0.85rem;
+}
+ul.contact li {
+    margin: 0;
+    padding: 0.26rem 0.7rem;
+    border: 1px solid var(--rule);
+    border-radius: 999px;
+    background: var(--soft);
+    color: var(--muted);
+}
+ul.contact li a { color: var(--ink); border: 0; }
+ul.contact li a:hover { color: var(--accent); }
+
+/* Masthead responsive overrides — must sit AFTER the .masthead grid rules
+   above, since they match with equal specificity and source order decides. */
+@media screen and (max-width: 640px) {
+    /* Phones: chips reclaim the avatar's column. At this width usable line
+       length beats sharing a left edge with the name. */
+    .masthead { column-gap: 0.8rem; row-gap: 0.85rem; }
+    .masthead ul.contact { grid-area: 2 / 1 / 3 / -1; }
+    .masthead .avatar { width: 56px; height: 56px; }
+}
+
+@media screen and (max-width: 380px) {
+    .masthead .avatar { width: 50px; height: 50px; }
+}
+
+/* --- Media --- */
+img { max-width: 100%; border-color: var(--rule); border-radius: 8px; box-shadow: var(--shadow); }
+img.qr, img.logo { box-shadow: none; }
+
+/* --- Tables scroll rather than overflow the page --- */
+@media screen and (max-width: 640px) {
+    table { display: block; overflow-x: auto; -webkit-overflow-scrolling: touch; }
+}
+
+/* ============================================================
+   PRINT / PDF — restores the compact single-column document
+   ============================================================ */
 @page {
     size: Letter;
     margin: 0;
 }
 
 @media print {
-    main { padding: 0.45in 0.55in; }
+    :root {
+        --ink: #1a1a1a;
+        --muted: #555;
+        --rule: #d5d5d5;
+        --accent: #0a4d8c;
+        --accent-soft: rgba(10, 77, 140, 0.10);
+        --soft: #f4f6f8;
+        --bg: #ffffff;
+        --shadow: none;
+    }
+    html, body {
+        font-size: 10.5pt;
+        line-height: 1.45;
+        background: #fff;
+        color: #1a1a1a;
+    }
+    main { max-width: none; padding: 0.45in 0.55in; }
     .no-print { display: none !important; }
     a { color: var(--accent); border-bottom: none; }
+
+    h1 { font-size: 24pt; margin: 0 0 0.15em; }
+    h2 { font-size: 14pt; margin: 1.4em 0 0.4em; padding-bottom: 0.15em; }
+    h3 { font-size: 11.5pt; margin: 1em 0 0.25em; }
+    h4 { font-size: 10.5pt; margin: 0.8em 0 0.2em; color: var(--ink); text-transform: none; letter-spacing: normal; }
+    p { margin: 0.4em 0; }
+    ul, ol { margin: 0.3em 0 0.6em; padding-left: 1.3em; }
+    li { margin: 0.15em 0; }
+    p, li { orphans: 3; widows: 3; }
+
+    /* Revert the screen grid — print is plain flow with no avatar column. */
+    .masthead { display: block; padding-bottom: 0.5em; margin-bottom: 0; border-bottom: 0; }
+    .tagline { margin: 0 0 0.25em; font-size: 10pt; text-transform: uppercase; letter-spacing: 0.02em; color: var(--ink); }
+    ul.contact { display: block; margin: 0 0 0.4em; padding: 0; font-size: 10pt; color: var(--muted); }
+    ul.contact li { display: inline; margin: 0; padding: 0; border: 0; background: none; }
+    ul.contact li + li::before { content: " · "; color: var(--muted); }
+
     /* Avoid awkward breaks after a section heading */
     h2, h3, h4 { break-after: avoid-page; }
-    /* Keep images with their captions */
-    img { break-inside: avoid; }
+    /* Keep images with their captions, and cap height so pages don't gap badly */
+    img { break-inside: avoid; max-height: 3.9in; box-shadow: none; border-radius: 4px; }
+    img.diagram-large { max-height: 7.6in; }
     /* Keep bullet lists together where possible */
-    ul, ol, table { break-inside: avoid; }
+    ul, ol, table, blockquote { break-inside: avoid; }
 }
 </style>
 </head>
 <body>
+<div class="topbar no-print">
+<div class="topbar-inner">
+<nav aria-label="Resume sections">
+<a href="#professional-summary">Summary</a>
+<a href="#core-skills">Skills</a>
+<a href="#experience">Experience</a>
+<a href="#featured-client-engineering">Client Work</a>
+<a href="#featured-personal-ai-ml-projects">AI Projects</a>
+<a href="#featured-full-stack-projects-swe-heavy">Full-Stack</a>
+<a href="#education">Education</a>
+</nav>
+<a class="btn-pdf" href="ResumeIlyes.pdf" download aria-label="Download PDF resume"><span class="lbl-full">Download PDF</span><span class="lbl-short">PDF</span></a>
+</div>
+</div>
 <main>
+<header class="masthead">
+<img class="avatar no-print" src="resume-assets/headshot.png" width="96" height="96" alt="Portrait of Mohamed Ilyes Tounsi">
+<div class="id-text">
 <h1 id="mohamed-ilyes-tounsi">Mohamed Ilyes Tounsi</h1>
-<p><strong>Full-Stack Software Engineer · AI/ML Integrator · Founder</strong></p>
-<p>Carlsbad, CA, USA · +1 (760) 481-4120 · tounsils@gmail.com
-<a href="https://linkedin.com/in/mohameditounsi">linkedin.com/in/mohameditounsi</a> · <a href="https://github.com/tounsils">github.com/tounsils</a> · <a href="https://www.digitalqrcard.com">digitalqrcard.com</a></p>
+<p class="tagline">Full-Stack Software Engineer · AI/ML Integrator · Founder</p>
+</div>
+<ul class="contact">
+<li>Carlsbad, CA, USA</li>
+<li><a href="tel:+17604814120">+1 (760) 481-4120</a></li>
+<li><a href="mailto:tounsils@gmail.com">tounsils@gmail.com</a></li>
+<li><a href="https://linkedin.com/in/mohameditounsi">linkedin.com/in/mohameditounsi</a></li>
+<li><a href="https://github.com/tounsils">github.com/tounsils</a></li>
+<li><a href="https://www.digitalqrcard.com">digitalqrcard.com</a></li>
+</ul>
+</header>
 <h2 id="professional-summary">Professional Summary</h2>
 <p>Full-stack software engineer and engineering leader with 20+ years of experience shipping production web platforms end-to-end — architecture, backend APIs, cloud infrastructure, frontend, data pipelines, and CI/CD. Over the last three years I've layered <strong>AI/ML integration</strong> on top of that foundation: LLM applications, RAG pipelines, MCP-based agent orchestration, voice, semantic search, and human-in-the-loop workflows. Current focus splits across a fractional senior engineering role at NXT Robotics (~60%), an advisory VP-of-Engineering role at AIMIA (~20%), part-time engineering at Hydrostasis (~20%), and solo-founder work on <a href="https://www.digitalqrcard.com">digitalqrcard.com</a>.</p>
 <p>I'm a <strong>software engineer first</strong>. AI is a tool in the stack, not the whole stack.</p>
@@ -231,14 +530,14 @@ h3 + p > img, h3 + p img, h4 + p img { margin-top: 0.4em; }
 <p><strong>Backend &amp; Cloud</strong> — Node.js, Python (FastAPI, Django), Docker, Kubernetes, AWS (ECS, EC2, S3, CloudFront, Route 53, Lambda, CloudFormation, EventBridge, Secrets Manager), Vercel, Railway, Neon, Supabase, GitHub Actions.</p>
 <p><strong>Data &amp; Storage</strong> — PostgreSQL, MongoDB, ChromaDB, Firestore, SQLite, Drizzle ORM, Prisma, ETL pipelines, data modeling, vector embeddings.</p>
 <p><strong>AI/ML Integration</strong> — Anthropic Claude SDK, OpenAI, Google Vertex AI / Gemini, Groq, ElevenLabs voice, HuggingFace embeddings, MCP (Model Context Protocol) orchestration, RAG pipelines, semantic search, human-in-the-loop workflows, weak-supervision labeling.</p>
-<p><strong>Testing &amp; Quality</strong> — TDD, Jest, PHPUnit, Playwright, Autocannon, unit / integration / E2E.</p>
+<p><strong>Testing &amp; Quality</strong> — TDD, Jest, PHPUnit, Autocannon (load testing), unit / integration testing, code review at scale.</p>
 <p><strong>Delivery &amp; Leadership</strong> — Agile/Scrum, Jira, ClickUp, Asana, distributed team leadership, mentoring, code review at scale.</p>
 <h2 id="experience">Experience</h2>
 <h3 id="senior-software-engineer-nxt-robotics-remote-fractional-60-2025-present">Senior Software Engineer — NXT Robotics (Remote) · Fractional (~60%) · 2025 – Present</h3>
 <ul>
 <li>Build and maintain <strong>RobotogoAI</strong> — the operator SaaS console + agent layer that turns raw device telemetry (video, GPS, battery, BLE beacons) into actionable ops decisions for physical-security and field-equipment fleets across ACE / Snapdragon Stadium / Petco Park, Verdant, ChargeHub, Drone Informer, and a 300+ site Amazon-parking pilot.</li>
 <li>Ship end-to-end operator-console features: alerts UI with severity taxonomy + deep-link, checklists module, camera-picker video streams with iOS black-tile fix, mobile swipeable single-camera carousel + battery graph, tenant-themed dashboards.</li>
-<li>LiveKit voice/video + ElevenLabs + react-speech-recognition cockpit voice interface; AI Assist wired to Nexie AgentCore / AWS Bedrock supervisor across <code>p00</code> / <code>ace</code> / <code>lsa</code> tenants.</li>
+<li>LiveKit voice/video + ElevenLabs + react-speech-recognition cockpit voice interface; AI Assist wired to an AWS Bedrock supervisor agent across multiple production tenants.</li>
 <li>Backend feature work: BLE beacon CRUD, editable gateway coverage radius, geofence-move alerts, battery-low threshold service with clamp-safe firing, <code>PruneTelemetry</code> retention command, Drone Informer heartbeat + bounded event sync.</li>
 <li>Built the <strong>NXT Executive Cockpit</strong> — Revenue-Runway, Fleet Status, OKR, Renewals, DecisionQueue cards + vendor ledger with audit log, ⌘K categorized search, drag-to-reorder, Trello &amp; Monday board integrations, Cognito SRP auth migration, admin <code>/team</code> route with invite modal + inline role editor.</li>
 <li>Founded and structured <code>nxt-brains</code> — the shared human + Claude-Code knowledge repo (Docsify + OKF v0.1 frontmatter + ADR-0001 adoption).</li>
@@ -266,12 +565,34 @@ h3 + p > img, h3 + p img, h4 + p img { margin-top: 0.4em; }
 <li>Ensured reliability, scalability, and secure deployment of data pipelines and GIS applications.</li>
 <li><strong>Stack:</strong> AWS, PostgreSQL, Esri ArcGIS, Docker, CloudFormation, EventBridge.</li>
 </ul>
-<h3 id="colonel-intelligence-fusion-center-manager-tunisian-ministry-of-national-defense-2001-2022">Colonel &amp; Intelligence Fusion Center Manager — Tunisian Ministry of National Defense · 2001 – 2022</h3>
+<h3 id="software-engineer-gis-architect-independent-consulting-carlsbad-ca-2022-2024">Software Engineer / GIS Architect — Independent Consulting (Web &amp; Carto, now tn76.com) · Carlsbad, CA · 2022 – 2024</h3>
 <ul>
-<li>Led software engineering efforts as a senior manager: architecture, delivery, team performance for mission-critical systems.</li>
-<li>Built scalable PHP-based platforms for eCommerce and marketing.</li>
-<li>Directed intelligence data consolidation into a real-time analytics dashboard with interactive visualizations ("Intelligence Data Lake").</li>
-<li><strong>Stack:</strong> PHP, MySQL, Node.js, Leaflet.js, REST APIs, Docker, GitHub.</li>
+<li>Independent practice delivering geospatial software directly to clients; operated as Web &amp; Carto, since consolidated under tn76.com.</li>
+<li>Designed and implemented geospatial solutions end to end — needs assessment, architecture, delivery, training, and support.</li>
+<li>Provided technical leadership, mentoring client-side developers on architecture design patterns and coding standards.</li>
+<li><strong>Stack:</strong> JavaScript, PHP, REST APIs, QGIS, Esri ArcGIS Enterprise Geo DB, SQL, Docker, Bootstrap, GitHub.</li>
+</ul>
+<h3 id="senior-software-engineering-manager-tunisian-ministry-of-national-defense-2015-2022">Senior Software Engineering Manager — Tunisian Ministry of National Defense · Tunis · 2015 – 2022</h3>
+<ul>
+<li>Led a team of software engineers building and maintaining mission-critical intelligence systems; owned the full SDLC from requirements through design, implementation, testing, and deployment.</li>
+<li>Directed the "Intelligence Data Lake" — consolidated disparate sources into a real-time analytics dashboard with interactive geospatial visualizations for decision-makers.</li>
+<li>Defined engineering standards across the organization: coding standards, version control, and QA process.</li>
+<li>Held the rank of Colonel; managed engineering delivery and team performance alongside the technical role.</li>
+<li><strong>Stack:</strong> PHP, JavaScript, REST APIs, MySQL, Leaflet.js, Esri ArcGIS Online, GPS/telemetry, ETL pipelines.</li>
+</ul>
+<h3 id="senior-software-engineer-tunisian-ministry-of-national-defense-2012-2015">Senior Software Engineer — Tunisian Ministry of National Defense · Tunis · 2012 – 2015</h3>
+<ul>
+<li>Led development of complex software systems from concept to release against fixed timelines and budgets.</li>
+<li>Managed a team of developers; introduced automated testing to improve product quality and reliability.</li>
+<li>Integrated software components across cross-functional teams and resolved system-level technical issues.</li>
+<li><strong>Stack:</strong> PHP, JavaScript, MySQL, Apache, Leaflet.js, Esri ArcGIS Enterprise, HTML/CSS, GitHub.</li>
+</ul>
+<h3 id="software-engineer-cnct-mrsc-2002-2012">Software Engineer — National Center for Cartography &amp; Remote Sensing (CNCT / MRSC) · Tunis · 2002 – 2012</h3>
+<ul>
+<li>First professional engineering role — ten years building geospatial software for national stakeholders including the healthcare and agriculture sectors.</li>
+<li>Contributed to agile development sprints: new features, bug fixes, and unit tests.</li>
+<li>Designed and implemented mapping and remote-sensing applications used across government programs.</li>
+<li><strong>Stack:</strong> PHP, VB, SQL, Leaflet.js, Esri ArcGIS, REST APIs, GPS.</li>
 </ul>
 <h2 id="featured-project-digital-qr-card-digitalqrcardcom">Featured Project — Digital QR Card (<a href="https://www.digitalqrcard.com">digitalqrcard.com</a>)</h2>
 <p><strong>Solo founder &amp; operator.</strong> B2C business selling customizable QR-based digital business cards with <strong>built-in lead capture</strong> — the differentiator vs Popl / HiHello / Linq / Blinq / Mobilo, all of which treat the card as the product. We treat the <em>connection</em> as the product.</p>
@@ -342,8 +663,8 @@ h3 + p > img, h3 + p img, h4 + p img { margin-top: 0.4em; }
 <p><strong>Sub-modules I own or contribute to:</strong></p>
 <ul>
 <li><strong><code>dashboard-react-js</code></strong> — the operator console (React 19 + Vite + Ant Design + Redux Toolkit + Saga). Live device map (react-leaflet + Draw), video streams (LiveKit + HLS.js), alerts, checklists, telemetry charts (Recharts / Chart.js), RBAC, multi-tenant theming.</li>
-<li><strong><code>dashboard-api</code></strong> — Laravel 12 / PHP 8.3 / Passport REST API. MQTT ingest via <code>php-amqplib</code>, device / site / beacon CRUD, alert engine, LiveKit + Bedrock / Nexie AgentCore integration.</li>
-<li><strong><code>dashboard-deploy</code></strong> — Python + AWS SAM / CloudFormation IaC that provisions per-tenant stacks (<code>p00</code>, <code>p01</code>, <code>ace</code>, …) on ECS + RDS + ALB + ACM + Route 53.</li>
+<li><strong><code>dashboard-api</code></strong> — Laravel 12 / PHP 8.3 / Passport REST API. MQTT ingest via <code>php-amqplib</code>, device / site / beacon CRUD, alert engine, LiveKit + AWS Bedrock agent integration.</li>
+<li><strong><code>dashboard-deploy</code></strong> — Python + AWS SAM / CloudFormation IaC that provisions isolated per-tenant stacks on ECS + RDS + ALB + ACM + Route 53.</li>
 <li><strong><code>nxt-cockpit</code> + <code>nxt-cockpit-api</code></strong> — the successor Executive Cockpit: Node 20 + TypeScript + esbuild + AWS Lambda + API Gateway + Aurora Serverless v2 (Postgres, Data API) + Cognito.</li>
 <li><strong><code>nxt-brains</code></strong> — dual-audience (human + Claude Code) knowledge repo I founded; Docsify site with OKF v0.1 frontmatter, ADRs, runbooks; source-of-truth that feeds the Bedrock KB.</li>
 </ul>
@@ -375,10 +696,10 @@ h3 + p > img, h3 + p img, h4 + p img { margin-top: 0.4em; }
 <li><strong>Admin console:</strong> live Gemini model discovery + smoke-test switcher, attempt inspection, contact CSV export, encryption backfill utility.</li>
 <li><strong>Application-layer AES-256-GCM</strong> field encryption on Mongoose setters, with <strong>HMAC-SHA256 blind-index email lookup</strong> so encrypted emails still dedupe.</li>
 <li><strong>Automated branded recap email</strong> on finalize; SSR-rendered <code>/verify/[certificateId]</code> public page.</li>
-<li><strong>In-flight AWS → GCP migration</strong> — ECS Fargate → Cloud Run, EC2 Mongo → Atlas — with <code>BRIDGE_SHARED_SECRET</code> already deployed cross-service.</li>
+<li><strong>In-flight AWS → GCP migration</strong> — ECS Fargate → Cloud Run, EC2 Mongo → Atlas — with a shared-secret bridge already deployed cross-service so both stacks can run in parallel during cutover.</li>
 </ul>
 <h3 id="hydrostasis-retool-admin-portal-with-test-prod-promotion-pipeline">Hydrostasis — Retool admin portal with Test → Prod promotion pipeline</h3>
-<p>Admin portal for Hydrostasis (intern summer 2026 engagement). Phase 1 promoted to production; phase 2 (webhook integrations) in flight.</p>
+<p>Admin portal for Hydrostasis (part-time engagement, summer 2026). Phase 1 promoted to production; phase 2 (webhook integrations) in flight.</p>
 <ul>
 <li><strong>What's interesting:</strong> wrote <code>promote.js</code> — a scripted Test → Prod promotion workflow for Retool app definitions, so deployments are diff-reviewable and reversible instead of manual copy-paste (which is the Retool default and a common source of prod breakage).</li>
 <li>Modern Vite / TanStack Router / TanStack Query / Radix UI stack layered over Retool's admin primitives.</li>
@@ -386,7 +707,7 @@ h3 + p > img, h3 + p img, h4 + p img { margin-top: 0.4em; }
 </ul>
 <h2 id="featured-personal-ai-ml-projects">Featured Personal AI / ML Projects</h2>
 <h3 id="aios-ai-voice-qr-card-realtor-pilot">AIOS — AI-voice QR card + realtor pilot</h3>
-<p>The engineering repo behind <a href="https://www.digitalqrcard.com">digitalqrcard.com</a> (see hero project above). Realtor B2B validation sprint underway with Jake Rose pilot.</p>
+<p>The engineering repo behind <a href="https://www.digitalqrcard.com">digitalqrcard.com</a> (see hero project above). Realtor B2B validation sprint underway with a pilot customer.</p>
 <ul>
 <li><strong>Stack:</strong> Node, Express, MongoDB, ElevenLabs, Stripe.</li>
 </ul>
@@ -425,8 +746,8 @@ h3 + p > img, h3 + p img, h4 + p img { margin-top: 0.4em; }
 <h3 id="revenuesignalai-multi-tenant-lead-gen-automation-platform">RevenueSignalAI — Multi-tenant lead-gen automation platform</h3>
 <p>A two-product suite plus its own marketing surface, aimed at converting external signals (city permits, YouTube niches, social) into qualified sales leads for SMB clients.</p>
 <ul>
-<li><strong><code>automation-app</code></strong> — Multi-tenant YouTube content-automation platform. Express / Prisma backend + Next.js frontend, with JWT-authenticated admin panel for tenant/user provisioning, Google/YouTube OAuth per tenant, encrypted OAuth tokens at rest (32-byte base64 key), and topic-to-short generation via <strong>Google Gemini</strong>. Each tenant gets isolated channels, credentials, and post history.</li>
-<li><strong><code>BarnesCo_Permit_Monitor</code></strong> — Production Python scraper deployed for a real client (Barnes &amp; Co). Polls City of San Diego + San Diego County public permit databases every 15 minutes for senior-housing permits (assisted living, memory care, nursing facilities), emails matched leads to the sales team via Gmail App Password, and appends to a CSV with <code>contacted</code> / <code>notes</code> columns so the sales team tracks follow-up directly in the sheet.</li>
+<li><strong><code>automation-app</code></strong> — Multi-tenant YouTube content-automation platform. Express / Prisma backend + Next.js frontend, with JWT-authenticated admin panel for tenant/user provisioning, Google/YouTube OAuth per tenant, encrypted OAuth tokens at rest, and topic-to-short generation via <strong>Google Gemini</strong>. Each tenant gets isolated channels, credentials, and post history.</li>
+<li><strong>Permit Monitor</strong> — Production Python scraper deployed for a paying client in the senior-housing sector. Polls City of San Diego + San Diego County public permit databases every 15 minutes for senior-housing permits (assisted living, memory care, nursing facilities), emails matched leads to the sales team via Gmail App Password, and appends to a CSV with <code>contacted</code> / <code>notes</code> columns so the sales team tracks follow-up directly in the sheet.</li>
 <li><strong><code>RevenueSignalAI.com</code></strong> — Static Next.js marketing site.</li>
 <li><strong>What's interesting:</strong> encrypted-at-rest OAuth token storage; per-tenant credential isolation; the permit-monitor is a "boring but works" counterexample to over-engineering — one Python file, cron loop, actual leads.</li>
 <li><strong>Stack:</strong> Next.js 15, Express, Prisma, PostgreSQL / Supabase, TypeScript, Google Gemini, YouTube Data API, Python, cron. Web on Vercel, worker on Railway.</li>
@@ -452,19 +773,11 @@ h3 + p > img, h3 + p img, h4 + p img { margin-top: 0.4em; }
 <p>Because the portfolio spans ~40 concurrent projects and multiple income streams, I built a lightweight <strong>AIOS-lite for myself</strong>: a Markdown-based operating layer that keeps the whole picture coherent across Claude Code sessions and human-only editing.</p>
 <ul>
 <li><strong>PROJECTS-INDEX.md</strong> — human-editable source of truth. One table per group (Client / Org / Personal-active / Personal-warm / Personal-dormant / Other) with purpose, stack, status, last-touch, and cross-references to income streams.</li>
-<li><strong>CONTRACTOR-INCOME/</strong> — weekly income rollup (INCOME-TRACKER.md) across Snorkel, Algora, Mercor, DataAnnotation, Scale, ClifyX/Meta + a recurring Monday MERCOR-CHECKLIST.md with interview-prep notes.</li>
+<li><strong>Engagement rollup</strong> — weekly tracker consolidating hours, deliverables, and invoicing across concurrent client engagements, so a fractional portfolio stays auditable instead of ad hoc.</li>
 <li><strong>Memory mirror</strong> at <code>~/.claude/projects/c--dev/memory/projects_overview.md</code> — auto-loaded into every Claude Code session under <code>C:\dev</code>, so any project session inherits awareness of the other 39.</li>
 <li><strong>Update discipline:</strong> trigger phrase (<code>"update the projects index"</code>) refreshes both index + memory in the same turn; Friday ritual captures anything I forgot to log during the week.</li>
 </ul>
 <p>Small project, but it's the reason all the above stays organized enough to ship.</p>
-<h2 id="contract-ml-data-work">Contract &amp; ML Data Work</h2>
-<p>Active contractor across ML data, weak-supervision, and bounty platforms — informs the featured LLM/RAG work above.</p>
-<ul>
-<li><strong>Snorkel AI</strong> — task authoring for domain-specific labeling factories.</li>
-<li><strong>Algora</strong> — open-source bounties (see <em>Archestra</em> above).</li>
-<li><strong>Mercor</strong> — active on the Instant Offers pipeline.</li>
-<li><strong>DataAnnotation, Scale AI, ClifyX / Meta</strong> — LLM data annotation, evaluation, and red-teaming assignments.</li>
-</ul>
 <h2 id="current-client-engagements-freelance">Current Client Engagements (Freelance)</h2>
 <ul>
 <li><strong>Hydrostasis</strong> — Part-time (~20%) Retool admin portal engineering (summer 2026). Node / Vite / TanStack / Radix. Phase 1 promoted to prod; phase 2 (webhooks) in flight. Includes a scripted Test → Prod promotion workflow (<code>promote.js</code>).</li>

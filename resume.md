@@ -24,7 +24,7 @@ I'm a **software engineer first**. AI is a tool in the stack, not the whole stac
 
 **AI/ML Integration** — Anthropic Claude SDK, OpenAI, Google Vertex AI / Gemini, Groq, ElevenLabs voice, HuggingFace embeddings, MCP (Model Context Protocol) orchestration, RAG pipelines, semantic search, human-in-the-loop workflows, weak-supervision labeling.
 
-**Testing & Quality** — TDD, Jest, PHPUnit, Playwright, Autocannon, unit / integration / E2E.
+**Testing & Quality** — TDD, Jest, PHPUnit, Autocannon (load testing), unit / integration testing, code review at scale.
 
 **Delivery & Leadership** — Agile/Scrum, Jira, ClickUp, Asana, distributed team leadership, mentoring, code review at scale.
 
@@ -34,7 +34,7 @@ I'm a **software engineer first**. AI is a tool in the stack, not the whole stac
 ### Senior Software Engineer — NXT Robotics (Remote) · Fractional (~60%) · 2025 – Present
 - Build and maintain **RobotogoAI** — the operator SaaS console + agent layer that turns raw device telemetry (video, GPS, battery, BLE beacons) into actionable ops decisions for physical-security and field-equipment fleets across ACE / Snapdragon Stadium / Petco Park, Verdant, ChargeHub, Drone Informer, and a 300+ site Amazon-parking pilot.
 - Ship end-to-end operator-console features: alerts UI with severity taxonomy + deep-link, checklists module, camera-picker video streams with iOS black-tile fix, mobile swipeable single-camera carousel + battery graph, tenant-themed dashboards.
-- LiveKit voice/video + ElevenLabs + react-speech-recognition cockpit voice interface; AI Assist wired to Nexie AgentCore / AWS Bedrock supervisor across `p00` / `ace` / `lsa` tenants.
+- LiveKit voice/video + ElevenLabs + react-speech-recognition cockpit voice interface; AI Assist wired to an AWS Bedrock supervisor agent across multiple production tenants.
 - Backend feature work: BLE beacon CRUD, editable gateway coverage radius, geofence-move alerts, battery-low threshold service with clamp-safe firing, `PruneTelemetry` retention command, Drone Informer heartbeat + bounded event sync.
 - Built the **NXT Executive Cockpit** — Revenue-Runway, Fleet Status, OKR, Renewals, DecisionQueue cards + vendor ledger with audit log, ⌘K categorized search, drag-to-reorder, Trello & Monday board integrations, Cognito SRP auth migration, admin `/team` route with invite modal + inline role editor.
 - Founded and structured `nxt-brains` — the shared human + Claude-Code knowledge repo (Docsify + OKF v0.1 frontmatter + ADR-0001 adoption).
@@ -59,11 +59,30 @@ I'm a **software engineer first**. AI is a tool in the stack, not the whole stac
 - Ensured reliability, scalability, and secure deployment of data pipelines and GIS applications.
 - **Stack:** AWS, PostgreSQL, Esri ArcGIS, Docker, CloudFormation, EventBridge.
 
-### Colonel & Intelligence Fusion Center Manager — Tunisian Ministry of National Defense · 2001 – 2022
-- Led software engineering efforts as a senior manager: architecture, delivery, team performance for mission-critical systems.
-- Built scalable PHP-based platforms for eCommerce and marketing.
-- Directed intelligence data consolidation into a real-time analytics dashboard with interactive visualizations ("Intelligence Data Lake").
-- **Stack:** PHP, MySQL, Node.js, Leaflet.js, REST APIs, Docker, GitHub.
+### Software Engineer / GIS Architect — Independent Consulting (Web & Carto, now tn76.com) · Carlsbad, CA · 2022 – 2024
+- Independent practice delivering geospatial software directly to clients; operated as Web & Carto, since consolidated under tn76.com.
+- Designed and implemented geospatial solutions end to end — needs assessment, architecture, delivery, training, and support.
+- Provided technical leadership, mentoring client-side developers on architecture design patterns and coding standards.
+- **Stack:** JavaScript, PHP, REST APIs, QGIS, Esri ArcGIS Enterprise Geo DB, SQL, Docker, Bootstrap, GitHub.
+
+### Senior Software Engineering Manager — Tunisian Ministry of National Defense · Tunis · 2015 – 2022
+- Led a team of software engineers building and maintaining mission-critical intelligence systems; owned the full SDLC from requirements through design, implementation, testing, and deployment.
+- Directed the "Intelligence Data Lake" — consolidated disparate sources into a real-time analytics dashboard with interactive geospatial visualizations for decision-makers.
+- Defined engineering standards across the organization: coding standards, version control, and QA process.
+- Held the rank of Colonel; managed engineering delivery and team performance alongside the technical role.
+- **Stack:** PHP, JavaScript, REST APIs, MySQL, Leaflet.js, Esri ArcGIS Online, GPS/telemetry, ETL pipelines.
+
+### Senior Software Engineer — Tunisian Ministry of National Defense · Tunis · 2012 – 2015
+- Led development of complex software systems from concept to release against fixed timelines and budgets.
+- Managed a team of developers; introduced automated testing to improve product quality and reliability.
+- Integrated software components across cross-functional teams and resolved system-level technical issues.
+- **Stack:** PHP, JavaScript, MySQL, Apache, Leaflet.js, Esri ArcGIS Enterprise, HTML/CSS, GitHub.
+
+### Software Engineer — National Center for Cartography & Remote Sensing (CNCT / MRSC) · Tunis · 2002 – 2012
+- First professional engineering role — ten years building geospatial software for national stakeholders including the healthcare and agriculture sectors.
+- Contributed to agile development sprints: new features, bug fixes, and unit tests.
+- Designed and implemented mapping and remote-sensing applications used across government programs.
+- **Stack:** PHP, VB, SQL, Leaflet.js, Esri ArcGIS, REST APIs, GPS.
 
 
 ## Featured Project — Digital QR Card ([digitalqrcard.com](https://www.digitalqrcard.com))
@@ -131,8 +150,8 @@ The product I contribute to is **RobotogoAI** — an operator-facing SaaS consol
 **Sub-modules I own or contribute to:**
 
 - **`dashboard-react-js`** — the operator console (React 19 + Vite + Ant Design + Redux Toolkit + Saga). Live device map (react-leaflet + Draw), video streams (LiveKit + HLS.js), alerts, checklists, telemetry charts (Recharts / Chart.js), RBAC, multi-tenant theming.
-- **`dashboard-api`** — Laravel 12 / PHP 8.3 / Passport REST API. MQTT ingest via `php-amqplib`, device / site / beacon CRUD, alert engine, LiveKit + Bedrock / Nexie AgentCore integration.
-- **`dashboard-deploy`** — Python + AWS SAM / CloudFormation IaC that provisions per-tenant stacks (`p00`, `p01`, `ace`, …) on ECS + RDS + ALB + ACM + Route 53.
+- **`dashboard-api`** — Laravel 12 / PHP 8.3 / Passport REST API. MQTT ingest via `php-amqplib`, device / site / beacon CRUD, alert engine, LiveKit + AWS Bedrock agent integration.
+- **`dashboard-deploy`** — Python + AWS SAM / CloudFormation IaC that provisions isolated per-tenant stacks on ECS + RDS + ALB + ACM + Route 53.
 - **`nxt-cockpit` + `nxt-cockpit-api`** — the successor Executive Cockpit: Node 20 + TypeScript + esbuild + AWS Lambda + API Gateway + Aurora Serverless v2 (Postgres, Data API) + Cognito.
 - **`nxt-brains`** — dual-audience (human + Claude Code) knowledge repo I founded; Docsify site with OKF v0.1 frontmatter, ADRs, runbooks; source-of-truth that feeds the Bedrock KB.
 
@@ -169,10 +188,10 @@ AIMIA pairs a **conversational career assessment** (RIASEC + skills + values + p
 - **Admin console:** live Gemini model discovery + smoke-test switcher, attempt inspection, contact CSV export, encryption backfill utility.
 - **Application-layer AES-256-GCM** field encryption on Mongoose setters, with **HMAC-SHA256 blind-index email lookup** so encrypted emails still dedupe.
 - **Automated branded recap email** on finalize; SSR-rendered `/verify/[certificateId]` public page.
-- **In-flight AWS → GCP migration** — ECS Fargate → Cloud Run, EC2 Mongo → Atlas — with `BRIDGE_SHARED_SECRET` already deployed cross-service.
+- **In-flight AWS → GCP migration** — ECS Fargate → Cloud Run, EC2 Mongo → Atlas — with a shared-secret bridge already deployed cross-service so both stacks can run in parallel during cutover.
 
 ### Hydrostasis — Retool admin portal with Test → Prod promotion pipeline
-Admin portal for Hydrostasis (intern summer 2026 engagement). Phase 1 promoted to production; phase 2 (webhook integrations) in flight.
+Admin portal for Hydrostasis (part-time engagement, summer 2026). Phase 1 promoted to production; phase 2 (webhook integrations) in flight.
 
 - **What's interesting:** wrote `promote.js` — a scripted Test → Prod promotion workflow for Retool app definitions, so deployments are diff-reviewable and reversible instead of manual copy-paste (which is the Retool default and a common source of prod breakage).
 - Modern Vite / TanStack Router / TanStack Query / Radix UI stack layered over Retool's admin primitives.
@@ -182,7 +201,7 @@ Admin portal for Hydrostasis (intern summer 2026 engagement). Phase 1 promoted t
 ## Featured Personal AI / ML Projects
 
 ### AIOS — AI-voice QR card + realtor pilot
-The engineering repo behind [digitalqrcard.com](https://www.digitalqrcard.com) (see hero project above). Realtor B2B validation sprint underway with Jake Rose pilot.
+The engineering repo behind [digitalqrcard.com](https://www.digitalqrcard.com) (see hero project above). Realtor B2B validation sprint underway with a pilot customer.
 
 - **Stack:** Node, Express, MongoDB, ElevenLabs, Stripe.
 
@@ -219,8 +238,8 @@ Contributor to an MCP-native governance / orchestration platform (Go backend, Do
 ### RevenueSignalAI — Multi-tenant lead-gen automation platform
 A two-product suite plus its own marketing surface, aimed at converting external signals (city permits, YouTube niches, social) into qualified sales leads for SMB clients.
 
-- **`automation-app`** — Multi-tenant YouTube content-automation platform. Express / Prisma backend + Next.js frontend, with JWT-authenticated admin panel for tenant/user provisioning, Google/YouTube OAuth per tenant, encrypted OAuth tokens at rest (32-byte base64 key), and topic-to-short generation via **Google Gemini**. Each tenant gets isolated channels, credentials, and post history.
-- **`BarnesCo_Permit_Monitor`** — Production Python scraper deployed for a real client (Barnes & Co). Polls City of San Diego + San Diego County public permit databases every 15 minutes for senior-housing permits (assisted living, memory care, nursing facilities), emails matched leads to the sales team via Gmail App Password, and appends to a CSV with `contacted` / `notes` columns so the sales team tracks follow-up directly in the sheet.
+- **`automation-app`** — Multi-tenant YouTube content-automation platform. Express / Prisma backend + Next.js frontend, with JWT-authenticated admin panel for tenant/user provisioning, Google/YouTube OAuth per tenant, encrypted OAuth tokens at rest, and topic-to-short generation via **Google Gemini**. Each tenant gets isolated channels, credentials, and post history.
+- **Permit Monitor** — Production Python scraper deployed for a paying client in the senior-housing sector. Polls City of San Diego + San Diego County public permit databases every 15 minutes for senior-housing permits (assisted living, memory care, nursing facilities), emails matched leads to the sales team via Gmail App Password, and appends to a CSV with `contacted` / `notes` columns so the sales team tracks follow-up directly in the sheet.
 - **`RevenueSignalAI.com`** — Static Next.js marketing site.
 - **What's interesting:** encrypted-at-rest OAuth token storage; per-tenant credential isolation; the permit-monitor is a "boring but works" counterexample to over-engineering — one Python file, cron loop, actual leads.
 - **Stack:** Next.js 15, Express, Prisma, PostgreSQL / Supabase, TypeScript, Google Gemini, YouTube Data API, Python, cron. Web on Vercel, worker on Railway.
@@ -259,21 +278,11 @@ See personal AI/ML section for full-stack pieces that also demonstrate frontend 
 Because the portfolio spans ~40 concurrent projects and multiple income streams, I built a lightweight **AIOS-lite for myself**: a Markdown-based operating layer that keeps the whole picture coherent across Claude Code sessions and human-only editing.
 
 - **PROJECTS-INDEX.md** — human-editable source of truth. One table per group (Client / Org / Personal-active / Personal-warm / Personal-dormant / Other) with purpose, stack, status, last-touch, and cross-references to income streams.
-- **CONTRACTOR-INCOME/** — weekly income rollup (INCOME-TRACKER.md) across Snorkel, Algora, Mercor, DataAnnotation, Scale, ClifyX/Meta + a recurring Monday MERCOR-CHECKLIST.md with interview-prep notes.
+- **Engagement rollup** — weekly tracker consolidating hours, deliverables, and invoicing across concurrent client engagements, so a fractional portfolio stays auditable instead of ad hoc.
 - **Memory mirror** at `~/.claude/projects/c--dev/memory/projects_overview.md` — auto-loaded into every Claude Code session under `C:\dev`, so any project session inherits awareness of the other 39.
 - **Update discipline:** trigger phrase (`"update the projects index"`) refreshes both index + memory in the same turn; Friday ritual captures anything I forgot to log during the week.
 
 Small project, but it's the reason all the above stays organized enough to ship.
-
-
-## Contract & ML Data Work
-
-Active contractor across ML data, weak-supervision, and bounty platforms — informs the featured LLM/RAG work above.
-
-- **Snorkel AI** — task authoring for domain-specific labeling factories.
-- **Algora** — open-source bounties (see *Archestra* above).
-- **Mercor** — active on the Instant Offers pipeline.
-- **DataAnnotation, Scale AI, ClifyX / Meta** — LLM data annotation, evaluation, and red-teaming assignments.
 
 
 ## Current Client Engagements (Freelance)
