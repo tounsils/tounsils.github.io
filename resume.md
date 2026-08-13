@@ -49,40 +49,43 @@ I'm a **software engineer first**. AI is a tool in the stack, not the whole stac
 - Ship admin console: live Gemini model discovery + smoke-test switcher, attempt inspection, contact CSV export, encryption backfill utility.
 - **Stack:** Next.js 15 (Pages Router), React 18, Redux Toolkit, Tailwind v4, Express + TypeScript, Mongoose 7, FastAPI (Python 3.11), Google Vertex AI / Gemini + Gemini Live, ElevenLabs, MongoDB Atlas, AWS (ECS Fargate, ECR, ALB, Route 53, Secrets Manager) → GCP (Cloud Run, Cloud DNS, Secret Manager), GitHub Actions, Docker, Sentry, PostHog.
 
+### Founder & Principal Engineer — TN76 Digital (formerly Web & Carto) · Carlsbad, CA · 2011 – Present
+- Independent consulting practice. Run part-time alongside full-time engineering employment through 2022, then as a primary practice after relocating to California.
+- Design and deliver geospatial and full-stack solutions end to end: needs assessment, system and data architecture, workflow optimization, integration with existing client systems, training and support.
+- Provide technical leadership, mentoring client-side developers on architecture patterns and coding standards.
+- **Stack:** JavaScript, TypeScript, PHP, Node.js, React, REST APIs, QGIS, Esri ArcGIS Enterprise Geo DB, PostgreSQL/PostGIS, MySQL, Docker.
+
 ### Software Engineering Manager — Zembra (Remote) · San Diego, CA · Sep 2024 – Nov 2024
 - Led a fullstack team of 6 delivering core platform features Agile-style.
 - Architected web apps and REST APIs using Node.js, React, PHP, SQL.
 - Scrum Master; facilitated sprints and cross-team collaboration.
 
-### GIS Enterprise Architect — geoConvergence (Remote) · Bloomington, IN · 2023 – 2024
+### Enterprise GIS Architect — geoConvergence (Remote) · Bloomington, IN · Nov 2023 – Apr 2024
 - Architected high-availability GIS solutions and microservices on AWS (Lambda, CloudFormation, EventBridge).
 - Ensured reliability, scalability, and secure deployment of data pipelines and GIS applications.
 - **Stack:** AWS, PostgreSQL, Esri ArcGIS, Docker, CloudFormation, EventBridge.
 
-### Software Engineer / GIS Architect — Independent Consulting (Web & Carto, now tn76.com) · Carlsbad, CA · 2022 – 2024
-- Independent practice delivering geospatial software directly to clients; operated as Web & Carto, since consolidated under tn76.com.
-- Designed and implemented geospatial solutions end to end — needs assessment, architecture, delivery, training, and support.
-- Provided technical leadership, mentoring client-side developers on architecture design patterns and coding standards.
-- **Stack:** JavaScript, PHP, REST APIs, QGIS, Esri ArcGIS Enterprise Geo DB, SQL, Docker, Bootstrap, GitHub.
-
-### Senior Software Engineering Manager — Tunisian Ministry of National Defense · Tunis · 2015 – 2022
-- Led a team of software engineers building and maintaining mission-critical intelligence systems; owned the full SDLC from requirements through design, implementation, testing, and deployment.
+### Lead Software Engineer — Tunisian Ministry of National Defense · Tunis · Apr 2017 – Sep 2022
+- Led the software engineering team in an agile environment, owning technical design and system architecture across projects.
 - Directed the "Intelligence Data Lake" — consolidated disparate sources into a real-time analytics dashboard with interactive geospatial visualizations for decision-makers.
-- Defined engineering standards across the organization: coding standards, version control, and QA process.
+- Owned production infrastructure setup and local development environments; produced data dictionaries and business-logic documentation.
+- Enforced code quality through code review, unit testing, and pair programming; balanced new feature delivery against defects and technical debt.
+- Mentored engineers in technology, architecture, and delivery; ran planning, task breakdown, and user-story writing.
 - Held the rank of Colonel; managed engineering delivery and team performance alongside the technical role.
 - **Stack:** PHP, JavaScript, REST APIs, MySQL, Leaflet.js, Esri ArcGIS Online, GPS/telemetry, ETL pipelines.
 
-### Senior Software Engineer — Tunisian Ministry of National Defense · Tunis · 2012 – 2015
-- Led development of complex software systems from concept to release against fixed timelines and budgets.
-- Managed a team of developers; introduced automated testing to improve product quality and reliability.
-- Integrated software components across cross-functional teams and resolved system-level technical issues.
-- **Stack:** PHP, JavaScript, MySQL, Apache, Leaflet.js, Esri ArcGIS Enterprise, HTML/CSS, GitHub.
+### Senior Software Engineer — Tunisian Ministry of National Defense · Tunis · Jun 2012 – Apr 2017
+- Led development of complex GIS solutions from concept through release, including requirements definition and design.
+- Converted business requirements into functional use cases and technical designs with client stakeholders; ran project review meetings.
+- Built proof-of-concept GIS demos to validate approaches before committing to build.
+- Reduced production cost by developing tooling that streamlined repetitive tasks in the SDLC.
+- **Stack:** PHP, JavaScript, MySQL, Apache, Leaflet.js, Esri ArcGIS Enterprise & Server, ArcGIS Model Builder, Python scripting, geoprocessing, REST APIs, HTML/CSS.
 
-### Software Engineer — National Center for Cartography & Remote Sensing (CNCT / MRSC) · Tunis · 2002 – 2012
-- First professional engineering role — ten years building geospatial software for national stakeholders including the healthcare and agriculture sectors.
-- Contributed to agile development sprints: new features, bug fixes, and unit tests.
-- Designed and implemented mapping and remote-sensing applications used across government programs.
-- **Stack:** PHP, VB, SQL, Leaflet.js, Esri ArcGIS, REST APIs, GPS.
+### Software Engineer — National Center for Mapping & Remote Sensing (CNCT) · Tunis · Jun 2002 – Jun 2012
+- First professional engineering role. Started as a GIS analyst and junior software engineer, then contributed to full-cycle delivery of nationwide GIS solutions.
+- Built a health/medical mapping system directing patients to the appropriate service or regional hospital, and an agricultural map portal serving officials and local farmers.
+- Contributed to agile development sprints: new features, bug fixes, and unit tests; provided technical support for assigned applications.
+- **Stack:** PHP, Visual Basic, JavaScript, MySQL, Esri ArcGIS & ArcGIS Server, Leaflet.js, REST APIs, Python scripting, geoprocessing.
 
 
 ## Featured Project — Digital QR Card ([digitalqrcard.com](https://www.digitalqrcard.com))
