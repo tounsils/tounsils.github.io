@@ -299,8 +299,8 @@ Small project, but it's the reason all the above stays organized enough to ship.
 ## Education
 
 - **M.S. in Systems Technology** — U.S. Naval Postgraduate School, 2012
-- **M.Eng. in Remote Sensing & GIS** — Université Pierre & Marie Curie, 2002
-- **B.Eng. in Telecommunications** — Aviation School of Borj El Amri, 2001
+- **DESS (Postgraduate Diploma) in Remote Sensing & GIS** — Université Pierre & Marie Curie, 2001 – 2002
+- **B.Eng. in Signals** — Aviation School of Borj El Amri, 1998 – 2001
 
 ## Training
 
