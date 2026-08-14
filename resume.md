@@ -31,6 +31,11 @@ I'm a **software engineer first**. AI is a tool in the stack, not the whole stac
 
 ## Experience
 
+### Senior Software Engineer — Hydrostasis (Remote) · Part-time (~20%) · 2026 – Present
+- Built an internal admin portal on a Vite / TanStack Router + Query / Radix UI stack layered over Retool's admin primitives; phase one is in production.
+- Wrote a scripted Test → Production promotion workflow for app definitions, making deployments diff-reviewable and reversible instead of manual copy-paste, which is the Retool default and a common source of production breakage.
+- **Stack:** Node, Vite, TanStack Router/Query, Radix UI, Retool.
+
 ### Senior Software Engineer — NXT Robotics (Remote) · Fractional (~60%) · 2025 – Present
 - Build and maintain **RobotogoAI** — the operator SaaS console + agent layer that turns raw device telemetry (video, GPS, battery, BLE beacons) into actionable ops decisions for physical-security and field-equipment fleets — stadium venues (ACE / Snapdragon Stadium, Petco Park), EV-charging networks, drone operators, and a 300+ site parking pilot.
 - Ship end-to-end operator-console features: alerts UI with severity taxonomy + deep-link, checklists module, camera-picker video streams with iOS black-tile fix, mobile swipeable single-camera carousel + battery graph, tenant-themed dashboards.
@@ -48,6 +53,11 @@ I'm a **software engineer first**. AI is a tool in the stack, not the whole stac
 - Lead in-flight **AWS ECS Fargate → GCP Cloud Run** migration (ECR/ALB/Route 53/Secrets Manager → Cloud Run / Cloud DNS / Secret Manager); per-service GitHub Actions CI/CD.
 - Ship admin console: live Gemini model discovery + smoke-test switcher, attempt inspection, contact CSV export, encryption backfill utility.
 - **Stack:** Next.js 15 (Pages Router), React 18, Redux Toolkit, Tailwind v4, Express + TypeScript, Mongoose 7, FastAPI (Python 3.11), Google Vertex AI / Gemini + Gemini Live, ElevenLabs, MongoDB Atlas, AWS (ECS Fargate, ECR, ALB, Route 53, Secrets Manager) → GCP (Cloud Run, Cloud DNS, Secret Manager), GitHub Actions, Docker, Sentry, PostHog.
+
+### Founder — Digital QR Card ([digitalqrcard.com](https://www.digitalqrcard.com)) · Self-employed · Dec 2024 – Present
+- Solo founder and operator of a B2C product selling customizable QR-based digital business cards with built-in lead capture. Solo across product, engineering, marketing, and operations.
+- Full product and architecture detail in the featured project below.
+- **Stack:** React, TypeScript, Node, Express, MongoDB, Stripe.
 
 ### Founder & Principal Engineer — TN76 Digital (formerly Web & Carto) · Carlsbad, CA · 2011 – Present
 - Independent consulting practice. Run part-time alongside full-time engineering employment through 2022, then as a primary practice after relocating to California.
