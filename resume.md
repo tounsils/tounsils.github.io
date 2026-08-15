@@ -302,7 +302,6 @@ Small project, but it's the reason all the above stays organized enough to ship.
 
 - **Individual SWE contracts** — Ongoing engineering-for-hire work for private clients through TN76 Digital. Recent example: loading a 49-software PLR bundle into an existing self-hosted OpenCart store with automated digital delivery, Stripe + PayPal integration, and a product-page redesign to match a reference storefront.
 - **Permit monitor** — Production Python scraper for a paying client in the senior-housing sector, polling City of San Diego and San Diego County permit databases on a 15-minute schedule and emailing matched leads to the sales team.
-- **GBDT** — Deliverables and research assets around gradient-boosted-decision-tree workflows.
 
 
 ## Education
