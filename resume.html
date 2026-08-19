@@ -4,71 +4,33 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Mohamed Ilyes Tounsi — Resume</title>
-<meta name="description" content="Full-stack software engineer and AI/ML integrator with 20+ years shipping production platforms — multi-agent LLM systems, RAG, realtime voice, AWS. Carlsbad, CA.">
-<meta name="author" content="Mohamed Ilyes Tounsi">
-<meta name="theme-color" content="#0a4d8c">
-
-<link rel="icon" href="favicon.ico" sizes="any">
-<link rel="icon" type="image/png" href="logo192.png">
-<link rel="apple-touch-icon" href="logo192.png">
-
-<meta property="og:type" content="profile">
-<meta property="og:title" content="Mohamed Ilyes Tounsi — Full-Stack Software Engineer &amp; AI/ML Integrator">
-<meta property="og:description" content="20+ years shipping production platforms end-to-end. Multi-agent LLM systems, RAG, realtime voice, AWS.">
-<meta property="og:url" content="https://tounsils.github.io/resume.html">
-<meta property="og:image" content="https://tounsils.github.io/logo512.png">
-<meta name="twitter:card" content="summary">
 <style>
 :root {
-    --ink: #14181d;
-    --muted: #5b6572;
-    --rule: #dfe3e8;
+    --ink: #1a1a1a;
+    --muted: #555;
+    --rule: #d5d5d5;
     --accent: #0a4d8c;
-    --accent-soft: rgba(10, 77, 140, 0.10);
-    --soft: #f5f7f9;
-    --bg: #ffffff;
-    --shadow: 0 1px 2px rgba(16, 24, 40, .05), 0 8px 24px rgba(16, 24, 40, .06);
-}
-
-@media screen and (prefers-color-scheme: dark) {
-    :root {
-        --ink: #e7ebf0;
-        --muted: #9aa5b1;
-        --rule: #2a333d;
-        --accent: #74b4f2;
-        --accent-soft: rgba(116, 180, 242, 0.14);
-        --soft: #161c23;
-        --bg: #0f141a;
-        --shadow: 0 1px 2px rgba(0, 0, 0, .4), 0 8px 24px rgba(0, 0, 0, .35);
-    }
+    --soft: #f4f6f8;
 }
 
 * { box-sizing: border-box; }
 
-html { scroll-behavior: smooth; }
-
 html, body {
     margin: 0;
     padding: 0;
-    background: var(--bg);
+    background: #fff;
     color: var(--ink);
     font-family: "Segoe UI", -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
-    font-size: 17px;
-    line-height: 1.62;
+    font-size: 10.5pt;
+    line-height: 1.45;
     -webkit-print-color-adjust: exact;
     print-color-adjust: exact;
-    -webkit-text-size-adjust: 100%;
 }
 
 main {
-    max-width: 54rem;
+    max-width: 7.5in;
     margin: 0 auto;
-    padding: 2.5rem 1.5rem 5rem;
-}
-
-@media screen and (max-width: 640px) {
-    html, body { font-size: 16px; }
-    main { padding: 1.75rem 1.1rem 4rem; }
+    padding: 0.5in 0.6in;
 }
 
 h1 {
@@ -235,297 +197,31 @@ p.qr-caption {
 /* Keep image + preceding heading together. */
 h3 + p > img, h3 + p img, h4 + p img { margin-top: 0.4em; }
 
-/* ============================================================
-   SCREEN PRESENTATION LAYER
-   The rules above are the print-first document base. Everything
-   below refines the on-screen reading experience; the @media
-   print block at the end re-asserts the compact page layout so
-   the downloadable PDF is unaffected.
-   ============================================================ */
-
-/* Long tokens (paths, identifiers, URLs) must never widen the page. */
-body { overflow-wrap: break-word; }
-code, a { overflow-wrap: anywhere; }
-h1, h2, h3, h4 { overflow-wrap: break-word; }
-
-h1 { font-size: 2.35rem; letter-spacing: -0.02em; margin: 0 0 0.3rem; }
-h2 {
-    font-size: 1.3rem;
-    margin: 3rem 0 0.9rem;
-    padding-bottom: 0.35rem;
-    scroll-margin-top: 5rem;
-}
-h3 { font-size: 1.08rem; margin: 2rem 0 0.4rem; scroll-margin-top: 5rem; }
-h4 {
-    font-size: 0.92rem;
-    margin: 1.4rem 0 0.3rem;
-    color: var(--muted);
-    text-transform: uppercase;
-    letter-spacing: 0.045em;
-}
-
-p { margin: 0.75rem 0; }
-ul, ol { margin: 0.6rem 0 1.1rem; padding-left: 1.35rem; }
-li { margin: 0.35rem 0; }
-
-a { border-bottom-color: var(--accent-soft); transition: border-color .15s ease, color .15s ease; }
-a:hover { border-bottom-color: var(--accent); }
-a:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 2px; }
-
-code { color: var(--ink); }
-
-/* --- Sticky section nav --- */
-.topbar {
-    position: sticky;
-    top: 0;
-    z-index: 20;
-    background: var(--bg);
-    background: color-mix(in srgb, var(--bg) 86%, transparent);
-    backdrop-filter: saturate(1.7) blur(10px);
-    -webkit-backdrop-filter: saturate(1.7) blur(10px);
-    border-bottom: 1px solid var(--rule);
-}
-.topbar-inner {
-    max-width: 54rem;
-    margin: 0 auto;
-    padding: 0.5rem 1.5rem;
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-}
-.topbar nav {
-    display: flex;
-    gap: 0.1rem;
-    flex: 1 1 auto;
-    /* min-width:0 is required — without it the flex item's automatic minimum
-       size is its content width, which pushes the page wider than the viewport. */
-    min-width: 0;
-    overflow-x: auto;
-    scrollbar-width: none;
-}
-.topbar nav::-webkit-scrollbar { display: none; }
-.topbar nav a {
-    flex: none;
-    font-size: 0.82rem;
-    color: var(--muted);
-    border: 0;
-    padding: 0.38rem 0.62rem;
-    border-radius: 999px;
-    white-space: nowrap;
-}
-.topbar nav a:hover { color: var(--accent); background: var(--accent-soft); }
-.btn-pdf {
-    flex: none;
-    font-size: 0.82rem;
-    font-weight: 600;
-    color: #fff;
-    background: var(--accent);
-    border: 0;
-    padding: 0.45rem 0.9rem;
-    border-radius: 999px;
-    white-space: nowrap;
-}
-.btn-pdf:hover { filter: brightness(1.1); color: #fff; border: 0; }
-.lbl-short { display: none; }
-
-@media screen and (max-width: 640px) {
-    .topbar-inner { padding: 0.4rem 1.1rem; gap: 0.5rem; }
-    /* Short label frees the room the scrolling nav needs on a phone. */
-    .lbl-full { display: none; }
-    .lbl-short { display: inline; }
-    /* Fade the right edge so a clipped item reads as "scrollable", not "broken". */
-    .topbar nav {
-        -webkit-mask-image: linear-gradient(to right, #000 calc(100% - 22px), transparent);
-        mask-image: linear-gradient(to right, #000 calc(100% - 22px), transparent);
-    }
-    /* Touch targets: ~44px tall. */
-    .topbar nav a { padding: 0.62rem 0.55rem; font-size: 0.85rem; }
-    .btn-pdf { padding: 0.62rem 0.95rem; font-size: 0.85rem; }
-
-    h1 { font-size: 1.85rem; }
-    h2 { font-size: 1.18rem; margin-top: 2.4rem; }
-    h3 { margin-top: 1.6rem; }
-    ul.contact { font-size: 0.8rem; }
-    ul.contact li { padding: 0.32rem 0.65rem; }
-    blockquote { padding: 0.6rem 0.8rem; }
-}
-
-
-@media screen and (max-width: 380px) {
-    main { padding: 1.4rem 0.9rem 3.5rem; }
-    .topbar-inner { padding: 0.4rem 0.9rem; }
-    h1 { font-size: 1.65rem; }
-}
-
-/* --- Masthead --- */
-.masthead {
-    padding-bottom: 1.6rem;
-    margin-bottom: 0.5rem;
-    border-bottom: 1px solid var(--rule);
-}
-.tagline {
-    margin: 0 0 1.1rem;
-    font-size: 1rem;
-    font-weight: 600;
-    color: var(--muted);
-}
-.id-text { min-width: 0; }
-.id-text .tagline { margin-bottom: 0; }
-.masthead ul.contact { margin-top: 1.1rem; }
-
-/* Portrait support — currently unused. Re-add
-   <img class="avatar no-print" src="resume-assets/headshot.png" ...>
-   as the first child of .masthead and the two-column layout switches on by
-   itself: avatar in col 1, name/tagline/chips sharing col 2's left edge so
-   the block reads as one alignment rather than a ragged one. */
-.masthead:has(.avatar) {
-    display: grid;
-    grid-template-columns: auto 1fr;
-    column-gap: 1rem;
-    row-gap: 1.05rem;
-}
-.masthead:has(.avatar) .avatar {
-    grid-area: 1 / 1;
-    align-self: center;
-    width: 68px;
-    height: 68px;
-    border-radius: 50%;
-    border: 2px solid var(--rule);
-    box-shadow: var(--shadow);
-    margin: 0;
-    object-fit: cover;
-    background: var(--soft);
-}
-.masthead:has(.avatar) .id-text { grid-area: 1 / 2; align-self: center; }
-.masthead:has(.avatar) ul.contact { grid-area: 2 / 2; margin-top: 0; }
-ul.contact {
-    list-style: none;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.4rem 0.45rem;
-    margin: 0;
-    padding: 0;
-    font-size: 0.85rem;
-}
-ul.contact li {
-    margin: 0;
-    padding: 0.26rem 0.7rem;
-    border: 1px solid var(--rule);
-    border-radius: 999px;
-    background: var(--soft);
-    color: var(--muted);
-}
-ul.contact li a { color: var(--ink); border: 0; }
-ul.contact li a:hover { color: var(--accent); }
-
-/* Masthead responsive overrides — must sit AFTER the .masthead grid rules
-   above, since they match with equal specificity and source order decides. */
-@media screen and (max-width: 640px) {
-    /* Phones: chips reclaim the avatar's column. At this width usable line
-       length beats sharing a left edge with the name. */
-    .masthead:has(.avatar) { column-gap: 0.8rem; row-gap: 0.85rem; }
-    .masthead:has(.avatar) ul.contact { grid-area: 2 / 1 / 3 / -1; }
-    .masthead:has(.avatar) .avatar { width: 56px; height: 56px; }
-}
-
-@media screen and (max-width: 380px) {
-    .masthead:has(.avatar) .avatar { width: 50px; height: 50px; }
-}
-
-/* --- Media --- */
-img { max-width: 100%; border-color: var(--rule); border-radius: 8px; box-shadow: var(--shadow); }
-img.qr, img.logo { box-shadow: none; }
-
-/* --- Tables scroll rather than overflow the page --- */
-@media screen and (max-width: 640px) {
-    table { display: block; overflow-x: auto; -webkit-overflow-scrolling: touch; }
-}
-
-/* ============================================================
-   PRINT / PDF — restores the compact single-column document
-   ============================================================ */
+/* Print-only rules */
 @page {
     size: Letter;
     margin: 0;
 }
 
 @media print {
-    :root {
-        --ink: #1a1a1a;
-        --muted: #555;
-        --rule: #d5d5d5;
-        --accent: #0a4d8c;
-        --accent-soft: rgba(10, 77, 140, 0.10);
-        --soft: #f4f6f8;
-        --bg: #ffffff;
-        --shadow: none;
-    }
-    html, body {
-        font-size: 10.5pt;
-        line-height: 1.45;
-        background: #fff;
-        color: #1a1a1a;
-    }
-    main { max-width: none; padding: 0.45in 0.55in; }
+    main { padding: 0.45in 0.55in; }
     .no-print { display: none !important; }
     a { color: var(--accent); border-bottom: none; }
-
-    h1 { font-size: 24pt; margin: 0 0 0.15em; }
-    h2 { font-size: 14pt; margin: 1.4em 0 0.4em; padding-bottom: 0.15em; }
-    h3 { font-size: 11.5pt; margin: 1em 0 0.25em; }
-    h4 { font-size: 10.5pt; margin: 0.8em 0 0.2em; color: var(--ink); text-transform: none; letter-spacing: normal; }
-    p { margin: 0.4em 0; }
-    ul, ol { margin: 0.3em 0 0.6em; padding-left: 1.3em; }
-    li { margin: 0.15em 0; }
-    p, li { orphans: 3; widows: 3; }
-
-    /* Revert the screen grid — print is plain flow with no avatar column. */
-    .masthead { display: block; padding-bottom: 0.5em; margin-bottom: 0; border-bottom: 0; }
-    .tagline { margin: 0 0 0.25em; font-size: 10pt; text-transform: uppercase; letter-spacing: 0.02em; color: var(--ink); }
-    ul.contact { display: block; margin: 0 0 0.4em; padding: 0; font-size: 10pt; color: var(--muted); }
-    ul.contact li { display: inline; margin: 0; padding: 0; border: 0; background: none; }
-    ul.contact li + li::before { content: " · "; color: var(--muted); }
-
     /* Avoid awkward breaks after a section heading */
     h2, h3, h4 { break-after: avoid-page; }
-    /* Keep images with their captions, and cap height so pages don't gap badly */
-    img { break-inside: avoid; max-height: 3.9in; box-shadow: none; border-radius: 4px; }
-    img.diagram-large { max-height: 7.6in; }
+    /* Keep images with their captions */
+    img { break-inside: avoid; }
     /* Keep bullet lists together where possible */
-    ul, ol, table, blockquote { break-inside: avoid; }
+    ul, ol, table { break-inside: avoid; }
 }
 </style>
 </head>
 <body>
-<div class="topbar no-print">
-<div class="topbar-inner">
-<nav aria-label="Resume sections">
-<a href="#professional-summary">Summary</a>
-<a href="#core-skills">Skills</a>
-<a href="#experience">Experience</a>
-<a href="#featured-client-engineering">Client Work</a>
-<a href="#featured-personal-ai-ml-projects">AI Projects</a>
-<a href="#featured-full-stack-projects-swe-heavy">Full-Stack</a>
-<a href="#education">Education</a>
-</nav>
-<a class="btn-pdf" href="ResumeIlyes.pdf" download aria-label="Download PDF resume"><span class="lbl-full">Download PDF</span><span class="lbl-short">PDF</span></a>
-</div>
-</div>
 <main>
-<header class="masthead">
-<div class="id-text">
 <h1 id="mohamed-ilyes-tounsi">Mohamed Ilyes Tounsi</h1>
-<p class="tagline">Full-Stack Software Engineer · AI/ML Integrator · Founder</p>
-</div>
-<ul class="contact">
-<li>Carlsbad, CA, USA</li>
-<li><a href="tel:+17604814120">+1 7604814120</a></li>
-<li><a href="mailto:tounsils@gmail.com">tounsils@gmail.com</a></li>
-<li><a href="https://linkedin.com/in/mohameditounsi">linkedin.com/in/mohameditounsi</a></li>
-<li><a href="https://github.com/tounsils">github.com/tounsils</a></li>
-<li><a href="https://www.digitalqrcard.com">digitalqrcard.com</a></li>
-</ul>
-</header>
+<p><strong>Full-Stack Software Engineer · AI/ML Integrator · Founder</strong></p>
+<p>Carlsbad, CA, USA · +1 7604814120 · tounsils@gmail.com
+<a href="https://linkedin.com/in/mohameditounsi">linkedin.com/in/mohameditounsi</a> · <a href="https://github.com/tounsils">github.com/tounsils</a> · <a href="https://www.digitalqrcard.com">digitalqrcard.com</a></p>
 <h2 id="professional-summary">Professional Summary</h2>
 <p>Full-stack software engineer and engineering leader with 20+ years of experience shipping production web platforms end-to-end — architecture, backend APIs, cloud infrastructure, frontend, data pipelines, and CI/CD. Over the last three years I've layered <strong>AI/ML integration</strong> on top of that foundation: LLM applications, RAG pipelines, MCP-based agent orchestration, voice, semantic search, and human-in-the-loop workflows. Current focus splits across a fractional senior engineering role at NXT Robotics (~60%), an advisory VP-of-Engineering role at AIMIA (~20%), part-time engineering at Hydrostasis (~20%), and solo-founder work on <a href="https://www.digitalqrcard.com">digitalqrcard.com</a>.</p>
 <p>I'm a <strong>software engineer first</strong>. AI is a tool in the stack, not the whole stack.</p>
@@ -538,7 +234,7 @@ img.qr, img.logo { box-shadow: none; }
 <p><strong>Testing &amp; Quality</strong> — TDD, Jest, PHPUnit, Autocannon (load testing), unit / integration testing, code review at scale.</p>
 <p><strong>Delivery &amp; Leadership</strong> — Agile/Scrum, Jira, ClickUp, Asana, distributed team leadership, mentoring, code review at scale.</p>
 <h2 id="experience">Experience</h2>
-<h3 id="senior-software-engineer-hydrostasis-2026-present">Senior Software Engineer — Hydrostasis (Remote) · Part-time (~20%) · 2026 – Present</h3>
+<h3 id="senior-software-engineer-hydrostasis-remote-part-time-20-2026-present">Senior Software Engineer — Hydrostasis (Remote) · Part-time (~20%) · 2026 – Present</h3>
 <ul>
 <li>Built an internal admin portal on a Vite / TanStack Router + Query / Radix UI stack layered over Retool's admin primitives; phase one is in production.</li>
 <li>Wrote a scripted Test → Production promotion workflow for app definitions, making deployments diff-reviewable and reversible instead of manual copy-paste, which is the Retool default and a common source of production breakage.</li>
@@ -564,13 +260,13 @@ img.qr, img.logo { box-shadow: none; }
 <li>Ship admin console: live Gemini model discovery + smoke-test switcher, attempt inspection, contact CSV export, encryption backfill utility.</li>
 <li><strong>Stack:</strong> Next.js 15 (Pages Router), React 18, Redux Toolkit, Tailwind v4, Express + TypeScript, Mongoose 7, FastAPI (Python 3.11), Google Vertex AI / Gemini + Gemini Live, ElevenLabs, MongoDB Atlas, AWS (ECS Fargate, ECR, ALB, Route 53, Secrets Manager) → GCP (Cloud Run, Cloud DNS, Secret Manager), GitHub Actions, Docker, Sentry, PostHog.</li>
 </ul>
-<h3 id="founder-digital-qr-card-dec-2024-present">Founder — Digital QR Card (<a href="https://www.digitalqrcard.com">digitalqrcard.com</a>) · Self-employed · Dec 2024 – Present</h3>
+<h3 id="founder-digital-qr-card-digitalqrcardcom-self-employed-dec-2024-present">Founder — Digital QR Card (<a href="https://www.digitalqrcard.com">digitalqrcard.com</a>) · Self-employed · Dec 2024 – Present</h3>
 <ul>
 <li>Solo founder and operator of a B2C product selling customizable QR-based digital business cards with built-in lead capture. Solo across product, engineering, marketing, and operations.</li>
 <li>Full product and architecture detail in the featured project below.</li>
 <li><strong>Stack:</strong> React, TypeScript, Node, Express, MongoDB, Stripe.</li>
 </ul>
-<h3 id="founder-principal-engineer-tn76-digital-2011-present">Founder &amp; Principal Engineer — TN76 Digital (formerly Web &amp; Carto) · Carlsbad, CA · 2011 – Present</h3>
+<h3 id="founder-principal-engineer-tn76-digital-formerly-web-carto-carlsbad-ca-2011-present">Founder &amp; Principal Engineer — TN76 Digital (formerly Web &amp; Carto) · Carlsbad, CA · 2011 – Present</h3>
 <ul>
 <li>Independent consulting practice. Run part-time alongside full-time engineering employment through 2022, then as a primary practice after relocating to California.</li>
 <li>Design and deliver geospatial and full-stack solutions end to end: needs assessment, system and data architecture, workflow optimization, integration with existing client systems, training and support.</li>
@@ -583,13 +279,13 @@ img.qr, img.logo { box-shadow: none; }
 <li>Architected web apps and REST APIs using Node.js, React, PHP, SQL.</li>
 <li>Scrum Master; facilitated sprints and cross-team collaboration.</li>
 </ul>
-<h3 id="enterprise-gis-architect-geoconvergence-remote-bloomington-in-2023-2024">Enterprise GIS Architect — geoConvergence (Remote) · Bloomington, IN · Nov 2023 – Apr 2024</h3>
+<h3 id="enterprise-gis-architect-geoconvergence-remote-bloomington-in-nov-2023-apr-2024">Enterprise GIS Architect — geoConvergence (Remote) · Bloomington, IN · Nov 2023 – Apr 2024</h3>
 <ul>
 <li>Architected high-availability GIS solutions and microservices on AWS (Lambda, CloudFormation, EventBridge).</li>
 <li>Ensured reliability, scalability, and secure deployment of data pipelines and GIS applications.</li>
 <li><strong>Stack:</strong> AWS, PostgreSQL, Esri ArcGIS, Docker, CloudFormation, EventBridge.</li>
 </ul>
-<h3 id="lead-software-engineer-ministry-2017-2022">Lead Software Engineer — Tunisian Ministry of National Defense · Tunis · Apr 2017 – Sep 2022</h3>
+<h3 id="lead-software-engineer-tunisian-ministry-of-national-defense-tunis-apr-2017-sep-2022">Lead Software Engineer — Tunisian Ministry of National Defense · Tunis · Apr 2017 – Sep 2022</h3>
 <ul>
 <li>Led the software engineering team in an agile environment, owning technical design and system architecture across projects.</li>
 <li>Directed the "Intelligence Data Lake" — consolidated disparate sources into a real-time analytics dashboard with interactive geospatial visualizations for decision-makers.</li>
@@ -599,7 +295,7 @@ img.qr, img.logo { box-shadow: none; }
 <li>Held the rank of Colonel; managed engineering delivery and team performance alongside the technical role.</li>
 <li><strong>Stack:</strong> PHP, JavaScript, REST APIs, MySQL, Leaflet.js, Esri ArcGIS Online, GPS/telemetry, ETL pipelines.</li>
 </ul>
-<h3 id="senior-software-engineer-ministry-2012-2017">Senior Software Engineer — Tunisian Ministry of National Defense · Tunis · Jun 2012 – Apr 2017</h3>
+<h3 id="senior-software-engineer-tunisian-ministry-of-national-defense-tunis-jun-2012-apr-2017">Senior Software Engineer — Tunisian Ministry of National Defense · Tunis · Jun 2012 – Apr 2017</h3>
 <ul>
 <li>Led development of complex GIS solutions from concept through release, including requirements definition and design.</li>
 <li>Converted business requirements into functional use cases and technical designs with client stakeholders; ran project review meetings.</li>
@@ -607,7 +303,7 @@ img.qr, img.logo { box-shadow: none; }
 <li>Reduced production cost by developing tooling that streamlined repetitive tasks in the SDLC.</li>
 <li><strong>Stack:</strong> PHP, JavaScript, MySQL, Apache, Leaflet.js, Esri ArcGIS Enterprise &amp; Server, ArcGIS Model Builder, Python scripting, geoprocessing, REST APIs, HTML/CSS.</li>
 </ul>
-<h3 id="software-engineer-cnct-2002-2012">Software Engineer — National Center for Mapping &amp; Remote Sensing (CNCT) · Tunis · Jun 2002 – Jun 2012</h3>
+<h3 id="software-engineer-national-center-for-mapping-remote-sensing-cnct-tunis-jun-2002-jun-2012">Software Engineer — National Center for Mapping &amp; Remote Sensing (CNCT) · Tunis · Jun 2002 – Jun 2012</h3>
 <ul>
 <li>First professional engineering role. Started as a GIS analyst and junior software engineer, then contributed to full-cycle delivery of nationwide GIS solutions.</li>
 <li>Built a health/medical mapping system directing patients to the appropriate service or regional hospital, and an agricultural map portal serving officials and local farmers.</li>
@@ -726,8 +422,8 @@ img.qr, img.logo { box-shadow: none; }
 <li><strong>Stack:</strong> Node, Vite, TanStack Router/Query, Radix UI, Retool.</li>
 </ul>
 <h2 id="featured-personal-ai-ml-projects">Featured Personal AI / ML Projects</h2>
-<h3 id="aios-ai-voice-qr-card-realtor-pilot">AIOS — AI-voice QR card + realtor pilot</h3>
-<p>The engineering repo behind <a href="https://www.digitalqrcard.com">digitalqrcard.com</a> (see hero project above). Realtor B2B validation sprint underway with a pilot customer.</p>
+<h3 id="aios-ai-voice-qr-card">AIOS — AI-voice QR card</h3>
+<p>The engineering repo behind <a href="https://www.digitalqrcard.com">digitalqrcard.com</a> (see hero project above). B2C product with early organisation-level demand signals from multiple sectors; vertical positioning being validated against actual buyer conversations rather than hypothesis.</p>
 <ul>
 <li><strong>Stack:</strong> Node, Express, MongoDB, ElevenLabs, Stripe.</li>
 </ul>

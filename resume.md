@@ -213,8 +213,8 @@ Admin portal for Hydrostasis (part-time engagement, summer 2026). Phase 1 promot
 
 ## Featured Personal AI / ML Projects
 
-### AIOS — AI-voice QR card + realtor pilot
-The engineering repo behind [digitalqrcard.com](https://www.digitalqrcard.com) (see hero project above). Realtor B2B validation sprint underway with a pilot customer.
+### AIOS — AI-voice QR card
+The engineering repo behind [digitalqrcard.com](https://www.digitalqrcard.com) (see hero project above). B2C product with early organisation-level demand signals from multiple sectors; vertical positioning being validated against actual buyer conversations rather than hypothesis.
 
 - **Stack:** Node, Express, MongoDB, ElevenLabs, Stripe.
 
