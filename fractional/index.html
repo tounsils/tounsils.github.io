@@ -1,0 +1,415 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Fractional CTO + MCP-Server Playbook | Ilyes Tounsi</title>
+<meta name="description" content="I ship your product as a remote MCP server in 6 weeks for $12,000, and stay on as your fractional CTO for $3,500/month after. One operator, two products.">
+<link rel="icon" href="../favicon.ico">
+<meta property="og:title" content="Fractional CTO + MCP-Server Playbook | Ilyes Tounsi">
+<meta property="og:description" content="Ship your product as a remote MCP server in 6 weeks for $12,000. Stay on with a fractional CTO for $3,500/month after.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://tounsils.github.io/fractional/">
+<meta property="og:image" content="https://tounsils.github.io/fractional/mcp-harness.png">
+<meta name="twitter:card" content="summary_large_image">
+<style>
+:root {
+    --ink: #1a1a1a;
+    --muted: #555;
+    --faint: #777;
+    --rule: #d5d5d5;
+    --accent: #0a4d8c;
+    --accent-soft: #e8f0f8;
+    --soft: #f4f6f8;
+    --bg: #fff;
+    --card: #fff;
+    --shadow: 0 1px 3px rgba(16, 34, 56, .07), 0 8px 24px rgba(16, 34, 56, .05);
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --ink: #e8eaed;
+        --muted: #a8b0b8;
+        --faint: #8b939b;
+        --rule: #333a42;
+        --accent: #6aa9e0;
+        --accent-soft: #17242f;
+        --soft: #1a1f25;
+        --bg: #12161a;
+        --card: #171c21;
+        --shadow: 0 1px 3px rgba(0, 0, 0, .3), 0 8px 24px rgba(0, 0, 0, .25);
+    }
+}
+
+* { box-sizing: border-box; }
+
+html, body {
+    margin: 0;
+    padding: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font-family: "Segoe UI", -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
+    font-size: 17px;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+}
+
+main { max-width: 860px; margin: 0 auto; padding: 0 22px 80px; }
+
+a { color: var(--accent); text-decoration: none; border-bottom: 1px solid rgba(10, 77, 140, .3); }
+a:hover { border-bottom-color: currentColor; }
+@media (prefers-color-scheme: dark) { a { border-bottom-color: rgba(106, 169, 224, .35); } }
+
+h1, h2, h3, h4 { line-height: 1.25; }
+h2 {
+    font-size: 1.55rem;
+    margin: 3.2rem 0 .2rem;
+    padding-bottom: .3rem;
+    border-bottom: 2px solid var(--accent);
+    color: var(--accent);
+    letter-spacing: -.01em;
+}
+h3 { font-size: 1.12rem; margin: 1.9rem 0 .4rem; }
+h4 { font-size: .95rem; margin: 1.3rem 0 .3rem; text-transform: uppercase; letter-spacing: .06em; color: var(--faint); font-weight: 600; }
+p { margin: .7rem 0; }
+ul, ol { margin: .6rem 0 1rem; padding-left: 1.35rem; }
+li { margin: .35rem 0; }
+strong { font-weight: 600; }
+hr { border: 0; border-top: 1px solid var(--rule); margin: 2.4rem 0; }
+code {
+    font-family: Consolas, "Cascadia Mono", "SF Mono", Menlo, monospace;
+    font-size: .87em;
+    background: var(--soft);
+    padding: .1em .38em;
+    border-radius: 3px;
+}
+
+/* ---------- hero ---------- */
+header.hero {
+    border-bottom: 1px solid var(--rule);
+    background: linear-gradient(180deg, var(--accent-soft), var(--bg));
+    padding: 3.4rem 0 2.6rem;
+    margin-bottom: .5rem;
+}
+header.hero .wrap { max-width: 860px; margin: 0 auto; padding: 0 22px; }
+.eyebrow {
+    font-size: .78rem;
+    text-transform: uppercase;
+    letter-spacing: .13em;
+    color: var(--accent);
+    font-weight: 600;
+    margin: 0 0 .7rem;
+}
+h1 {
+    font-size: 2.5rem;
+    margin: 0 0 .8rem;
+    letter-spacing: -.022em;
+}
+@media (max-width: 620px) { h1 { font-size: 1.95rem; } }
+.lede { font-size: 1.16rem; color: var(--muted); margin: 0 0 1.1rem; max-width: 44rem; }
+.byline { font-size: .93rem; color: var(--faint); margin: 0 0 1.7rem; }
+
+.cta-row { display: flex; flex-wrap: wrap; gap: .7rem; }
+.btn {
+    display: inline-block;
+    padding: .62rem 1.25rem;
+    border-radius: 6px;
+    font-size: .95rem;
+    font-weight: 600;
+    border: 1px solid var(--accent);
+    background: var(--accent);
+    color: #fff;
+    transition: opacity .15s;
+}
+@media (prefers-color-scheme: dark) { .btn { color: #0d1418; } }
+.btn:hover { opacity: .87; border-bottom-color: var(--accent); }
+.btn.ghost { background: transparent; color: var(--accent); }
+@media (prefers-color-scheme: dark) { .btn.ghost { color: var(--accent); } }
+
+/* ---------- callout ---------- */
+.callout {
+    background: var(--soft);
+    border-left: 3px solid var(--accent);
+    border-radius: 0 5px 5px 0;
+    padding: 1.1rem 1.3rem;
+    margin: 2.2rem 0;
+}
+.callout p:first-child { margin-top: 0; }
+.callout p:last-child { margin-bottom: 0; }
+
+/* ---------- product card ---------- */
+.product {
+    background: var(--card);
+    border: 1px solid var(--rule);
+    border-radius: 9px;
+    box-shadow: var(--shadow);
+    padding: 1.6rem 1.7rem 1.9rem;
+    margin: 1.2rem 0 0;
+}
+@media (max-width: 620px) { .product { padding: 1.2rem 1.1rem 1.4rem; } }
+.price {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: .55rem;
+    margin: 0 0 1rem;
+    padding-bottom: .9rem;
+    border-bottom: 1px solid var(--rule);
+}
+.price .amount { font-size: 1.85rem; font-weight: 700; letter-spacing: -.02em; }
+.price .term { color: var(--muted); font-size: 1rem; }
+.badge {
+    display: inline-block;
+    font-size: .74rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: .07em;
+    padding: .2rem .55rem;
+    border-radius: 4px;
+    background: var(--accent-soft);
+    color: var(--accent);
+    border: 1px solid rgba(10, 77, 140, .2);
+}
+@media (prefers-color-scheme: dark) { .badge { border-color: rgba(106, 169, 224, .28); } }
+
+.split { display: grid; grid-template-columns: 1fr 1fr; gap: 0 2rem; }
+@media (max-width: 620px) { .split { grid-template-columns: 1fr; } }
+
+/* ---------- week table ---------- */
+table { border-collapse: collapse; width: 100%; margin: .9rem 0 1.2rem; font-size: .93rem; }
+th, td { text-align: left; padding: .55rem .65rem; border-bottom: 1px solid var(--rule); vertical-align: top; }
+th { background: var(--soft); font-weight: 600; border-bottom: 2px solid var(--rule); }
+td:first-child { white-space: nowrap; font-weight: 600; color: var(--accent); }
+.table-scroll { overflow-x: auto; }
+
+/* ---------- diagram ---------- */
+figure { margin: 1.6rem 0; text-align: center; }
+figure img {
+    max-width: 100%;
+    height: auto;
+    border: 1px solid var(--rule);
+    border-radius: 6px;
+    background: #fff;
+}
+figcaption { font-size: .87rem; color: var(--faint); margin-top: .55rem; }
+
+/* ---------- footer ---------- */
+footer {
+    border-top: 1px solid var(--rule);
+    margin-top: 3.5rem;
+    padding-top: 1.4rem;
+    font-size: .9rem;
+    color: var(--faint);
+}
+footer a { color: var(--muted); }
+.contact { font-size: 1.02rem; color: var(--ink); margin-bottom: 1.4rem; }
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="wrap">
+    <p class="eyebrow">Fractional CTO &middot; MCP-Server Playbook</p>
+    <h1>I ship your product as a remote MCP server, and stay on as your fractional CTO after.</h1>
+    <p class="lede">You need a technical adult in the room. Not full-time, not for the next ten years, just until you know what you are doing. Two products, one operator, natural funnel.</p>
+    <p class="byline">Ilyes Tounsi &middot; 20+ years shipping production systems &middot; Senior Engineer at NXT Robotics, VP of Engineering at AIMIA, Retool engineering at Hydrostasis, founder of digitalqrcard.com</p>
+    <div class="cta-row">
+      <a class="btn" href="mailto:tounsils@gmail.com?subject=Discovery%20call%3A%20MCP%20Playbook%20or%20Fractional%20CTO">Book a free 30-minute fit check</a>
+      <a class="btn ghost" href="#playbook">See the 6-week Playbook</a>
+    </div>
+  </div>
+</header>
+
+<main>
+
+<div class="callout">
+  <p><strong>See the pattern before you buy it.</strong> The MCP-Server Playbook ships the exact architecture already running at <a href="https://github.com/tounsils/ask-me-mcp">github.com/tounsils/ask-me-mcp</a>, a public MIT-licensed reference implementation. Install it in Claude Desktop or Claude Code and interact with the pattern during our discovery call: six typed tools, a coordinator, rails and confidence scoring, external grounding, an evaluation corpus and a certification gate. Every element of the pattern is visible in the source.</p>
+  <p style="margin-bottom:0"><strong>Live endpoint:</strong> <code>https://ask-me-mcp-xi.vercel.app/api/mcp</code></p>
+</div>
+
+<h2 id="playbook">Product 1: MCP-Server Product Playbook</h2>
+
+<div class="product">
+  <div class="price">
+    <span class="amount">$12,000</span>
+    <span class="term">fixed &middot; 6 weeks</span>
+    <span class="badge">Ships or 50% refund</span>
+  </div>
+
+  <p>Your product ships as a remote MCP server in Anthropic's connector directory, ChatGPT's Apps SDK, and via xAI's tool-calling API. <strong>One MCP server. Three storefronts.</strong> Same code.</p>
+
+  <h4>What you get in 6 weeks</h4>
+  <ol>
+    <li><strong>Typed tool contract.</strong> Four to eight JSON-schema-strict MCP tools. No free-form params, no prompt-engineering surface area.</li>
+    <li><strong>Coordinator and specialist agent architecture.</strong> The coordinator routes, elicitation agents gather, supervisor agents review before the response goes out.</li>
+    <li><strong>Signal-extraction pipeline.</strong> Every conversation compiles to a typed signal vector. Structured, versioned, inspectable.</li>
+    <li><strong>Versioned reasoning specification.</strong> Grounded in your domain science, not the model's guesses. Whatever framework governs your field, we ship it as spec.</li>
+    <li><strong>Rails and confidence-per-answer discipline.</strong> Steering blocked in code. Every response ships with a confidence level and its evidence.</li>
+    <li><strong>Grounding architecture.</strong> The harness queries your data sources, external APIs, and reference taxonomies. <strong>The model never invents.</strong></li>
+    <li><strong>Evaluation corpus, eval runner, per-model-pairing certification.</strong> You author the corpus with my guidance. I ship the runner and the gate. <strong>Pass or nothing ships.</strong></li>
+    <li><strong>Remote MCP server deployment.</strong> Production endpoint, auth, observability, and the connector-directory listing paperwork.</li>
+    <li><strong>One passing eval</strong> on your production tool contract by week 6.</li>
+  </ol>
+
+  <h4>Week by week</h4>
+  <div class="table-scroll">
+  <table>
+    <thead><tr><th>Week</th><th>Deliverable</th><th>Gate</th></tr></thead>
+    <tbody>
+      <tr><td>1</td><td>Product definition, candidate tool list, input/output schemas, architecture map</td><td>You validate the target user flow and the tool contract. No tool contract without schema review.</td></tr>
+      <tr><td>2</td><td>Grounding sources identified, confidence and refusal policy in code, first versioned reasoning spec</td><td>Domain science is explicitly encoded, not left implicit. Critical edge cases documented.</td></tr>
+      <tr><td>3</td><td>Coordinator routes, specialist workers, handoff behavior, first evaluator pass</td><td>Tool routing is inspectable and deterministic. The system can explain which path it used.</td></tr>
+      <tr><td>4</td><td>Evaluation corpus, eval runner, documented failure cases and known gaps</td><td>Every core tool has a smoke eval and a failure case. You confirm behavior matches product intent.</td></tr>
+      <tr><td>5</td><td>Auth, deployment, observability, production logging, final fallback logic</td><td>A deployable remote MCP endpoint exists. Critical failure modes are handled and visible.</td></tr>
+      <tr><td>6</td><td>End-to-end smoke tests, final eval pass, connector-directory launch checklist, handoff notes</td><td>One passing eval on the final production tool contract, or the refund trigger fires.</td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <div class="split">
+    <div>
+      <h4>Not in scope</h4>
+      <ul>
+        <li>Your domain implementation. That is your product, the tools call it.</li>
+        <li>UI beyond a debug console.</li>
+        <li>Marketing, growth, or go-to-market. That is what the retainer is for.</li>
+        <li>Fundraise deck work.</li>
+      </ul>
+    </div>
+    <div>
+      <h4>Refund trigger</h4>
+      <ul>
+        <li>No live tool contract on the target remote MCP setup.</li>
+        <li>No working eval runner or validation gate.</li>
+        <li>No production-ready grounding architecture.</li>
+        <li>No deployable path to the connector directory.</li>
+      </ul>
+      <p style="font-size:.9rem;color:var(--muted);margin-bottom:0">Failure to reach the shipping state by end of week 6 is failed delivery, not a soft "almost shipped."</p>
+    </div>
+  </div>
+
+  <div class="split">
+    <div>
+      <h4>Who this is for</h4>
+      <p>Pre-seed to Series A founders who have already decided that going deep on one AI-assistant platform beats building yet another web app. You value defensibility from external certification, not just "we use Claude."</p>
+    </div>
+    <div>
+      <h4>Who this is not for</h4>
+      <ul>
+        <li>Teams that want a chatbot with a retrieval tab.</li>
+        <li>Teams without a real domain to encode. The harness is only defensible if you have field science underneath.</li>
+        <li>Teams that cannot commit an engineer or PM to the sprint. This is not turnkey.</li>
+      </ul>
+    </div>
+  </div>
+
+  <p style="margin-bottom:0"><strong>Cap:</strong> one active Playbook engagement at a time. When at capacity, waitlist only.</p>
+</div>
+
+<h2>The architecture you are buying</h2>
+
+<figure>
+  <img src="mcp-harness.png" alt="MCP-server harness architecture: typed tool contract, coordinator and specialist agents, signal vector, versioned reasoning spec, rails and confidence, external grounding, evaluation corpus and certification gate.">
+  <figcaption>The Harness pattern. Every layer is delivered in the 6-week Playbook and visible in the ask-me-mcp source.</figcaption>
+</figure>
+
+<h2>Product 2: Fractional CTO Retainer</h2>
+
+<div class="product">
+  <div class="price">
+    <span class="amount">$3,500</span>
+    <span class="term">per month</span>
+    <span class="badge">Cancel anytime</span>
+  </div>
+
+  <p>For founders who complete the Playbook and want to keep going, or who need the architecture-adult role without the MCP-shipping wedge.</p>
+
+  <h4>What you get</h4>
+  <ul>
+    <li><strong>Weekly 60-minute strategy call.</strong> Architecture, hiring, vendor selection, risk calls. Recorded. Notes shared same day.</li>
+    <li><strong>Monthly written architecture review.</strong> Three to five pages on a specific system, with concrete recommendations. <strong>Not a slide deck.</strong></li>
+    <li><strong>Slack on-call for critical decisions.</strong> Same-day response Monday to Friday for decisions blocking your team. Not "can you look at this PR."</li>
+    <li><strong>Access to the reusable-patterns library.</strong> Twelve documented engineering patterns built across the engagements below. Drop them into your codebase, no attribution required.</li>
+    <li><strong>First 90 days deliverable.</strong> A yes-or-no verdict on your current architecture, a 12-month hiring roadmap, and the three vendor decisions you should make this quarter.</li>
+  </ul>
+
+  <h4>Explicitly not in scope</h4>
+  <ul>
+    <li>Writing production code for you. Different service, different pricing.</li>
+    <li>Attending your all-hands or investor updates. Available as an add-on at $500 per session.</li>
+    <li>Managing your engineers day to day. You still need a lead engineer or head of engineering.</li>
+    <li>Standing in as full-time CTO for a fundraise. Investors will see through it.</li>
+  </ul>
+
+  <p style="margin-bottom:0"><strong>Cap:</strong> two active retainer clients at a time.</p>
+</div>
+
+<h2>Pricing</h2>
+
+<div class="table-scroll">
+<table>
+  <thead><tr><th>Product</th><th>Price</th><th>Term</th><th>Cap</th></tr></thead>
+  <tbody>
+    <tr><td>MCP-Server Product Playbook</td><td>$12,000 fixed</td><td>6 weeks</td><td>1 active at a time</td></tr>
+    <tr><td>Fractional CTO Retainer</td><td>$3,500 / month</td><td>Month to month</td><td>2 active at a time</td></tr>
+    <tr><td>Investor or all-hands session</td><td>$500 / session</td><td>Per session</td><td>Add-on</td></tr>
+  </tbody>
+</table>
+</div>
+
+<p><strong>Combined ceiling:</strong> one Playbook plus one Retainer, or two Retainers, or two back-to-back Playbooks. Never two concurrent Playbooks. I would rather turn work away than deliver two sprints badly.</p>
+
+<h2>The proof: current engagements</h2>
+
+<h3>NXT Robotics: RobotogoAI operator platform</h3>
+<p><em>Senior Software Engineer, fractional 60%, 2025 to present.</em></p>
+<p>Build RobotogoAI, the operator SaaS console and agent layer that turns raw device telemetry (video, GPS, battery, BLE beacons) into actionable ops decisions for physical-security and field-equipment fleets: stadium venues including ACE / Snapdragon Stadium and Petco Park, EV-charging networks, drone operators, and a 300+ site parking pilot.</p>
+<p>Own five sub-modules across the platform: a React 19 operator console (Vite, Ant Design, Redux Toolkit, Saga), a Laravel 12 / PHP 8.3 API with Passport auth, a Python and AWS SAM per-tenant deployment pipeline, a Node 20 executive cockpit on Lambda with Aurora Serverless v2 and Cognito, and a dual-audience knowledge repository read by both humans and coding agents.</p>
+<p>Recent ships: an end-to-end alerts UI with severity taxonomy and deep-linking, an iOS video playback fix, BLE beacon CRUD, a battery-low threshold service, a telemetry retention pipeline, a Cognito SRP auth migration, and an admin team-management route with invite flow.</p>
+
+<h3>AIMIA: AI career and AI-literacy assessment</h3>
+<p><em>VP of Engineering, advisory, 2025 to present.</em></p>
+<p>Own the entire engineering surface for a career-guidance harness serving students, young professionals, and adult learners. Institutional partners include Irvine Valley College, MIT, Palomar College, and Mission Edge.</p>
+<p>Architected a multi-agent stack (six specialized agents plus a supervisor synthesizer), bidirectional voice over WebSocket with a fallback provider, multilingual output in English, Traditional Chinese, and Spanish, application-layer AES-256-GCM field encryption with an HMAC-SHA256 blind index for email dedupe, and a length-bias anti-cheat detector. Currently leading a container-platform migration between two major clouds.</p>
+
+<h3>Hydrostasis: Retool admin portal with a Test to Prod promotion pipeline</h3>
+<p><em>Part-time engagement (~20%), summer 2026. Phase 1 in production, phase 2 in flight.</em></p>
+<p>Wrote <code>promote.js</code>, a scripted Test to Prod promotion workflow for Retool app definitions that makes deployments diff-reviewable and reversible instead of manual copy-paste, which is the Retool default and a common source of production breakage. A modern Vite, TanStack Router, TanStack Query, and Radix UI stack layered over Retool's admin primitives.</p>
+
+<h2>The reusable-patterns library</h2>
+
+<p>Twelve patterns worth stealing, built across the engagements above. Retainer clients get access plus a walkthrough on the ones relevant to their stack. Selected examples:</p>
+
+<ul>
+  <li><strong>The Harness pattern.</strong> MCP-server product architecture on rented intelligence: typed tools, coordinator, signal vector, versioned reasoning spec, evaluation-corpus certification gate. The same pattern the Playbook delivers.</li>
+  <li><strong>Test to Prod diff review for low-code platforms.</strong> For Retool, Bubble, Airtable, or anywhere "publish" is a blackbox mutation.</li>
+  <li><strong>Dual-audience knowledge repository.</strong> Structured frontmatter plus architecture decision records, read by both humans and coding agents.</li>
+  <li><strong>AES-256-GCM field encryption with an HMAC blind index.</strong> Encrypted PII that still dedupes and indexes.</li>
+  <li><strong>Length-bias anti-cheat detector.</strong> Retry when the model writes systematically longer correct answers than distractors.</li>
+  <li><strong>Live model discovery and smoke-test switcher.</strong> Enumerate models at runtime, smoke-test each, swap the default without a deploy.</li>
+</ul>
+
+<p>Full list on request.</p>
+
+<h2>How to book</h2>
+
+<p><strong>First 30 minutes are free.</strong> A fit check, and an honest answer on whether either product actually solves your problem. If neither does, I will say so.</p>
+
+<div class="cta-row" style="margin:1.4rem 0 2rem">
+  <a class="btn" href="mailto:tounsils@gmail.com?subject=Discovery%20call%3A%20MCP%20Playbook%20or%20Fractional%20CTO">Email me to book</a>
+  <a class="btn ghost" href="https://www.linkedin.com/in/mohameditounsi">Connect on LinkedIn</a>
+</div>
+
+<footer>
+  <p class="contact">
+    <a href="mailto:tounsils@gmail.com">tounsils@gmail.com</a> &middot;
+    <a href="https://www.linkedin.com/in/mohameditounsi">linkedin.com/in/mohameditounsi</a> &middot;
+    <a href="https://github.com/tounsils">github.com/tounsils</a>
+  </p>
+  <p><a href="../resume.html">Full engineering resume</a> &middot; <a href="https://github.com/tounsils/ask-me-mcp">ask-me-mcp reference implementation</a></p>
+  <p>All client work described here is limited to what is already public on my resume and my clients' own sites. No client code, data model, or confidential roadmap is shared in any engagement.</p>
+</footer>
+
+</main>
+</body>
+</html>
