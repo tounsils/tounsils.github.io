@@ -37,10 +37,10 @@ I'm a **software engineer first**. AI is a tool in the stack, not the whole stac
 - **Stack:** Node, Vite, TanStack Router/Query, Radix UI, Retool.
 
 ### Senior Software Engineer — NXT Robotics (Remote) · Fractional (~60%) · 2025 – Present
-- Build and maintain **RobotogoAI** — the operator SaaS console + agent layer that turns raw device telemetry (video, GPS, battery, BLE beacons) into actionable ops decisions for physical-security and field-equipment fleets — stadium venues (ACE / Snapdragon Stadium, Petco Park), EV-charging networks, drone operators, and a 300+ site parking pilot.
+- Build and maintain **RobotogoAI** — the operator SaaS console + agent layer that turns raw device telemetry (video, GPS, battery, BLE beacons) into actionable ops decisions for physical-security and field-equipment fleets — stadium venues (Snapdragon Stadium, Petco Park), EV-charging networks, drone operators, and a 300+ site parking pilot.
 - Ship end-to-end operator-console features: alerts UI with severity taxonomy + deep-link, checklists module, camera-picker video streams with iOS black-tile fix, mobile swipeable single-camera carousel + battery graph, tenant-themed dashboards.
 - LiveKit voice/video + ElevenLabs + react-speech-recognition cockpit voice interface; AI Assist wired to an AWS Bedrock supervisor agent across multiple production tenants.
-- Backend feature work: BLE beacon CRUD, editable gateway coverage radius, geofence-move alerts, battery-low threshold service with clamp-safe firing, `PruneTelemetry` retention command, drone-partner heartbeat + bounded event sync.
+- Backend feature work: BLE beacon CRUD, editable gateway coverage radius, geofence-move alerts, battery-low threshold service with clamp-safe firing, a scheduled telemetry-retention pruning command, drone-partner heartbeat + bounded event sync.
 - Built the **executive operations console** — a configurable metric-card system with an auditable vendor ledger, ⌘K categorized search, drag-to-reorder, Trello & Monday board integrations, Cognito SRP auth migration, admin `/team` route with invite modal + inline role editor.
 - Founded and structured the shared human + AI-agent knowledge repository (Docsify site, structured frontmatter schema, ADR adoption).
 - **Stack:** React 19, Redux Toolkit + Saga, Ant Design, Vite, LiveKit, HLS.js, Recharts / Chart.js, react-leaflet, PHP 8.3 + Laravel 12 + Passport, MySQL/RDS, RabbitMQ / MQTT, Python + AWS SAM/CloudFormation, ECS + RDS + ALB, Node 20 + TypeScript + esbuild, AWS Lambda + API Gateway + Aurora Serverless v2 + Cognito, ElevenLabs, AWS Bedrock, Docker.
@@ -77,7 +77,7 @@ I'm a **software engineer first**. AI is a tool in the stack, not the whole stac
 
 ### Lead Software Engineer — Tunisian Ministry of National Defense · Tunis · Apr 2017 – Sep 2022
 - Led the software engineering team in an agile environment, owning technical design and system architecture across projects.
-- Directed the "Intelligence Data Lake" — consolidated disparate sources into a real-time analytics dashboard with interactive geospatial visualizations for decision-makers.
+- Directed a real-time analytics platform consolidating disparate sources into an operational dashboard with interactive geospatial visualizations for decision-makers.
 - Owned production infrastructure setup and local development environments; produced data dictionaries and business-logic documentation.
 - Enforced code quality through code review, unit testing, and pair programming; balanced new feature delivery against defects and technical debt.
 - Mentored engineers in technology, architecture, and delivery; ran planning, task breakdown, and user-story writing.
@@ -154,7 +154,7 @@ Solo across product, marketing, sales, ops. Currently in the customer-acquisitio
 ## Featured Client Engineering
 
 ### NXT Robotics — [nxtrobotics.com](https://www.nxtrobotics.com/) · RobotogoAI operator platform
-NXT Robotics builds AI-powered computer-vision infrastructure for stadiums, airports, parking, data centers, government, and manufacturing — the flagship customer deployment lives at **ACE / Snapdragon Stadium**. Positioning: *"See More. Know More. Act Faster."*
+NXT Robotics builds AI-powered computer-vision infrastructure for stadiums, airports, parking, data centers, government, and manufacturing — the flagship customer deployment lives at **Snapdragon Stadium**. Positioning: *"See More. Know More. Act Faster."*
 
 ![NXT Robotics — See More. Know More. Act Faster.](resume-assets/nxt-hero.png)
 
@@ -170,10 +170,10 @@ The product I contribute to is **RobotogoAI** — an operator-facing SaaS consol
 
 **Recent shipped work (last 30 days):**
 
-- Alerts UI end-to-end: Critical / Actionable / Informational severity taxonomy, sort + filters, `AlertDetailCard` (priority + weather), bell deep-link (`?alertId=`).
+- Alerts UI end-to-end: Critical / Actionable / Informational severity taxonomy, sort + filters, an alert detail card surfacing priority and weather, notification-bell deep linking straight to a single alert.
 - Video streams reliability: replaced auto-load-all cameras with a picker; fixed iOS black-tile with queued attaches (300 ms gap, `playsInline` + `muted` + explicit `play()`); mobile swipeable single-camera carousel with tenant theming and battery graph.
-- BLE beacons: capability + CRUD for editable BC03 positions; site-profile `beacons_snapshot`.
-- Battery alerts: `battery_low` threshold service, clamp-safe firing, telemetry retention 30 → 60 d, `PruneTelemetry` command.
+- BLE beacons: capability flag + CRUD for editable beacon positions, with a per-site beacon snapshot on the site profile.
+- Battery alerts: low-battery threshold service with clamp-safe firing; telemetry retention extended 30 → 60 days behind a scheduled pruning command.
 - Drone-partner heartbeat + bounded event sync; multi-tab simultaneous streaming.
 - Executive console → Trello (OAuth connect, live board tile, drilldown Drawer, new-card modal + `POST /trello/cards`) and Monday integrations (roadmap board sync, record fan-out, silent token refresh).
 - Cognito SRP + `FORCE_CHANGE_PASSWORD` auth migration; admin `/team` route with live Cognito listing, invite modal, inline role editor, resend-invite.
