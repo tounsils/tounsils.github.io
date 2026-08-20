@@ -242,10 +242,10 @@ h3 + p > img, h3 + p img, h4 + p img { margin-top: 0.4em; }
 </ul>
 <h3 id="senior-software-engineer-nxt-robotics-remote-fractional-60-2025-present">Senior Software Engineer — NXT Robotics (Remote) · Fractional (~60%) · 2025 – Present</h3>
 <ul>
-<li>Build and maintain <strong>RobotogoAI</strong> — the operator SaaS console + agent layer that turns raw device telemetry (video, GPS, battery, BLE beacons) into actionable ops decisions for physical-security and field-equipment fleets — stadium venues (ACE / Snapdragon Stadium, Petco Park), EV-charging networks, drone operators, and a 300+ site parking pilot.</li>
+<li>Build and maintain <strong>RobotogoAI</strong> — the operator SaaS console + agent layer that turns raw device telemetry (video, GPS, battery, BLE beacons) into actionable ops decisions for physical-security and field-equipment fleets — stadium venues (Snapdragon Stadium, Petco Park), EV-charging networks, drone operators, and a 300+ site parking pilot.</li>
 <li>Ship end-to-end operator-console features: alerts UI with severity taxonomy + deep-link, checklists module, camera-picker video streams with iOS black-tile fix, mobile swipeable single-camera carousel + battery graph, tenant-themed dashboards.</li>
 <li>LiveKit voice/video + ElevenLabs + react-speech-recognition cockpit voice interface; AI Assist wired to an AWS Bedrock supervisor agent across multiple production tenants.</li>
-<li>Backend feature work: BLE beacon CRUD, editable gateway coverage radius, geofence-move alerts, battery-low threshold service with clamp-safe firing, <code>PruneTelemetry</code> retention command, drone-partner heartbeat + bounded event sync.</li>
+<li>Backend feature work: BLE beacon CRUD, editable gateway coverage radius, geofence-move alerts, battery-low threshold service with clamp-safe firing, a scheduled telemetry-retention pruning command, drone-partner heartbeat + bounded event sync.</li>
 <li>Built the <strong>executive operations console</strong> — a configurable metric-card system with an auditable vendor ledger, ⌘K categorized search, drag-to-reorder, Trello &amp; Monday board integrations, Cognito SRP auth migration, admin <code>/team</code> route with invite modal + inline role editor.</li>
 <li>Founded and structured the shared human + AI-agent knowledge repository (Docsify site, structured frontmatter schema, ADR adoption).</li>
 <li><strong>Stack:</strong> React 19, Redux Toolkit + Saga, Ant Design, Vite, LiveKit, HLS.js, Recharts / Chart.js, react-leaflet, PHP 8.3 + Laravel 12 + Passport, MySQL/RDS, RabbitMQ / MQTT, Python + AWS SAM/CloudFormation, ECS + RDS + ALB, Node 20 + TypeScript + esbuild, AWS Lambda + API Gateway + Aurora Serverless v2 + Cognito, ElevenLabs, AWS Bedrock, Docker.</li>
@@ -288,7 +288,7 @@ h3 + p > img, h3 + p img, h4 + p img { margin-top: 0.4em; }
 <h3 id="lead-software-engineer-tunisian-ministry-of-national-defense-tunis-apr-2017-sep-2022">Lead Software Engineer — Tunisian Ministry of National Defense · Tunis · Apr 2017 – Sep 2022</h3>
 <ul>
 <li>Led the software engineering team in an agile environment, owning technical design and system architecture across projects.</li>
-<li>Directed the "Intelligence Data Lake" — consolidated disparate sources into a real-time analytics dashboard with interactive geospatial visualizations for decision-makers.</li>
+<li>Directed a real-time analytics platform consolidating disparate sources into an operational dashboard with interactive geospatial visualizations for decision-makers.</li>
 <li>Owned production infrastructure setup and local development environments; produced data dictionaries and business-logic documentation.</li>
 <li>Enforced code quality through code review, unit testing, and pair programming; balanced new feature delivery against defects and technical debt.</li>
 <li>Mentored engineers in technology, architecture, and delivery; ran planning, task breakdown, and user-story writing.</li>
@@ -373,7 +373,7 @@ h3 + p > img, h3 + p img, h4 + p img { margin-top: 0.4em; }
 </blockquote>
 <h2 id="featured-client-engineering">Featured Client Engineering</h2>
 <h3 id="nxt-robotics-nxtroboticscom-robotogoai-operator-platform">NXT Robotics — <a href="https://www.nxtrobotics.com/">nxtrobotics.com</a> · RobotogoAI operator platform</h3>
-<p>NXT Robotics builds AI-powered computer-vision infrastructure for stadiums, airports, parking, data centers, government, and manufacturing — the flagship customer deployment lives at <strong>ACE / Snapdragon Stadium</strong>. Positioning: <em>"See More. Know More. Act Faster."</em></p>
+<p>NXT Robotics builds AI-powered computer-vision infrastructure for stadiums, airports, parking, data centers, government, and manufacturing — the flagship customer deployment lives at <strong>Snapdragon Stadium</strong>. Positioning: <em>"See More. Know More. Act Faster."</em></p>
 <p><img alt="NXT Robotics — See More. Know More. Act Faster." src="resume-assets/nxt-hero.png"></p>
 <p>The product I contribute to is <strong>RobotogoAI</strong> — an operator-facing SaaS console plus agent layer. Raw device telemetry (video streams, GPS, battery, BLE beacons, alerts) flows in from rovers, EV chargers, drones, and NXTSensorHub trailers; RobotogoAI turns it into decisions an operator can act on inside a Virtual Security Operations Center (vSOC).</p>
 <p><strong>Sub-modules I own or contribute to:</strong></p>
@@ -386,10 +386,10 @@ h3 + p > img, h3 + p img, h4 + p img { margin-top: 0.4em; }
 </ul>
 <p><strong>Recent shipped work (last 30 days):</strong></p>
 <ul>
-<li>Alerts UI end-to-end: Critical / Actionable / Informational severity taxonomy, sort + filters, <code>AlertDetailCard</code> (priority + weather), bell deep-link (<code>?alertId=</code>).</li>
+<li>Alerts UI end-to-end: Critical / Actionable / Informational severity taxonomy, sort + filters, an alert detail card surfacing priority and weather, notification-bell deep linking straight to a single alert.</li>
 <li>Video streams reliability: replaced auto-load-all cameras with a picker; fixed iOS black-tile with queued attaches (300 ms gap, <code>playsInline</code> + <code>muted</code> + explicit <code>play()</code>); mobile swipeable single-camera carousel with tenant theming and battery graph.</li>
-<li>BLE beacons: capability + CRUD for editable BC03 positions; site-profile <code>beacons_snapshot</code>.</li>
-<li>Battery alerts: <code>battery_low</code> threshold service, clamp-safe firing, telemetry retention 30 → 60 d, <code>PruneTelemetry</code> command.</li>
+<li>BLE beacons: capability flag + CRUD for editable beacon positions, with a per-site beacon snapshot on the site profile.</li>
+<li>Battery alerts: low-battery threshold service with clamp-safe firing; telemetry retention extended 30 → 60 days behind a scheduled pruning command.</li>
 <li>Drone-partner heartbeat + bounded event sync; multi-tab simultaneous streaming.</li>
 <li>Executive console → Trello (OAuth connect, live board tile, drilldown Drawer, new-card modal + <code>POST /trello/cards</code>) and Monday integrations (roadmap board sync, record fan-out, silent token refresh).</li>
 <li>Cognito SRP + <code>FORCE_CHANGE_PASSWORD</code> auth migration; admin <code>/team</code> route with live Cognito listing, invite modal, inline role editor, resend-invite.</li>
