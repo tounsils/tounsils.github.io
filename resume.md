@@ -93,6 +93,7 @@ I'm a **software engineer first**. AI is a tool in the stack, not the whole stac
 
 ### Software Engineer — National Center for Mapping & Remote Sensing (CNCT) · Tunis · Jun 2002 – Jun 2012
 - First professional engineering role. Started as a GIS analyst and junior software engineer, then contributed to full-cycle delivery of nationwide GIS solutions.
+- Selected and funded by CNCT for a two-year master's at the U.S. Naval Postgraduate School (Monterey, California, 2010 to 2012), remaining on staff throughout.
 - Built a health/medical mapping system directing patients to the appropriate service or regional hospital, and an agricultural map portal serving officials and local farmers.
 - Contributed to agile development sprints: new features, bug fixes, and unit tests; provided technical support for assigned applications.
 - **Stack:** PHP, Visual Basic, JavaScript, MySQL, Esri ArcGIS & ArcGIS Server, Leaflet.js, REST APIs, Python scripting, geoprocessing.
@@ -306,7 +307,7 @@ Small project, but it's the reason all the above stays organized enough to ship.
 
 ## Education
 
-- **M.S. in Systems Technology** — U.S. Naval Postgraduate School, 2012
+- **M.S. in Systems Technology** — U.S. Naval Postgraduate School, Monterey, CA, 2010 – 2012
 - **DESS (Postgraduate Diploma) in Remote Sensing & GIS** — Université Pierre & Marie Curie, 2001 – 2002
 - **B.Eng. in Signals** — Aviation School of Borj El Amri, 1998 – 2001
 
