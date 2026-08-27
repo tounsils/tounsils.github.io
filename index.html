@@ -1,1 +1,147 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"/><link rel="icon" href="./favicon.ico"/><meta name="viewport" content="width=device-width,initial-scale=1"/><meta name="theme-color" content="#000000"/><meta name="description" content="e-BusinessCard Created by tn76.com"/><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"><link rel="apple-touch-icon" href="./logo192.png"/><link rel="manifest" href="./manifest.json"/><title>e-BusinessCard Created by tn76.com</title><script defer="defer" src="./static/js/main.4f0530b8.js"></script><link href="./static/css/main.e0bca7c6.css" rel="stylesheet"></head><body><noscript>You need to enable JavaScript to run this app.</noscript><div id="root"></div></body></html>
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Ilyes Tounsi | Full-Stack Software Engineer &amp; AI/ML Integrator</title>
+<meta name="description" content="Full-stack software engineer and AI/ML integrator. 20+ years shipping production systems. Fractional CTO and MCP-server engineering for early-stage founders.">
+<link rel="icon" href="./favicon.ico">
+<meta property="og:title" content="Ilyes Tounsi | Full-Stack Software Engineer &amp; AI/ML Integrator">
+<meta property="og:description" content="20+ years shipping production systems. Fractional CTO and MCP-server engineering for early-stage founders.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://tounsils.github.io/">
+<meta name="twitter:card" content="summary">
+<style>
+:root {
+    --ink: #1a1a1a;
+    --muted: #555;
+    --faint: #777;
+    --rule: #d5d5d5;
+    --accent: #0a4d8c;
+    --accent-soft: #e8f0f8;
+    --soft: #f4f6f8;
+    --bg: #fff;
+    --card: #fff;
+    --shadow: 0 1px 3px rgba(16, 34, 56, .07), 0 8px 24px rgba(16, 34, 56, .05);
+}
+@media (prefers-color-scheme: dark) {
+    :root {
+        --ink: #e8eaed; --muted: #a8b0b8; --faint: #8b939b; --rule: #333a42;
+        --accent: #6aa9e0; --accent-soft: #17242f; --soft: #1a1f25;
+        --bg: #12161a; --card: #171c21;
+        --shadow: 0 1px 3px rgba(0,0,0,.3), 0 8px 24px rgba(0,0,0,.25);
+    }
+}
+* { box-sizing: border-box; }
+html, body {
+    margin: 0; padding: 0; background: var(--bg); color: var(--ink);
+    font-family: "Segoe UI", -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
+    font-size: 17px; line-height: 1.6; -webkit-font-smoothing: antialiased;
+}
+main { max-width: 720px; margin: 0 auto; padding: 0 22px 70px; }
+a { color: var(--accent); text-decoration: none; border-bottom: 1px solid rgba(10,77,140,.3); }
+a:hover { border-bottom-color: currentColor; }
+@media (prefers-color-scheme: dark) { a { border-bottom-color: rgba(106,169,224,.35); } }
+
+header.hero {
+    border-bottom: 1px solid var(--rule);
+    background: linear-gradient(180deg, var(--accent-soft), var(--bg));
+    padding: 3.6rem 0 2.4rem; margin-bottom: 2rem;
+}
+header.hero .wrap { max-width: 720px; margin: 0 auto; padding: 0 22px; }
+.eyebrow {
+    font-size: .78rem; text-transform: uppercase; letter-spacing: .13em;
+    color: var(--accent); font-weight: 600; margin: 0 0 .7rem;
+}
+h1 { font-size: 2.4rem; margin: 0 0 .7rem; letter-spacing: -.022em; line-height: 1.15; }
+@media (max-width: 620px) { h1 { font-size: 1.9rem; } }
+.lede { font-size: 1.12rem; color: var(--muted); margin: 0 0 1.5rem; }
+.cta-row { display: flex; flex-wrap: wrap; gap: .7rem; }
+.btn {
+    display: inline-block; padding: .6rem 1.2rem; border-radius: 6px;
+    font-size: .95rem; font-weight: 600; border: 1px solid var(--accent);
+    background: var(--accent); color: #fff; transition: opacity .15s;
+}
+@media (prefers-color-scheme: dark) { .btn { color: #0d1418; } }
+.btn:hover { opacity: .87; border-bottom-color: var(--accent); }
+.btn.ghost { background: transparent; color: var(--accent); }
+
+h2 {
+    font-size: 1.15rem; margin: 2.4rem 0 .9rem; padding-bottom: .3rem;
+    border-bottom: 2px solid var(--accent); color: var(--accent);
+}
+.links { list-style: none; padding: 0; margin: 0; }
+.links li {
+    padding: .85rem 0; border-bottom: 1px solid var(--rule);
+    display: flex; flex-wrap: wrap; gap: .2rem 1rem; align-items: baseline;
+}
+.links li:last-child { border-bottom: 0; }
+.links .what { font-weight: 600; min-width: 11rem; }
+.links .why { color: var(--muted); font-size: .93rem; }
+.now { background: var(--soft); border-left: 3px solid var(--accent);
+       border-radius: 0 5px 5px 0; padding: 1rem 1.2rem; margin: 0 0 .5rem; }
+.now p { margin: .3rem 0; }
+.now .label { font-size: .78rem; text-transform: uppercase; letter-spacing: .08em;
+              color: var(--faint); font-weight: 600; }
+footer {
+    border-top: 1px solid var(--rule); margin-top: 3rem; padding-top: 1.2rem;
+    font-size: .9rem; color: var(--faint);
+}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="wrap">
+    <p class="eyebrow">San Diego, California</p>
+    <h1>Ilyes Tounsi</h1>
+    <p class="lede">Full-stack software engineer and AI/ML integrator. Twenty years shipping production systems: architecture, backend, cloud, frontend, data pipelines. The last three of them layering LLM applications, agent orchestration and evaluation pipelines on top of that.</p>
+    <div class="cta-row">
+      <a class="btn" href="./fractional/">Fractional CTO &amp; MCP-Server Playbook</a>
+      <a class="btn ghost" href="./resume.html">Engineering r&eacute;sum&eacute;</a>
+    </div>
+  </div>
+</header>
+
+<main>
+
+  <div class="now">
+    <p class="label">Currently</p>
+    <p>Senior engineering at NXT Robotics, VP of Engineering (advisory) at AIMIA, and founder of <a href="https://www.digitalqrcard.com">digitalqrcard.com</a>. Taking a small number of fractional and fixed-scope engagements alongside those.</p>
+  </div>
+
+  <h2>Where to go</h2>
+  <ul class="links">
+    <li>
+      <span class="what"><a href="./fractional/">Work with me</a></span>
+      <span class="why">Ship your product as a remote MCP server in six weeks, then keep a fractional CTO after. Scope, gates and terms.</span>
+    </li>
+    <li>
+      <span class="what"><a href="./resume.html">R&eacute;sum&eacute;</a></span>
+      <span class="why">Full engineering history, stacks and shipped work. <a href="./ResumeIlyes.pdf">PDF version</a>.</span>
+    </li>
+    <li>
+      <span class="what"><a href="https://github.com/tounsils/ask-me-mcp">ask-me-mcp</a></span>
+      <span class="why">Public MIT-licensed reference MCP server. Six typed tools, grounding, and an evaluation corpus wired as the ship gate. Installs in Claude in about two minutes.</span>
+    </li>
+    <li>
+      <span class="what"><a href="https://github.com/tounsils">GitHub</a></span>
+      <span class="why">Public repositories.</span>
+    </li>
+    <li>
+      <span class="what"><a href="https://www.linkedin.com/in/mohameditounsi">LinkedIn</a></span>
+      <span class="why">Background and contact.</span>
+    </li>
+    <li>
+      <span class="what"><a href="mailto:tounsils@gmail.com">tounsils@gmail.com</a></span>
+      <span class="why">Best way to reach me.</span>
+    </li>
+  </ul>
+
+  <footer>
+    <p>Built and hosted as static files. No trackers, no analytics, no cookies.</p>
+  </footer>
+
+</main>
+</body>
+</html>
