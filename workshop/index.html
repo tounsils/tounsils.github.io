@@ -1,0 +1,236 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>AI Prototyping Workshop | Build and ship your first prototype in half a day</title>
+<meta name="description" content="Half a day. You leave with a working prototype running on a public URL that you built yourself and can change on Monday. For product managers, founders and operations leads. No coding experience needed.">
+<link rel="icon" href="../favicon.ico">
+<link rel="canonical" href="https://tounsils.github.io/workshop/">
+
+<meta property="og:title" content="AI Prototyping Workshop: ship something real in half a day">
+<meta property="og:description" content="You leave with a working prototype on a live URL that you built yourself. Not a demo you watched. For product managers, founders and ops leads. No coding experience needed.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://tounsils.github.io/workshop/">
+<meta property="og:site_name" content="Ilyes Tounsi">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="AI Prototyping Workshop: ship something real in half a day">
+<meta name="twitter:description" content="You leave with a working prototype on a live URL that you built yourself. No coding experience needed.">
+
+<style>
+:root {
+    --ink: #1a1a1a; --muted: #555; --faint: #777; --rule: #d5d5d5;
+    --accent: #0a4d8c; --accent-soft: #e8f0f8; --soft: #f4f6f8;
+    --bg: #fff; --card: #fff;
+    --shadow: 0 1px 3px rgba(16,34,56,.07), 0 8px 24px rgba(16,34,56,.05);
+}
+@media (prefers-color-scheme: dark) {
+    :root {
+        --ink: #e8eaed; --muted: #a8b0b8; --faint: #8b939b; --rule: #333a42;
+        --accent: #6aa9e0; --accent-soft: #17242f; --soft: #1a1f25;
+        --bg: #12161a; --card: #171c21;
+        --shadow: 0 1px 3px rgba(0,0,0,.3), 0 8px 24px rgba(0,0,0,.25);
+    }
+}
+* { box-sizing: border-box; }
+html, body {
+    margin: 0; padding: 0; background: var(--bg); color: var(--ink);
+    font-family: "Segoe UI", -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
+    font-size: 17px; line-height: 1.6; -webkit-font-smoothing: antialiased;
+}
+main { max-width: 720px; margin: 0 auto; padding: 0 22px 70px; }
+a { color: var(--accent); text-decoration: none; border-bottom: 1px solid rgba(10,77,140,.3); }
+a:hover { border-bottom-color: currentColor; }
+@media (prefers-color-scheme: dark) { a { border-bottom-color: rgba(106,169,224,.35); } }
+
+header.hero {
+    border-bottom: 1px solid var(--rule);
+    background: linear-gradient(180deg, var(--accent-soft), var(--bg));
+    padding: 3.4rem 0 2.3rem; margin-bottom: 2rem;
+}
+header.hero .wrap { max-width: 720px; margin: 0 auto; padding: 0 22px; }
+.eyebrow {
+    font-size: .78rem; text-transform: uppercase; letter-spacing: .13em;
+    color: var(--accent); font-weight: 600; margin: 0 0 .7rem;
+}
+h1 { font-size: 2.3rem; margin: 0 0 .7rem; letter-spacing: -.022em; line-height: 1.15; }
+@media (max-width: 620px) { h1 { font-size: 1.8rem; } }
+.lede { font-size: 1.12rem; color: var(--muted); margin: 0 0 1.4rem; }
+.byline { font-size: .92rem; color: var(--faint); margin: 0 0 1.4rem; }
+.cta-row { display: flex; flex-wrap: wrap; gap: .7rem; }
+.btn {
+    display: inline-block; padding: .65rem 1.25rem; border-radius: 6px;
+    font-size: .95rem; font-weight: 600; border: 1px solid var(--accent);
+    background: var(--accent); color: #fff; transition: opacity .15s;
+}
+@media (prefers-color-scheme: dark) { .btn { color: #0d1418; } }
+.btn:hover { opacity: .87; border-bottom-color: var(--accent); }
+.btn.ghost { background: transparent; color: var(--accent); }
+
+h2 {
+    font-size: 1.15rem; margin: 2.6rem 0 .9rem; padding-bottom: .3rem;
+    border-bottom: 2px solid var(--accent); color: var(--accent);
+}
+h3 { font-size: 1.02rem; margin: 1.6rem 0 .4rem; }
+ul { padding-left: 1.15rem; }
+li { margin: .45rem 0; }
+
+.pull {
+    background: var(--soft); border-left: 3px solid var(--accent);
+    border-radius: 0 5px 5px 0; padding: 1rem 1.2rem; margin: 1.4rem 0;
+}
+.pull p { margin: .35rem 0; }
+
+.tiers { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin: 1.2rem 0; }
+@media (max-width: 620px) { .tiers { grid-template-columns: 1fr; } }
+.tier {
+    background: var(--card); border: 1px solid var(--rule); border-radius: 9px;
+    padding: 1.2rem 1.3rem; box-shadow: var(--shadow);
+}
+.tier .name { font-size: .78rem; text-transform: uppercase; letter-spacing: .1em; color: var(--faint); font-weight: 700; }
+.tier .amount { font-size: 2rem; font-weight: 700; letter-spacing: -.02em; margin: .25rem 0 .1rem; }
+.tier .unit { font-size: .9rem; color: var(--muted); margin: 0 0 .6rem; }
+.tier p { margin: .4rem 0 0; font-size: .95rem; color: var(--muted); }
+
+.faq dt { font-weight: 600; margin-top: 1.1rem; }
+.faq dd { margin: .3rem 0 0; color: var(--muted); }
+
+footer {
+    border-top: 1px solid var(--rule); margin-top: 3rem; padding-top: 1.2rem;
+    font-size: .9rem; color: var(--faint);
+}
+</style>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Course",
+  "name": "AI Prototyping Workshop",
+  "description": "Half-day hands-on workshop. Attendees build and deploy a working prototype to a public URL using AI coding tools, and leave able to change it on their own.",
+  "url": "https://tounsils.github.io/workshop/",
+  "inLanguage": "en",
+  "teaches": ["AI-assisted prototyping", "Cursor", "Reviewing AI-generated code", "Deploying a static site"],
+  "provider": {
+    "@type": "Person",
+    "name": "Ilyes Tounsi",
+    "url": "https://tounsils.github.io/",
+    "email": "mailto:tounsils@gmail.com"
+  },
+  "hasCourseInstance": {
+    "@type": "CourseInstance",
+    "courseMode": ["Online", "Onsite"],
+    "courseWorkload": "PT4H"
+  }
+}
+</script>
+</head>
+<body>
+
+<header class="hero">
+  <div class="wrap">
+    <p class="eyebrow">Half a day &middot; Remote or San Diego &middot; No coding experience needed</p>
+    <h1>Build something real, and leave able to change it</h1>
+    <p class="lede">In half a day you will build a working prototype and put it on a public URL you can send to anyone. You will type all of it. I will not touch the keyboard, because a thing you watched someone else build is worth nothing to you on Monday.</p>
+    <p class="byline">Run by Ilyes Tounsi &middot; twenty years shipping production software &middot; <a href="https://tounsils.github.io/">tounsils.github.io</a></p>
+    <div class="cta-row">
+      <a class="btn" href="mailto:tounsils@gmail.com?subject=AI%20Prototyping%20Workshop&amp;body=Hi%20Ilyes%2C%0A%0AI%27d%20like%20to%20book%20the%20workshop.%0A%0AOne-to-one%20or%20team%3A%20%0APreferred%20dates%3A%20%0AWhat%20I%27d%20like%20to%20build%3A%20%0A">Book a session</a>
+      <a class="btn ghost" href="#price">See pricing</a>
+    </div>
+  </div>
+</header>
+
+<main>
+
+<h2>Who this is for</h2>
+
+<p>Product managers, founders, operations leads, designers, analysts. Anyone whose job now expects them to show a working demo rather than describe one, and who has been waiting on an engineering team to find the time.</p>
+
+<p>Job postings have started saying it in plain language. A recent Head of Product listing asked candidates to <em>"prototype and iterate using AI-native tools to go from idea to working demo yourself."</em> That expectation is now normal, and almost nobody teaches the skill.</p>
+
+<div class="pull">
+  <p><strong>You do not need to know how to code.</strong> You will not learn to code either. Half a day does not do that, and anybody promising it is selling something. You will learn to describe what you want, judge whether you got it, and recover when you did not.</p>
+</div>
+
+<h2>What you will build</h2>
+
+<p>One small, finished, genuinely useful thing. You bring the idea, or I bring one from your world if you would rather not decide on the day.</p>
+
+<p>It runs in a browser, it lives at a real URL, and you can send that link to a colleague or an interviewer the same afternoon. It is a prototype on purpose: it exists to make a decision cheaper, not to be shipped to customers.</p>
+
+<h2>What makes this different</h2>
+
+<h3>You type. All of it.</h3>
+<p>Most training of this kind is a demonstration. You watch an expert move quickly, feel encouraged, and discover on Monday that you cannot reproduce any of it. Here you drive from the first minute, including the parts where it goes wrong. Especially those.</p>
+
+<h3>The failure playbook</h3>
+<p>These tools are fast, confident, and quietly wrong in ways that survive a casual look. I recently had one build a small timing tool: everything visible worked, it demoed beautifully, and the clock never actually started, so every number derived from it came out as zero.</p>
+<p>Nothing in the code looked wrong. You catch that class of problem by knowing to ask, not by reading harder. That is the part of the day that transfers, and it is the part nobody else teaches.</p>
+
+<h3>You leave with the materials</h3>
+<p>A written reference sheet, a library of prompts that actually work, and the failure playbook itself. Yours to keep and to circulate internally.</p>
+
+<h2 id="price">What it costs</h2>
+
+<div class="tiers">
+  <div class="tier">
+    <p class="name">One to one</p>
+    <p class="amount">$600</p>
+    <p class="unit">Half day, just you</p>
+    <p>Your idea, your pace, and time to go deeper on the parts you care about. Best if you are preparing for interviews or have a specific thing to build.</p>
+  </div>
+  <div class="tier">
+    <p class="name">Team</p>
+    <p class="amount">$1,800</p>
+    <p class="unit">Half day, up to 8 people</p>
+    <p>Private session for one company. Capped at eight, because past that somebody ends up watching, and watching does not work.</p>
+  </div>
+</div>
+
+<p>Both include the reference materials and <strong>two weeks of follow-up by email</strong> after the session, for when it goes sideways on your own. It will, and that is when the lesson actually lands.</p>
+
+<p>Remote anywhere, or in person around San Diego. Fixed price, agreed before we start.</p>
+
+<h2>What this is not</h2>
+
+<ul>
+  <li><strong>Not a coding bootcamp.</strong> You will not come out an engineer, and you do not need to be one to get value from these tools.</li>
+  <li><strong>Not production software.</strong> What you build is a prototype. Treating one as production is a real and expensive mistake, and knowing the difference is part of the day.</li>
+  <li><strong>Not me building it for you.</strong> If you want something built, that is a different conversation and a different price.</li>
+  <li><strong>Not a sales pitch for one tool.</strong> The tools will change. The judgment is what you keep.</li>
+</ul>
+
+<h2>Questions</h2>
+
+<dl class="faq">
+  <dt>What do I need before we start?</dt>
+  <dd>A laptop and about fifteen minutes of setup, which I will send in advance and help with if it gives you trouble. Most of the tools have a free tier that runs out quickly, so budget roughly $20 for the month if you plan to keep going afterwards.</dd>
+
+  <dt>Do I need to be technical?</dt>
+  <dd>No. It helps to be comfortable describing what you want precisely, which is a product skill rather than an engineering one.</dd>
+
+  <dt>Is there an age requirement?</dt>
+  <dd>Yes. The mainstream AI coding tools require users to be 18 or over in their own terms of service, so this is an adult workshop. For a parent and teenager who want to do it together on the parent's account, get in touch and we will work something out.</dd>
+
+  <dt>Can we do this for a whole department?</dt>
+  <dd>Not in one session. Eight is the ceiling for a single workshop because everyone has to be building. For larger groups, several sessions.</dd>
+
+  <dt>What if I already use these tools a bit?</dt>
+  <dd>Then skip the setup and tell me what keeps going wrong. The failure playbook is the half of the day that experienced users get the most from.</dd>
+</dl>
+
+<h2>Book it</h2>
+
+<p>Email me with whether you want one to one or a team session, rough dates, and what you would like to build. I will reply with a straight answer and a fixed price, no qualifying call required unless you want one.</p>
+
+<div class="cta-row" style="margin:1.2rem 0 1rem">
+  <a class="btn" href="mailto:tounsils@gmail.com?subject=AI%20Prototyping%20Workshop&amp;body=Hi%20Ilyes%2C%0A%0AI%27d%20like%20to%20book%20the%20workshop.%0A%0AOne-to-one%20or%20team%3A%20%0APreferred%20dates%3A%20%0AWhat%20I%27d%20like%20to%20build%3A%20%0A">tounsils@gmail.com</a>
+  <a class="btn ghost" href="https://www.linkedin.com/in/mohameditounsi">Connect on LinkedIn</a>
+</div>
+
+<footer>
+  <p>Ilyes Tounsi &middot; San Diego, California &middot; <a href="https://tounsils.github.io/">tounsils.github.io</a> &middot; <a href="../fractional/">Fractional CTO and MCP-server engineering</a></p>
+</footer>
+
+</main>
+</body>
+</html>
