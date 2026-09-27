@@ -7,7 +7,7 @@ Carlsbad, CA, USA · +1 7604814120 · tounsils@gmail.com
 
 ## Professional Summary
 
-Full-stack software engineer and engineering leader with 20+ years of experience shipping production web platforms end-to-end: architecture, backend APIs, cloud infrastructure, frontend, data pipelines, and CI/CD. Over the last three years I've layered **AI/ML integration** on top of that foundation: LLM applications, RAG pipelines, MCP-based agent orchestration, voice, semantic search, and human-in-the-loop workflows. Current focus splits across a fractional senior engineering role at NXT Robotics (~60%), an advisory VP-of-Engineering role at AIMIA (~20%), part-time engineering at Hydrostasis (~20%), and solo-founder work on [digitalqrcard.com](https://www.digitalqrcard.com).
+Full-stack software engineer and engineering leader with 20+ years of experience shipping production web platforms end-to-end: architecture, backend APIs, cloud infrastructure, frontend, data pipelines, and CI/CD. Over the last three years I've layered **AI/ML integration** on top of that foundation: LLM applications, RAG pipelines, MCP-based agent orchestration, voice, semantic search, and human-in-the-loop workflows. Current focus splits across a fractional senior engineering role at NXT Robotics, an advisory VP-of-Engineering role at AIMIA, a part-time engineering placement at Hydrostasis through Manpower West, and solo-founder work on [digitalqrcard.com](https://www.digitalqrcard.com).
 
 I'm a **software engineer first**. AI is a tool in the stack, not the whole stack.
 
@@ -31,12 +31,12 @@ I'm a **software engineer first**. AI is a tool in the stack, not the whole stac
 
 ## Experience
 
-### Software Engineer — Manpower West (Remote) · Placed at Hydrostasis · Part-time (~20%) · Jun 2026 – Present
+### Software Engineer — Manpower West (Remote) · Placed at Hydrostasis · Part-time · Jun 2026 – Present
 - Built an internal admin portal on a Vite / TanStack Router + Query / Radix UI stack layered over Retool's admin primitives; phase one is in production.
 - Wrote a scripted Test → Production promotion workflow for app definitions, making deployments diff-reviewable and reversible instead of manual copy-paste, which is the Retool default and a common source of production breakage.
 - **Stack:** Node, Vite, TanStack Router/Query, Radix UI, Retool.
 
-### Senior Software Engineer — NXT Robotics (Remote) · Fractional (~60%) · 2025 – Present
+### Senior Software Engineer — NXT Robotics (Remote) · Fractional · 2025 – Present
 - Build and maintain **RobotogoAI**, the operator SaaS console + agent layer that turns raw device telemetry (video, GPS, battery, BLE beacons) into actionable ops decisions for physical-security and field-equipment fleets: stadium venues (Snapdragon Stadium, Petco Park), EV-charging networks, drone operators, and a 300+ site parking pilot.
 - Ship end-to-end operator-console features: alerts UI with severity taxonomy + deep-link, checklists module, camera-picker video streams with iOS black-tile fix, mobile swipeable single-camera carousel + battery graph, tenant-themed dashboards.
 - LiveKit voice/video + ElevenLabs + react-speech-recognition cockpit voice interface; AI Assist wired to an AWS Bedrock supervisor agent across multiple production tenants.
@@ -45,7 +45,7 @@ I'm a **software engineer first**. AI is a tool in the stack, not the whole stac
 - Founded and structured the shared human + AI-agent knowledge repository (Docsify site, structured frontmatter schema, ADR adoption).
 - **Stack:** React 19, Redux Toolkit + Saga, Ant Design, Vite, LiveKit, HLS.js, Recharts / Chart.js, react-leaflet, PHP 8.3 + Laravel 12 + Passport, MySQL/RDS, RabbitMQ / MQTT, Python + AWS SAM/CloudFormation, ECS + RDS + ALB, Node 20 + TypeScript + esbuild, AWS Lambda + API Gateway + Aurora Serverless v2 + Cognito, ElevenLabs, AWS Bedrock, Docker.
 
-### VP of Engineering (Advisory, Part-time ~20%) — AIMIA (Remote) · San Diego, CA · 2025 – Present
+### VP of Engineering (Advisory, Part-time) — AIMIA (Remote) · San Diego, CA · 2025 – Present
 - Own end-to-end engineering for an AI-driven career + AI-literacy assessment platform (aimia.me) serving students, young professionals, and adult learners, with institutional partners including Irvine Valley College, MIT, Palomar College, and Mission Edge.
 - Architect a **multi-agent Gemini stack**: 6 specialized agents + supervisor produce a Career Summary + Top-3 Career Paths from a conversational RIASEC / skills / values / personality assessment, paired with a 48-question AI Proficiency Assessment across 6 domains that issues a shareable public certificate.
 - Ship **Gemini Live** bidirectional voice over WebSocket + ElevenLabs voice fallback; multilingual UX + LLM output (English, zh-TW, zh-HK, Spanish); length-bias / anti-cheat detector that retries generation when the model systematically writes longer correct answers.
