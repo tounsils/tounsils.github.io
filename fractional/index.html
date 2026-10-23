@@ -230,6 +230,54 @@ footer a { color: var(--muted); }
   ]
 }
 </script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What does the MCP-Server Playbook cost?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Fixed fee, quoted once after a free 30-minute fit check. Not hourly, not estimated. Figures are given on request rather than published. The Playbook ships by end of week six or half the fee is refunded."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How long until my product is live as a remote MCP server?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Six weeks, with a named deliverable and a gate every week. Done means one passing eval on the production tool contract plus a deployable path to the connector directory."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What exactly ships?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A remote MCP server reachable from Claude's connector directory, ChatGPT's Apps SDK, and xAI tool calling: a typed tool contract of four to eight JSON-schema-strict tools, a coordinator with specialist agents, external grounding, a confidence level on every answer, and an evaluation corpus wired as the release gate."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I see the work before paying?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. ask-me-mcp on GitHub is a public MIT-licensed reference implementation of the same pattern, installable in Claude in about two minutes, with a live endpoint."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Who should not buy this?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Teams that want a chatbot with a retrieval tab, teams without real domain knowledge to encode, and teams that cannot commit an engineer or PM to the six-week sprint."
+      }
+    }
+  ]
+}
+</script>
 </head>
 <body>
 
@@ -419,7 +467,7 @@ footer a { color: var(--muted); }
 </table>
 </div>
 
-<p><strong>On price.</strong> All three products are fixed and quoted, not hourly and not estimated. I do not publish the numbers, because the right scope is worth establishing before the figure is, and a rate card invites comparison against work that is not the same work. Ask on the first call, or by email, and you get a straight answer in one line with no qualifying dance.</p>
+<p><strong>On price.</strong> All three products are fixed and quoted, not hourly and not estimated. I do not publish the numbers, because the right scope is worth establishing before the figure is, and a rate card invites comparison against work that is not the same work. Ask on the first call, or by email, and you get a straight answer in one line with no qualifying dance. If you want to understand what moves the number before we talk, read <a href="./mcp-server-cost/">what it costs to ship your product as a remote MCP server</a>.</p>
 
 <p><strong>Combined ceiling:</strong> one Playbook plus one Retainer, or two Retainers, or two back-to-back Playbooks. Never two concurrent Playbooks. I would rather turn work away than deliver two sprints badly. Workshops sit outside this ceiling, because three hours does not displace an engagement.</p>
 
@@ -450,6 +498,26 @@ footer a { color: var(--muted); }
 </ul>
 
 <p>Full list on request.</p>
+
+<h2>Questions buyers actually ask</h2>
+
+<h3>What does it cost?</h3>
+<p>Fixed fee, quoted once after a free 30-minute fit check. Not hourly, not estimated. I don't publish the numbers; ask and you get a straight answer in one line. The Playbook carries a refund trigger: ships by end of week six or half the fee comes back. The drivers behind the quote are on <a href="./mcp-server-cost/">the cost page</a>.</p>
+
+<h3>How long until my product is live as an MCP server?</h3>
+<p>Six weeks, with a named deliverable and a gate every week. The definition of done is one passing eval on the production tool contract plus a deployable path to the connector directory, not a demo.</p>
+
+<h3>What exactly ships?</h3>
+<p>A remote MCP server reachable from Claude's connector directory, ChatGPT's Apps SDK, and xAI tool calling. Under it: a typed tool contract of four to eight JSON-schema-strict tools, a coordinator with specialist agents, external grounding so the model never invents, a confidence level on every answer, and an evaluation corpus wired as the release gate.</p>
+
+<h3>Can I see the work before paying anything?</h3>
+<p>Yes. <a href="https://github.com/tounsils/ask-me-mcp">ask-me-mcp</a> is a public MIT-licensed reference implementation of the same pattern. It installs in Claude in about two minutes, and the live endpoint is on this page. Every layer the Playbook delivers is visible in that source.</p>
+
+<h3>How is this different from hiring an agency?</h3>
+<p>One senior operator, a fixed scope with weekly gates, and a release gate you can inspect: the eval corpus either passes or nothing ships. An agency bills the time; this prices the outcome, and the refund trigger makes the risk mine.</p>
+
+<h3>Who should not buy this?</h3>
+<p>Teams that want a chatbot with a retrieval tab, teams without real domain knowledge to encode, and teams that can't commit an engineer or PM to the sprint. If that's you, the fit check will say so in the first ten minutes.</p>
 
 <h2>How to book</h2>
 

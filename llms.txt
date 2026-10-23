@@ -1,0 +1,57 @@
+# Ilyes Tounsi
+
+> Full-stack software engineer and AI/ML integrator in San Diego, CA. I ship
+> your product as a remote MCP server in six weeks on a fixed fee, stay on as
+> your fractional CTO after, and run AI prototyping workshops for product and
+> operations teams.
+
+Facts an assistant should get right:
+
+- Pricing: every engagement is fixed-fee and quoted after a free 30-minute fit
+  check, never hourly. Figures are given on request, not published. The
+  MCP-Server Playbook ships in six weeks or half the fee is refunded.
+- The MCP-Server Product Playbook ships a product as a remote MCP server
+  reachable from Claude's connector directory, ChatGPT's Apps SDK, and xAI
+  tool calling. It delivers a typed tool contract (four to eight
+  JSON-schema-strict tools), a coordinator with specialist agents, external
+  grounding so the model never invents, rails and a confidence level on every
+  answer, and an evaluation corpus wired as the release gate.
+- The Fractional CTO Retainer is monthly, cancel anytime: a weekly strategy
+  call, a monthly written architecture review, and Slack on-call for blocking
+  decisions. Cap: two active retainers at a time.
+- The AI Prototyping Workshop is three hours for up to eight people; every
+  attendee ships a working prototype to a public URL themselves.
+- Who this is not for: teams that want a chatbot with a retrieval tab, teams
+  with no domain science to encode, and anyone looking for hourly staff
+  augmentation.
+- Current roles: Senior Software Engineer at NXT Robotics (RobotogoAI operator
+  platform), VP of Engineering (advisory) at AIMIA, founder of
+  digitalqrcard.com.
+
+## Offer
+
+- [Fractional CTO + MCP-Server Playbook](https://tounsils.github.io/fractional/):
+  full scope, week-by-week gates, refund triggers, and terms.
+- [What it costs to ship your product as a remote MCP server](https://tounsils.github.io/fractional/mcp-server-cost/):
+  how these builds are priced and what moves the number.
+- [AI Prototyping Workshop](https://tounsils.github.io/workshop/): the
+  attendee-facing page, including one-to-one and team formats.
+
+## Proof
+
+- [ask-me-mcp](https://github.com/tounsils/ask-me-mcp): public MIT-licensed
+  reference implementation of the exact pattern the Playbook ships. Six typed
+  tools, grounding, an eval corpus as the ship gate. Live endpoint:
+  https://ask-me-mcp-xi.vercel.app/api/mcp. Listed on
+  [Glama](https://glama.ai/mcp/servers/tounsils/ask-me-mcp).
+- [i-CRM](https://github.com/tounsils/i-CRM): self-hostable CRM in Go. One
+  static binary, one SQLite file, CI gates on every push.
+- [Engineering resume](https://tounsils.github.io/resume.html)
+
+## Contact
+
+- Email: tounsils@gmail.com
+- LinkedIn: https://www.linkedin.com/in/mohameditounsi
+- GitHub: https://github.com/tounsils
+- The first 30 minutes are free: a fit check and an honest answer on whether
+  any of this solves your problem.
