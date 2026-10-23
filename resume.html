@@ -455,16 +455,17 @@ h3 + p > img, h3 + p img, h4 + p img { margin-top: 0.4em; }
 <ul>
 <li><strong>Stack:</strong> Turborepo, Next.js 15, Express, Firestore, Google Gemini, TypeScript.</li>
 </ul>
-<h3 id="archestra-fork-via-p-algora-bounties-mcp-orchestrator-contribution">Archestra fork (via P-algora-bounties) — MCP orchestrator contribution</h3>
-<p>Contributor to an MCP-native governance / orchestration platform (Go backend, Docker/Kubernetes). Companion Python <code>bounty-watcher</code> script tracks Algora open bounties.</p>
+<h3 id="model-context-protocol-registry-merged-upstream-contribution">Model Context Protocol Registry — merged upstream contribution</h3>
+<p>Shipped server-icon rendering in the official MCP registry's web client (<a href="https://github.com/modelcontextprotocol/registry/pull/1586">PR #1586</a>, merged Oct 2026): size-aware icon selection, HTTPS re-validation at render time, XSS-safe SVG handling, and referrer-policy hardening against third-party icon hosts.</p>
 <ul>
-<li><strong>What's interesting:</strong> production-grade MCP orchestrator surface, real-world exposure to MCP server auth, tool discovery, and multi-tenant governance patterns.</li>
+<li><strong>What's interesting:</strong> icon URLs are registry-published data, so the renderer treats them as hostile input even though the publish API validates them; the selection logic was verified against the first 100 servers in the production registry.</li>
+<li><strong>Stack:</strong> Go-embedded web client, vanilla JavaScript.</li>
 </ul>
 <h3 id="revenuesignalai-multi-tenant-lead-gen-automation-platform">RevenueSignalAI — Multi-tenant lead-gen automation platform</h3>
 <p>A two-product suite plus its own marketing surface, aimed at converting external signals (city permits, YouTube niches, social) into qualified sales leads for SMB clients.</p>
 <ul>
 <li><strong><code>automation-app</code>:</strong> Multi-tenant YouTube content-automation platform. Express / Prisma backend + Next.js frontend, with JWT-authenticated admin panel for tenant/user provisioning, Google/YouTube OAuth per tenant, encrypted OAuth tokens at rest, and topic-to-short generation via <strong>Google Gemini</strong>. Each tenant gets isolated channels, credentials, and post history.</li>
-<li><strong>Permit Monitor:</strong> Production Python scraper deployed for a paying client in the senior-housing sector. Polls City of San Diego + San Diego County public permit databases every 15 minutes for senior-housing permits (assisted living, memory care, nursing facilities), emails matched leads to the sales team via Gmail App Password, and appends to a CSV with <code>contacted</code> / <code>notes</code> columns so the sales team tracks follow-up directly in the sheet.</li>
+<li><strong>Permit Monitor:</strong> Production Python scraper running for a lead-gen venture in the senior-housing sector. Polls City of San Diego + San Diego County public permit databases every 15 minutes for senior-housing permits (assisted living, memory care, nursing facilities), emails matched leads to the sales team via Gmail App Password, and appends to a CSV with <code>contacted</code> / <code>notes</code> columns so the sales team tracks follow-up directly in the sheet.</li>
 <li><strong><code>RevenueSignalAI.com</code>:</strong> Static Next.js marketing site.</li>
 <li><strong>What's interesting:</strong> encrypted-at-rest OAuth token storage; per-tenant credential isolation; the permit-monitor is a "boring but works" counterexample to over-engineering: one Python file, cron loop, actual leads.</li>
 <li><strong>Stack:</strong> Next.js 15, Express, Prisma, PostgreSQL / Supabase, TypeScript, Google Gemini, YouTube Data API, Python, cron. Web on Vercel, worker on Railway.</li>
@@ -498,7 +499,7 @@ h3 + p > img, h3 + p img, h4 + p img { margin-top: 0.4em; }
 <h2 id="current-client-engagements-freelance">Current Client Engagements (Freelance)</h2>
 <ul>
 <li><strong>Individual SWE contracts:</strong> Ongoing engineering-for-hire work for private clients through TN76 Digital. Recent example: loading a 49-software PLR bundle into an existing self-hosted OpenCart store with automated digital delivery, Stripe + PayPal integration, and a product-page redesign to match a reference storefront.</li>
-<li><strong>Permit monitor:</strong> Production Python scraper for a paying client in the senior-housing sector, polling City of San Diego and San Diego County permit databases on a 15-minute schedule and emailing matched leads to the sales team.</li>
+<li><strong>Permit monitor:</strong> Production Python scraper for a lead-gen venture in the senior-housing sector, polling City of San Diego and San Diego County permit databases on a 15-minute schedule and emailing matched leads to the sales team.</li>
 </ul>
 <h2 id="education">Education</h2>
 <ul>

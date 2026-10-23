@@ -1,0 +1,192 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>What it costs to ship your product as a remote MCP server | Ilyes Tounsi</title>
+<meta name="description" content="How a fixed-fee MCP-server build is priced: the five drivers that move the number, what done means, and why the quote comes after a free fit check rather than from a rate card.">
+<link rel="icon" href="../../favicon.ico">
+<meta property="og:title" content="What it costs to ship your product as a remote MCP server">
+<meta property="og:description" content="The five drivers that move the price of an MCP-server build, what done means, and why fixed fee beats hourly for a six-week scope.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://tounsils.github.io/fractional/mcp-server-cost/">
+<meta name="twitter:card" content="summary">
+<style>
+:root {
+    --ink: #1a1a1a;
+    --muted: #555;
+    --faint: #777;
+    --rule: #d5d5d5;
+    --accent: #0a4d8c;
+    --accent-soft: #e8f0f8;
+    --soft: #f4f6f8;
+    --bg: #fff;
+    --card: #fff;
+    --shadow: 0 1px 3px rgba(16, 34, 56, .07), 0 8px 24px rgba(16, 34, 56, .05);
+}
+@media (prefers-color-scheme: dark) {
+    :root {
+        --ink: #e8eaed; --muted: #a8b0b8; --faint: #8b939b; --rule: #333a42;
+        --accent: #6aa9e0; --accent-soft: #17242f; --soft: #1a1f25;
+        --bg: #12161a; --card: #171c21;
+        --shadow: 0 1px 3px rgba(0,0,0,.3), 0 8px 24px rgba(0,0,0,.25);
+    }
+}
+* { box-sizing: border-box; }
+html, body {
+    margin: 0; padding: 0; background: var(--bg); color: var(--ink);
+    font-family: "Segoe UI", -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
+    font-size: 17px; line-height: 1.6; -webkit-font-smoothing: antialiased;
+}
+main { max-width: 860px; margin: 0 auto; padding: 0 22px 80px; }
+a { color: var(--accent); text-decoration: none; border-bottom: 1px solid rgba(10,77,140,.3); }
+a:hover { border-bottom-color: currentColor; }
+@media (prefers-color-scheme: dark) { a { border-bottom-color: rgba(106,169,224,.35); } }
+h1, h2, h3 { line-height: 1.25; }
+h1 { font-size: 2.2rem; margin: 0 0 .8rem; letter-spacing: -.022em; }
+@media (max-width: 620px) { h1 { font-size: 1.8rem; } }
+h2 {
+    font-size: 1.45rem; margin: 3rem 0 .2rem; padding-bottom: .3rem;
+    border-bottom: 2px solid var(--accent); color: var(--accent); letter-spacing: -.01em;
+}
+p { margin: .7rem 0; }
+ul, ol { margin: .6rem 0 1rem; padding-left: 1.35rem; }
+li { margin: .35rem 0; }
+strong { font-weight: 600; }
+header.hero {
+    border-bottom: 1px solid var(--rule);
+    background: linear-gradient(180deg, var(--accent-soft), var(--bg));
+    padding: 3.2rem 0 2.4rem; margin-bottom: .5rem;
+}
+header.hero .wrap { max-width: 860px; margin: 0 auto; padding: 0 22px; }
+.eyebrow {
+    font-size: .78rem; text-transform: uppercase; letter-spacing: .13em;
+    color: var(--accent); font-weight: 600; margin: 0 0 .7rem;
+}
+.lede { font-size: 1.14rem; color: var(--muted); margin: 0 0 1.1rem; max-width: 44rem; }
+.cta-row { display: flex; flex-wrap: wrap; gap: .7rem; margin-top: 1.4rem; }
+.btn {
+    display: inline-block; padding: .62rem 1.25rem; border-radius: 6px;
+    font-size: .95rem; font-weight: 600; border: 1px solid var(--accent);
+    background: var(--accent); color: #fff; transition: opacity .15s;
+}
+@media (prefers-color-scheme: dark) { .btn { color: #0d1418; } }
+.btn:hover { opacity: .87; border-bottom-color: var(--accent); }
+.btn.ghost { background: transparent; color: var(--accent); }
+.callout {
+    background: var(--soft); border-left: 3px solid var(--accent);
+    border-radius: 0 5px 5px 0; padding: 1.1rem 1.3rem; margin: 2.2rem 0;
+}
+.callout p:first-child { margin-top: 0; }
+.callout p:last-child { margin-bottom: 0; }
+table { border-collapse: collapse; width: 100%; margin: .9rem 0 1.2rem; font-size: .93rem; }
+th, td { text-align: left; padding: .55rem .65rem; border-bottom: 1px solid var(--rule); vertical-align: top; }
+th { background: var(--soft); font-weight: 600; border-bottom: 2px solid var(--rule); }
+td:first-child { white-space: nowrap; font-weight: 600; color: var(--accent); }
+.table-scroll { overflow-x: auto; }
+footer {
+    border-top: 1px solid var(--rule); margin-top: 3.5rem; padding-top: 1.4rem;
+    font-size: .9rem; color: var(--faint);
+}
+footer a { color: var(--muted); }
+</style>
+<link rel="canonical" href="https://tounsils.github.io/fractional/mcp-server-cost/">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "What it costs to ship your product as a remote MCP server",
+  "description": "The five drivers that move the price of an MCP-server build, what done means, and why fixed fee beats hourly for a six-week scope.",
+  "url": "https://tounsils.github.io/fractional/mcp-server-cost/",
+  "datePublished": "2026-10-22",
+  "author": {
+    "@type": "Person",
+    "name": "Ilyes Tounsi",
+    "url": "https://tounsils.github.io/"
+  }
+}
+</script>
+</head>
+<body>
+
+<header class="hero">
+  <div class="wrap">
+    <p class="eyebrow">Pricing, explained before the call</p>
+    <h1>What it costs to ship your product as a remote MCP server</h1>
+    <p class="lede">The honest answer is a quote, not a rate card. This page explains what the quote is made of, so you can estimate where your build lands before we ever talk.</p>
+    <div class="cta-row">
+      <a class="btn" href="mailto:tounsils@gmail.com?subject=Fit%20check%3A%20MCP-Server%20Playbook">Book a free 30-minute fit check</a>
+      <a class="btn ghost" href="../">The full Playbook scope</a>
+    </div>
+  </div>
+</header>
+
+<main>
+
+<h2>What you are actually buying</h2>
+
+<p>Not a chatbot, and not a thin wrapper around your API. A production MCP server is a contract between your product and every AI assistant that calls it: a typed tool surface, grounding so the model never invents, a confidence level on every answer, and an evaluation corpus that decides whether the thing ships at all. The parts that cost money are the parts you can't see in a demo.</p>
+
+<p>Every layer is visible in public source before you pay anything: <a href="https://github.com/tounsils/ask-me-mcp">ask-me-mcp</a> is an MIT-licensed reference implementation of the exact pattern, installable in Claude in about two minutes.</p>
+
+<h2>The five drivers that move the number</h2>
+
+<div class="table-scroll">
+<table>
+  <thead><tr><th>Driver</th><th>Cheap end</th><th>Expensive end</th></tr></thead>
+  <tbody>
+    <tr><td>Tool surface</td><td>Four read-only tools over one data source</td><td>Eight tools with writes, side effects, and approval flows</td></tr>
+    <tr><td>Existing API</td><td>Your product already has a clean API; the MCP server is one more storefront on it</td><td>No API exists, so the build includes carving one out of the application</td></tr>
+    <tr><td>Grounding</td><td>One well-structured internal source</td><td>Several external sources, freshness requirements, and a domain taxonomy to encode</td></tr>
+    <tr><td>Evaluation depth</td><td>Smoke evals per tool</td><td>A certification corpus for a domain where a wrong answer costs real money</td></tr>
+    <tr><td>Deployment and auth</td><td>Single-tenant endpoint, API-key auth</td><td>Multi-tenant, OAuth, observability, and connector-directory listing requirements</td></tr>
+  </tbody>
+</table>
+</div>
+
+<p>The second row is the one founders most often underestimate in their favor. If your product already exposes a real API, you are much closer to the cheap end than you think: the expensive half of the work already exists.</p>
+
+<h2>Three ways this gets priced in the market</h2>
+
+<ul>
+  <li><strong>Hourly or day rate.</strong> Open-ended by construction. The incentive runs against finishing, and the risk of scope growth is yours.</li>
+  <li><strong>Platform subscriptions.</strong> Fine for generic connectors to common SaaS tools. They do not encode your domain, your grounding, or your release gate, because they can't.</li>
+  <li><strong>Fixed fee against a defined done.</strong> What I sell. One quote after a fit check, six weeks, a gate per week, and a refund trigger: a live tool contract with a passing eval by the end of week six, or half the fee comes back.</li>
+</ul>
+
+<div class="callout">
+  <p><strong>Why no number on this page.</strong> A rate card invites comparison against work that is not the same work, and the right scope is worth establishing before the figure is. Ask on the call or by email and you get the number in one line, immediately. What is published is the shape: fixed, quoted once, six weeks, ships or half back.</p>
+</div>
+
+<h2>What "done" means, concretely</h2>
+
+<ol>
+  <li>A remote MCP server deployed to a production endpoint with auth and observability.</li>
+  <li>A typed tool contract your team can read, version, and extend.</li>
+  <li>One passing eval on the production tool contract, run by an eval runner you keep.</li>
+  <li>A deployable path to Claude's connector directory, ChatGPT's Apps SDK, and xAI tool calling. One server, three storefronts.</li>
+</ol>
+
+<p>Anything short of that by the end of week six is a failed delivery and fires the refund trigger. The full week-by-week scope, gates, and exclusions are on <a href="../">the Playbook page</a>.</p>
+
+<h2>Estimate your own build</h2>
+
+<p>Count your tools, check whether your API already exists, and be honest about what a wrong answer costs in your domain. Then bring those three facts to a free 30-minute fit check and you leave with a quote in one line and an honest answer on whether this is worth doing at all. If it isn't, I'll say so.</p>
+
+<div class="cta-row" style="margin:1.4rem 0 2rem">
+  <a class="btn" href="mailto:tounsils@gmail.com?subject=Fit%20check%3A%20MCP-Server%20Playbook">Email me to book</a>
+  <a class="btn ghost" href="https://www.linkedin.com/in/mohameditounsi">Connect on LinkedIn</a>
+</div>
+
+<footer>
+  <p>
+    <a href="mailto:tounsils@gmail.com">tounsils@gmail.com</a> &middot;
+    <a href="https://www.linkedin.com/in/mohameditounsi">linkedin.com/in/mohameditounsi</a> &middot;
+    <a href="https://github.com/tounsils">github.com/tounsils</a>
+  </p>
+  <p><a href="../">Fractional CTO + MCP-Server Playbook</a> &middot; <a href="../../resume.html">Engineering resume</a> &middot; <a href="https://github.com/tounsils/ask-me-mcp">ask-me-mcp reference implementation</a></p>
+</footer>
+
+</main>
+</body>
+</html>
