@@ -455,10 +455,11 @@ h3 + p > img, h3 + p img, h4 + p img { margin-top: 0.4em; }
 <ul>
 <li><strong>Stack:</strong> Turborepo, Next.js 15, Express, Firestore, Google Gemini, TypeScript.</li>
 </ul>
-<h3 id="archestra-fork-via-p-algora-bounties-mcp-orchestrator-contribution">Archestra fork (via P-algora-bounties) — MCP orchestrator contribution</h3>
-<p>Contributor to an MCP-native governance / orchestration platform (Go backend, Docker/Kubernetes). Companion Python <code>bounty-watcher</code> script tracks Algora open bounties.</p>
+<h3 id="model-context-protocol-registry-merged-upstream-contribution">Model Context Protocol Registry — merged upstream contribution</h3>
+<p>Shipped server-icon rendering in the official MCP registry's web client (<a href="https://github.com/modelcontextprotocol/registry/pull/1586">PR #1586</a>, merged Oct 2026): size-aware icon selection, HTTPS re-validation at render time, XSS-safe SVG handling, and referrer-policy hardening against third-party icon hosts.</p>
 <ul>
-<li><strong>What's interesting:</strong> production-grade MCP orchestrator surface, real-world exposure to MCP server auth, tool discovery, and multi-tenant governance patterns.</li>
+<li><strong>What's interesting:</strong> icon URLs are registry-published data, so the renderer treats them as hostile input even though the publish API validates them; the selection logic was verified against the first 100 servers in the production registry.</li>
+<li><strong>Stack:</strong> Go-embedded web client, vanilla JavaScript.</li>
 </ul>
 <h3 id="revenuesignalai-multi-tenant-lead-gen-automation-platform">RevenueSignalAI — Multi-tenant lead-gen automation platform</h3>
 <p>A two-product suite plus its own marketing surface, aimed at converting external signals (city permits, YouTube niches, social) into qualified sales leads for SMB clients.</p>

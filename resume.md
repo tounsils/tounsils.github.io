@@ -244,10 +244,11 @@ Turborepo platform combining a Next.js dashboard, an Express ingestion service, 
 
 - **Stack:** Turborepo, Next.js 15, Express, Firestore, Google Gemini, TypeScript.
 
-### Archestra fork (via P-algora-bounties) — MCP orchestrator contribution
-Contributor to an MCP-native governance / orchestration platform (Go backend, Docker/Kubernetes). Companion Python `bounty-watcher` script tracks Algora open bounties.
+### Model Context Protocol Registry — merged upstream contribution
+Shipped server-icon rendering in the official MCP registry's web client ([PR #1586](https://github.com/modelcontextprotocol/registry/pull/1586), merged Oct 2026): size-aware icon selection, HTTPS re-validation at render time, XSS-safe SVG handling, and referrer-policy hardening against third-party icon hosts.
 
-- **What's interesting:** production-grade MCP orchestrator surface, real-world exposure to MCP server auth, tool discovery, and multi-tenant governance patterns.
+- **What's interesting:** icon URLs are registry-published data, so the renderer treats them as hostile input even though the publish API validates them; the selection logic was verified against the first 100 servers in the production registry.
+- **Stack:** Go-embedded web client, vanilla JavaScript.
 
 ### RevenueSignalAI — Multi-tenant lead-gen automation platform
 A two-product suite plus its own marketing surface, aimed at converting external signals (city permits, YouTube niches, social) into qualified sales leads for SMB clients.
