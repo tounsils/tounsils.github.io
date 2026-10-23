@@ -253,7 +253,7 @@ Contributor to an MCP-native governance / orchestration platform (Go backend, Do
 A two-product suite plus its own marketing surface, aimed at converting external signals (city permits, YouTube niches, social) into qualified sales leads for SMB clients.
 
 - **`automation-app`:** Multi-tenant YouTube content-automation platform. Express / Prisma backend + Next.js frontend, with JWT-authenticated admin panel for tenant/user provisioning, Google/YouTube OAuth per tenant, encrypted OAuth tokens at rest, and topic-to-short generation via **Google Gemini**. Each tenant gets isolated channels, credentials, and post history.
-- **Permit Monitor:** Production Python scraper deployed for a paying client in the senior-housing sector. Polls City of San Diego + San Diego County public permit databases every 15 minutes for senior-housing permits (assisted living, memory care, nursing facilities), emails matched leads to the sales team via Gmail App Password, and appends to a CSV with `contacted` / `notes` columns so the sales team tracks follow-up directly in the sheet.
+- **Permit Monitor:** Production Python scraper running for a lead-gen venture in the senior-housing sector. Polls City of San Diego + San Diego County public permit databases every 15 minutes for senior-housing permits (assisted living, memory care, nursing facilities), emails matched leads to the sales team via Gmail App Password, and appends to a CSV with `contacted` / `notes` columns so the sales team tracks follow-up directly in the sheet.
 - **`RevenueSignalAI.com`:** Static Next.js marketing site.
 - **What's interesting:** encrypted-at-rest OAuth token storage; per-tenant credential isolation; the permit-monitor is a "boring but works" counterexample to over-engineering: one Python file, cron loop, actual leads.
 - **Stack:** Next.js 15, Express, Prisma, PostgreSQL / Supabase, TypeScript, Google Gemini, YouTube Data API, Python, cron. Web on Vercel, worker on Railway.
@@ -302,7 +302,7 @@ Small project, but it's the reason all the above stays organized enough to ship.
 ## Current Client Engagements (Freelance)
 
 - **Individual SWE contracts:** Ongoing engineering-for-hire work for private clients through TN76 Digital. Recent example: loading a 49-software PLR bundle into an existing self-hosted OpenCart store with automated digital delivery, Stripe + PayPal integration, and a product-page redesign to match a reference storefront.
-- **Permit monitor:** Production Python scraper for a paying client in the senior-housing sector, polling City of San Diego and San Diego County permit databases on a 15-minute schedule and emailing matched leads to the sales team.
+- **Permit monitor:** Production Python scraper for a lead-gen venture in the senior-housing sector, polling City of San Diego and San Diego County permit databases on a 15-minute schedule and emailing matched leads to the sales team.
 
 
 ## Education
